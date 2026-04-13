@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Source - AI Augmented ERP Implementations</title>
+<meta property="og:title" content="Source - AI Augmented ERP Implementations">
+<meta property="og:description" content="We handle ERP implementations. You keep the client, the brand, and 50%+ margins.">
+<meta name="description" content="Source AI partner one-pager. White-label ERP migrations, 50%+ margins, sub-21-day delivery.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ── RESET & BASE ─────────────────────────────────── */
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 13px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #000;
+  }
+
+  body {
+    background: #f0f0f0;
+    margin: 0;
+    padding: 0;
+  }
+
+  a { color: inherit; }
+
+  /* ── PAGE CONTAINER ───────────────────────────────── */
+  .page {
+    width: 100%;
+    max-width: 900px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 52px 64px;
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+  }
+
+  /* ── TOOLBAR (screen only) ────────────────────────── */
+  .toolbar {
+    position: fixed;
+    top: 20px;
+    right: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 100;
+    align-items: stretch;
+  }
+
+  .toolbar-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #000;
+    color: #fff;
+    border: 2px solid #000;
+    padding: 14px 24px;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.15s, color 0.15s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+
+  .toolbar-btn:hover { background: #fff; color: #000; }
+
+  .toolbar-btn svg { width: 15px; height: 15px; }
+
+  .toolbar-btn-secondary {
+    background: #fff;
+    color: #000;
+    border: 2px solid #000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  }
+
+  .toolbar-btn-secondary:hover {
+    background: #000;
+    color: #fff;
+  }
+
+  /* ── HEADER ───────────────────────────────────────── */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+
+  .logo-wordmark {
+    height: 26px;
+    width: auto;
+  }
+
+  .logo-icon {
+    height: 22px;
+    width: auto;
+  }
+
+  .header-rule {
+    border: none;
+    border-top: 2px solid #000;
+    margin-bottom: 22px;
+  }
+
+  /* ── HERO ─────────────────────────────────────────── */
+  .doc-type {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: rgba(0,0,0,0.35);
+    margin-bottom: 8px;
+  }
+
+  .hero-title {
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+    margin-bottom: 16px;
+  }
+
+  .hero-body {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: rgba(0,0,0,0.50);
+    letter-spacing: -0.01em;
+    max-width: 95%;
+    margin-bottom: 14px;
+  }
+
+  /* ── STAT BOXES ───────────────────────────────────── */
+  .stats-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .stat-box {
+    border: 1px solid rgba(0,0,0,0.08);
+    background: rgba(0,0,0,0.03);
+    padding: 16px 14px;
+    text-align: center;
+  }
+
+  .stat-val {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+  }
+
+  .stat-label {
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.10em;
+    color: rgba(0,0,0,0.45);
+    margin-top: 5px;
+  }
+
+  .stat-sub {
+    font-size: 9px;
+    font-weight: 400;
+    color: rgba(0,0,0,0.30);
+    margin-top: 2px;
+  }
+
+  /* ── SECTION LABELS (deck style with accent bar) ─── */
+  .section-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    padding-top: 10px;
+  }
+
+  .section-bar::before {
+    content: '';
+    flex: 0 0 3px;
+    height: 10px;
+    background: #000;
+  }
+
+  .section-bar-label {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: rgba(0,0,0,0.35);
+  }
+
+  .section-bar::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(0,0,0,0.08);
+  }
+
+  /* ── ECONOMICS TABLE ──────────────────────────────── */
+  .econ-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 10px;
+    margin-bottom: 14px;
+  }
+
+  .econ-table th {
+    font-size: 9px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.10em;
+    color: rgba(0,0,0,0.40);
+    text-align: left;
+    padding: 6px 8px;
+    border-bottom: 1.5px solid #000;
+  }
+
+  .econ-table th:not(:first-child) {
+    text-align: center;
+  }
+
+  .econ-table td {
+    padding: 4.5px 8px;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    color: rgba(0,0,0,0.55);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+
+  .econ-table td:not(:first-child) {
+    text-align: center;
+  }
+
+  .econ-table td:first-child {
+    font-weight: 500;
+    color: rgba(0,0,0,0.70);
+  }
+
+  .econ-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .econ-table .highlight-col {
+    background: rgba(0,0,0,0.025);
+    font-weight: 600;
+    color: #000;
+  }
+
+  .econ-table .profit-row td {
+    border-top: 1.5px solid rgba(0,0,0,0.12);
+    border-bottom: 1.5px solid rgba(0,0,0,0.12);
+    font-weight: 600;
+    color: #000;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .econ-table .profit-row .highlight-col {
+    background: rgba(0,0,0,0.05);
+  }
+
+  /* ── BEFORE/AFTER FLOW (from deck Section 03) ─────── */
+  .flow-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: rgba(0,0,0,0.35);
+    margin-bottom: 10px;
+  }
+
+  .flow-before {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 22px;
+  }
+
+  .flow-node {
+    padding: 10px 18px;
+    border: 1px solid rgba(0,0,0,0.10);
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(0,0,0,0.60);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .flow-node svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+  .flow-node-cut {
+    color: rgba(0,0,0,0.20);
+    background: rgba(0,0,0,0.02);
+    border-color: rgba(0,0,0,0.08);
+    text-decoration: line-through;
+    position: relative;
+  }
+
+  .flow-node-cut .x-icon {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 10px;
+    height: 10px;
+    color: rgba(220,38,38,0.4);
+  }
+
+  .flow-arrow {
+    color: rgba(0,0,0,0.18);
+    font-size: 14px;
+  }
+
+  /* After flow — horizontal strip */
+  .flow-after {
+    display: flex;
+    align-items: stretch;
+    border: 1px solid rgba(0,0,0,0.08);
+    margin-bottom: 22px;
+    min-height: 0;
+  }
+
+  .flow-col {
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .flow-col-label {
+    font-size: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.10em;
+    color: rgba(0,0,0,0.30);
+    margin-bottom: 4px;
+  }
+
+  .flow-col-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #000;
+    line-height: 1.3;
+  }
+
+  .flow-col-border {
+    border-right: 1px solid rgba(0,0,0,0.08);
+  }
+
+  .flow-col-narrow {
+    flex: 0 0 auto;
+    width: 120px;
+    text-align: center;
+    align-items: center;
+    padding: 14px 16px;
+  }
+
+  .flow-col-consultant {
+    flex: 0 0 auto;
+    width: 160px;
+  }
+
+  .flow-consultant-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 10px;
+    color: rgba(0,0,0,0.50);
+    margin-bottom: 5px;
+  }
+
+  .flow-consultant-item:last-child { margin-bottom: 0; }
+
+  .flow-consultant-item svg { width: 12px; height: 12px; flex-shrink: 0; opacity: 0.5; }
+
+  .flow-col-engine {
+    flex: 1;
+    background: #000;
+    color: #fff;
+    padding: 20px 24px;
+  }
+
+  .flow-engine-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+
+  .flow-engine-label {
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.10em;
+    color: rgba(255,255,255,0.85);
+  }
+
+  .flow-engine-badge {
+    font-size: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #000;
+    background: #fff;
+    padding: 3px 10px;
+  }
+
+  .flow-engine-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 20px;
+  }
+
+  .flow-engine-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.90);
+  }
+
+  .flow-engine-item svg { width: 12px; height: 12px; flex-shrink: 0; opacity: 0.6; }
+
+  .flow-col-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 6px;
+    color: rgba(0,0,0,0.18);
+    font-size: 16px;
+    flex: 0 0 28px;
+    align-self: center;
+  }
+
+  .flow-col-arrow-white {
+    color: rgba(0,0,0,0.18);
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex: 0 0 28px;
+    align-self: center;
+  }
+
+  /* ── ECONOMICS SUBTITLE ───────────────────────────── */
+  .econ-subtitle {
+    font-size: 8px;
+    font-weight: 400;
+    color: rgba(0,0,0,0.40);
+    letter-spacing: -0.01em;
+    margin-bottom: 6px;
+  }
+
+  /* ── CASE STUDY (main prominent section) ────────── */
+  .case-main {
+    border: 2px solid #000;
+    padding: 22px 26px;
+    margin-bottom: 18px;
+  }
+
+  .case-main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+  }
+
+  .case-main-title {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+
+  .case-main-badge {
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.10em;
+    color: #10B981;
+    border: 1px solid rgba(16,185,129,0.25);
+    background: rgba(16,185,129,0.06);
+    padding: 4px 10px;
+    white-space: nowrap;
+  }
+
+  .case-main-body {
+    font-size: 12px;
+    font-weight: 400;
+    color: rgba(0,0,0,0.50);
+    line-height: 1.7;
+    letter-spacing: -0.01em;
+    margin-bottom: 16px;
+  }
+
+  .case-main-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .case-main-stat {
+    border: 1px solid rgba(0,0,0,0.08);
+    background: rgba(0,0,0,0.03);
+    padding: 12px 10px;
+    text-align: center;
+  }
+
+  .case-main-stat-val {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+  }
+
+  .case-main-stat-label {
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.10em;
+    color: rgba(0,0,0,0.40);
+    margin-top: 5px;
+  }
+
+  .case-main-highlights {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 20px;
+    margin-bottom: 16px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .case-highlight {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: rgba(0,0,0,0.55);
+    letter-spacing: -0.01em;
+  }
+
+  .case-highlight svg { width: 13px; height: 13px; flex-shrink: 0; opacity: 0.4; }
+
+  .case-highlight strong {
+    font-weight: 600;
+    color: #000;
+  }
+
+  /* ── MIGRATION PATHS (compact row) ────────────────── */
+  .systems-grid {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 24px 36px;
+    margin-bottom: 16px;
+    padding: 32px 24px;
+    border: 1px solid rgba(0,0,0,0.12);
+  }
+
+  .system-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .system-name {
+    display: none;
+  }
+
+  .system-logo { height: 32px; width: auto; max-width: 140px; object-fit: contain; }
+  .system-logo-qb { height: 40px; }
+  .system-logo-netsuite { height: 24px; }
+  .system-logo-d365 { height: 36px; }
+  .system-logo-xero { height: 32px; }
+  .system-logo-acumatica { height: 28px; }
+  .system-logo-sage { height: 30px; }
+  .system-logo-myob { height: 26px; }
+
+
+  /* ── BOOK A CALL CTA ──────────────────────────────── */
+  .cta-book {
+    display: block;
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 22px 32px;
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+
+  .cta-book:hover { background: #333; }
+
+  .cta-book-title {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .cta-book-sub {
+    font-size: 11px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.50);
+    margin-top: 5px;
+    letter-spacing: -0.01em;
+  }
+
+  /* ── WHITE-LABEL + PILOT (compact row) ─────────────── */
+  .bottom-row {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 16px;
+    margin-bottom: 14px;
+  }
+
+  .wl-item {
+    font-size: 11px;
+    font-weight: 400;
+    color: rgba(0,0,0,0.55);
+    line-height: 1.6;
+    padding-left: 12px;
+    position: relative;
+    letter-spacing: -0.01em;
+    margin-bottom: 4px;
+  }
+
+  .wl-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 4px;
+    height: 4px;
+    background: #000;
+  }
+
+  .pilot-item {
+    font-size: 8.5px;
+    font-weight: 400;
+    color: rgba(0,0,0,0.55);
+    line-height: 1.5;
+    padding-left: 10px;
+    position: relative;
+    letter-spacing: -0.01em;
+    margin-bottom: 3px;
+  }
+
+  .pilot-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 4px;
+    height: 4px;
+    background: #10B981;
+  }
+
+  /* ── VIDEO PREVIEW ─────────────────────────────────── */
+  .video-preview {
+    display: block;
+    position: relative;
+    aspect-ratio: 16/9;
+    background: #000;
+    overflow: hidden;
+    text-decoration: none;
+    transition: transform 0.2s;
+    border-radius: 6px;
+  }
+
+  .video-description {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(0,0,0,0.55);
+    line-height: 1.7;
+    margin-top: 10px;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+  }
+
+  /* ── TEAM + CREDIBILITY ──────────────────────────── */
+  .team-credibility-section {
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 2px solid #000;
+  }
+
+  .team-row {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 18px;
+  }
+
+  .team-photos {
+    display: flex;
+    align-items: center;
+  }
+
+  .team-photo {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+    filter: grayscale(100%) contrast(1.1);
+    margin-left: -10px;
+  }
+
+  .team-photo:first-child { margin-left: 0; }
+
+  .team-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(0,0,0,0.70);
+    letter-spacing: -0.01em;
+  }
+
+  .credibility-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+  }
+
+  .credibility-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(0,0,0,0.50);
+    letter-spacing: 0.01em;
+  }
+
+  .credibility-badge svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    opacity: 0.45;
+  }
+
+  .credibility-dot {
+    width: 3px;
+    height: 3px;
+    background: rgba(0,0,0,0.20);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .video-preview:hover { transform: scale(1.01); }
+
+  .video-preview-bg {
+    position: absolute;
+    inset: 0;
+    opacity: 0.30;
+    transition: opacity 0.3s;
+  }
+
+  .video-preview:hover .video-preview-bg { opacity: 0.40; }
+
+  .video-preview-play {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .video-preview-play svg {
+    width: 28px;
+    height: 28px;
+    opacity: 0.7;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+    transition: opacity 0.2s, transform 0.2s;
+  }
+
+  .video-preview:hover .video-preview-play svg {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+
+  .video-preview-caption {
+    position: absolute;
+    bottom: 12px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.70);
+  }
+
+  /* ── VIDEO CTA STATE ───────────────────────────────── */
+  .video-cta {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .video-cta-label {
+    font-size: 9px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 10px;
+  }
+
+  .video-cta-heading {
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: -0.02em;
+    line-height: 1.35;
+    margin-bottom: 16px;
+    text-align: center;
+    max-width: 320px;
+  }
+
+  .video-cta-btn {
+    display: inline-block;
+    background: #fff;
+    color: #000;
+    border: none;
+    padding: 12px 24px;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .video-cta-btn:hover {
+    background: transparent;
+    color: #fff;
+    outline: 1px solid #fff;
+  }
+
+  /* ── COMPARE ROW (from deck) ─────────────────────────── */
+  .compare-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .compare-col {
+    padding: 12px 16px;
+    border: 1px solid rgba(0,0,0,0.08);
+  }
+
+  .compare-col-highlight {
+    border: 2px solid #000;
+    background: rgba(0,0,0,0.02);
+  }
+
+  .compare-col-label {
+    font-size: 7.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.10em;
+    color: rgba(0,0,0,0.35);
+    margin-bottom: 4px;
+  }
+
+  .compare-col-value {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 4px;
+  }
+
+  .compare-col-detail {
+    font-size: 8px;
+    font-weight: 400;
+    color: rgba(0,0,0,0.40);
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+  }
+
+  /* ── SECTION DIVIDER (grey horizontal rule) ────────── */
+  .section-divider {
+    border: none;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    margin: 16px 0;
+  }
+
+  /* ── FOOTER / CTA ─────────────────────────────────── */
+  .footer {
+    border-top: 2px solid #000;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .cta-title {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 4px;
+  }
+
+  .cta-link {
+    font-size: 11px;
+    font-weight: 500;
+    color: rgba(0,0,0,0.50);
+    letter-spacing: -0.01em;
+    text-decoration: none;
+  }
+
+  .cta-link:hover { color: #000; text-decoration: underline; }
+
+  .cta-deck-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(0,0,0,0.40);
+    text-decoration: none;
+    margin-top: 6px;
+    transition: color 0.15s;
+  }
+
+  .cta-deck-link:hover { color: #000; }
+
+  .cta-deck-link svg { width: 10px; height: 10px; }
+
+  .footer-right {
+    font-size: 9px;
+    font-weight: 500;
+    color: rgba(0,0,0,0.35);
+    text-align: right;
+    letter-spacing: 0.02em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  /* ── PRINT ────────────────────────────────────────── */
+  @media print {
+    @page {
+      size: A4 portrait;
+      margin: 12mm 16mm;
+    }
+
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
+    }
+
+    html { font-size: 10px; }
+
+    body {
+      background: #fff !important;
+      margin: 0;
+      padding: 0;
+      height: auto !important;
+      overflow: visible !important;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 100%;
+      min-height: auto;
+      padding: 0;
+      margin: 0;
+      box-shadow: none !important;
+      transform: none !important;
+    }
+
+    .toolbar { display: none !important; }
+    .cta-deck-link { display: none !important; }
+    #scroll-hint { display: none !important; }
+    a { text-decoration: none !important; }
+
+    /* Video section — always show the screenshot in print */
+    .video-preview {
+      transform: none !important;
+      position: relative !important;
+      overflow: hidden !important;
+    }
+    .video-preview-bg {
+      opacity: 1 !important;
+      position: absolute !important;
+      inset: 0 !important;
+    }
+    .video-preview-bg img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+    }
+    .video-preview-play { display: none !important; }
+    .video-cta { display: none !important; }
+    #demoCalEmbed { display: none !important; }
+    .video-preview-caption { display: none !important; }
+
+    /* Spacing */
+    .section-divider { margin: 16px 0; }
+    .section-bar { margin-top: 20px; margin-bottom: 12px; }
+
+    /* Prevent page breaks inside key sections */
+    .flow-row { page-break-inside: avoid; }
+    .case-study-card { page-break-inside: avoid; }
+    .stats-row { page-break-inside: avoid; }
+    .team-credibility-section { page-break-inside: avoid; }
+    .footer { page-break-inside: avoid; }
+
+    /* Keep video + team + footer together on same page */
+    .video-description,
+    .video-preview,
+    .team-credibility-section,
+    .footer {
+      page-break-before: avoid;
+    }
+  }
+
+  /* ── SCREEN PREVIEW ───────────────────────────────── */
+  @media screen {
+    body {
+      background: #f0f0f0;
+      padding: 20px 0;
+    }
+    .page {
+      box-shadow: 0 1px 8px rgba(0,0,0,0.08);
+      transform-origin: top center;
+    }
+  }
+  @media screen and (max-width: 900px) {
+    body {
+      padding: 0;
+      background: #fff;
+    }
+    .page {
+      box-shadow: none;
+      transform-origin: top left;
+      padding: 28px 20px;
+    }
+    .hero-title { font-size: 24px; line-height: 1.2; }
+    .hero-body { font-size: 13px; line-height: 1.6; }
+    .stat-val { font-size: 24px; }
+    .stat-label { font-size: 8px; }
+    .stat-sub { font-size: 9px; }
+    .stats-row { gap: 8px; }
+    .stat-box { padding: 14px 12px; }
+    .section-bar { margin-top: 24px; }
+    .flow-row { overflow-x: auto; -webkit-overflow-scrolling: touch; min-width: 0; }
+    .flow-col-title { font-size: 13px; }
+    .flow-col-label { font-size: 8px; }
+    .flow-engine-item { font-size: 10px; }
+    .flow-engine-label { font-size: 9px; }
+    .flow-engine-badge { font-size: 8px; padding: 3px 8px; }
+    .before-row { gap: 4px; flex-wrap: wrap; }
+    .before-step { font-size: 11px; padding: 8px 12px; }
+    .systems-grid { gap: 20px 28px; padding: 20px 24px; }
+    .system-logo { height: 20px; }
+    .video-preview { min-height: 180px; }
+    .case-main-stat-val { font-size: 28px; }
+    .team-photos { gap: 8px; }
+    .team-photo { width: 36px; height: 36px; }
+    .toolbar { top: auto; bottom: 12px; right: 12px; flex-direction: row; gap: 6px; }
+    .toolbar-btn { padding: 8px 14px; font-size: 9px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── TOOLBAR (screen only) ───────────────────── -->
+<div class="toolbar">
+  <button class="toolbar-btn" onclick="window.print()">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    Download PDF
+  </button>
+  <a href="https://source.shop/partner-solution" class="toolbar-btn toolbar-btn-secondary" target="_blank">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg>
+    View Full Deck
+  </a>
+  <button class="toolbar-btn toolbar-btn-secondary" id="shareBtn" onclick="shareLink()">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+    <span id="shareBtnText">Share Link</span>
+  </button>
+
+</div>
+
+<div class="page">
+
+  <!-- Source asterisk mark — top right -->
+  <svg class="page-mark" viewBox="0 0 992 992" xmlns="http://www.w3.org/2000/svg" style="position:absolute;top:28px;right:48px;width:36px;height:36px;opacity:0.10;pointer-events:none;">
+    <path fill="#000" d="M651.487549,341.435852 C662.197266,335.039825 672.597656,328.837646 683.472168,322.352753 C688.963135,331.437805 694.152039,339.938232 699.258484,348.487854 C713.694031,372.657013 728.008484,396.899170 742.596741,420.975555 C745.021790,424.977783 744.529053,426.756622 740.437439,428.989960 C699.647522,451.254730 658.957153,473.701782 618.247314,496.113159 C615.805542,497.457428 613.219177,498.608734 611.156921,500.696594 C612.367615,502.573273 614.311646,503.240448 616.021851,504.167267 C657.319153,526.548340 698.602112,548.956360 739.982361,571.183228 C744.084106,573.386353 745.147766,575.068848 742.516724,579.420898 C723.903137,610.210571 705.545166,641.154785 687.081848,672.035461 C683.561096,677.924072 683.441711,678.014282 677.293579,674.388428 C637.692749,651.033813 598.134766,627.606445 558.530212,604.258240 C554.991333,602.171997 551.686218,599.513611 547.191956,598.666809 C545.572998,602.416504 546.221497,606.278809 546.452454,609.939697 C547.407837,625.083191 547.126160,640.239746 547.356262,655.391113 C547.730591,680.040771 548.603943,704.682556 548.387939,729.342041 C548.351685,733.487305 548.762390,737.648438 549.168945,741.782410 C549.641968,746.591370 547.583740,748.174927 542.843994,748.147339 C516.681946,747.994812 490.518463,748.078064 464.355469,748.077515 C454.690155,748.077332 445.021881,747.926575 435.360901,748.128967 C430.964661,748.221069 429.564484,746.523315 429.692383,742.219849 C431.048676,696.589172 430.450531,650.936584 431.101349,605.296997 C431.115601,604.297607 431.158447,603.292175 431.075195,602.299011 C430.727203,598.146301 429.243713,597.205872 425.596130,599.306885 C416.935913,604.295471 408.379272,609.464905 399.807404,614.605591 C366.379456,634.653076 332.911133,654.634216 299.601379,674.876221 C295.165039,677.572144 293.355103,676.851013 290.852692,672.517517 C272.942902,641.502686 254.839417,610.598633 236.584412,579.785583 C234.044998,575.499268 234.326096,573.603149 238.945816,571.131470 C279.484161,549.442261 319.876892,527.480957 360.313904,505.602325 C362.491638,504.424072 364.745911,503.357635 366.365784,501.583954 C366.213776,498.617981 363.945892,497.931335 362.108887,496.919342 C321.256958,474.414764 280.399384,451.920441 239.528183,429.450867 C233.339310,426.048431 233.341507,426.130646 236.755646,420.308716 C254.957108,389.270813 273.201752,358.257782 291.246368,327.128876 C293.430328,323.361267 295.108704,322.754456 298.920166,325.056122 C340.132507,349.943939 381.440796,374.672882 422.734680,399.425476 C424.988220,400.776306 427.102692,402.468018 430.172150,402.947144 C432.294922,397.475983 431.476501,391.866791 431.265320,386.311951 C430.397827,363.496918 430.881226,340.669922 430.644653,317.849487 C430.440918,298.196747 430.241821,278.542145 429.755280,258.895447 C429.635651,254.063843 431.195465,252.577911 435.998779,252.599503 C471.659698,252.759811 507.321960,252.751709 542.982971,252.600922 C547.519775,252.581741 549.340149,253.894791 548.999023,258.562988 C547.578430,278.005768 548.598145,297.504974 547.689697,316.979736 C546.883545,334.263947 547.391418,351.606934 547.173279,368.922119 C547.053650,378.410278 546.550598,387.893158 546.376038,397.381287 C546.264709,403.430176 547.232300,403.955750 552.600403,400.743011 C585.476562,381.066742 618.322388,361.339722 651.487549,341.435852z"/>
+  </svg>
+
+  <!-- ─── HEADER ──────────────────────────────────── -->
+  <div class="header">
+    <svg class="logo-wordmark" viewBox="0 -719 3121 971" fill="#000000" xmlns="http://www.w3.org/2000/svg">
+      <g transform="scale(1, -1)">
+        <g transform="translate(0, 0)"><path d="M457 507Q452 562 417.0 589.0Q382 616 313 616Q185 616 185 529Q185 497 211.5 476.0Q238 455 297 441Q366 425 417.0 410.5Q468 396 510 378Q534 367 555.0 353.0Q576 339 590.5 317.5Q605 296 614.0 265.0Q623 234 623 192Q623 140 601.0 100.0Q579 60 542.5 32.0Q506 4 456.0 -10.5Q406 -25 351 -25Q40 -25 31 216H177Q178 160 221.5 128.0Q265 96 331 96Q403 96 440.0 121.5Q477 147 477 193Q477 210 472.5 224.5Q468 239 455.5 251.0Q443 263 421.5 272.5Q400 282 365 289Q282 306 222.5 324.0Q163 342 124.0 368.0Q85 394 66.5 432.5Q48 471 48 530Q48 574 64.0 613.0Q80 652 113.5 680.5Q147 709 196.5 726.0Q246 743 313 743Q378 743 430.0 726.0Q482 709 519.5 678.5Q557 648 577.5 604.0Q598 560 600 507Z"/></g>
+        <g transform="translate(628, 0)"><path d="M290 104Q419 104 419 266Q419 428 290 428Q161 428 161 266Q161 104 290 104ZM290 -14Q225 -14 174.0 6.5Q123 27 88.0 64.0Q53 101 34.5 153.0Q16 205 16 266Q16 329 35.0 381.0Q54 433 90.0 470.0Q126 507 176.0 527.0Q226 547 290 547Q353 547 403.0 527.0Q453 507 488.0 470.5Q523 434 542.0 382.0Q561 330 561 266Q561 203 542.0 151.5Q523 100 488.0 63.0Q453 26 402.5 6.0Q352 -14 290 -14Z"/></g>
+        <g transform="translate(1201, 0)"><path d="M375 0V75Q322 -14 209 -14Q169 -14 136.0 0.0Q103 14 79.0 40.0Q55 66 41.5 102.0Q28 138 28 182V533H169V204Q169 104 259 104Q314 104 341.0 138.0Q368 172 368 225V533H508V0Z"/></g>
+        <g transform="translate(1737, 0)"><path d="M32 0V533H164V469Q182 496 201.0 511.0Q220 526 240.0 534.5Q260 543 280.5 545.0Q301 547 322 547H341V403Q321 406 302 406Q173 406 173 277V0Z"/></g>
+        <g transform="translate(2090, 0)"><path d="M507 193Q502 146 480.5 108.0Q459 70 426.5 43.0Q394 16 352.0 1.0Q310 -14 262 -14Q208 -14 163.0 4.0Q118 22 85.5 58.0Q53 94 35.0 147.5Q17 201 17 273Q17 344 35.0 396.0Q53 448 85.5 481.0Q118 514 164.0 530.5Q210 547 267 547Q318 547 361.0 532.5Q404 518 436.0 491.5Q468 465 486.5 427.0Q505 389 508 342H366Q361 383 333.0 406.5Q305 430 265 430Q243 430 223.5 422.5Q204 415 189.0 397.0Q174 379 165.5 349.0Q157 319 157 276Q157 232 165.5 200.0Q174 168 188.5 146.5Q203 125 222.0 114.5Q241 104 261 104Q302 104 331.5 126.5Q361 149 365 193Z"/></g>
+        <g transform="translate(2597, 0)"><path d="M374 318Q372 378 339.5 406.5Q307 435 265 435Q222 435 191.5 404.5Q161 374 156 318ZM152 230Q155 168 187.0 132.5Q219 97 271 97Q306 97 332.5 113.0Q359 129 366 157H512Q487 75 425.0 30.5Q363 -14 278 -14Q11 -14 11 276Q11 338 28.5 388.0Q46 438 79.0 473.5Q112 509 159.5 528.0Q207 547 269 547Q394 547 456.5 468.5Q519 390 519 230Z"/></g>
+      </g>
+    </svg>
+  </div>
+
+  <hr class="header-rule">
+
+  <!-- ─── HERO ────────────────────────────────────── -->
+  <div class="hero-title">We automate ERP Implementations with AI.<br>You keep the client, the brand, and you make 50%+ margins.</div>
+  <div class="hero-body">Source is an AI engine that automates <strong style="color:#000;font-weight:700;">85% of ERP implementation delivery</strong> &mdash; scanning, BRD generation, data migration, configuration, testing. Better contribution margins, faster delivery, win more deals, and offer fixed-price engagements. Your consultancy keeps the client relationship and presents it as your own methodology.</div>
+
+  <!-- ─── HERO STATS ──────────────────────────────── -->
+  <div class="stats-row">
+    <div class="stat-box">
+      <div class="stat-val">50%+</div>
+      <div class="stat-label">Contribution Margin</div>
+      <div class="stat-sub">vs ~20% traditional</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-val">21</div>
+      <div class="stat-label">Days to Go-Live</div>
+      <div class="stat-sub">vs 4&ndash;6 months traditional</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-val">85%</div>
+      <div class="stat-label">AI-Automated</div>
+      <div class="stat-sub">~12 hrs consultant time</div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- ─── HOW IT WORKS (Before/After flow from deck S03) -->
+
+  <!-- BEFORE -->
+  <div class="flow-label">Before</div>
+  <div class="flow-before">
+    <div class="flow-node">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
+      End Client
+    </div>
+    <span class="flow-arrow">&rarr;</span>
+    <div class="flow-node">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+      Sales
+    </div>
+    <span class="flow-arrow">&rarr;</span>
+    <div class="flow-node flow-node-cut">Solutions Architect<svg class="x-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+    <span class="flow-arrow">&rarr;</span>
+    <div class="flow-node flow-node-cut">Offshore Dev Team<svg class="x-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+    <span class="flow-arrow">&rarr;</span>
+    <div class="flow-node">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      Done
+    </div>
+  </div>
+
+  <!-- AFTER -->
+  <div class="flow-label">After</div>
+  <div class="flow-after">
+    <!-- End Client -->
+    <div class="flow-col flow-col-narrow flow-col-border">
+      <div class="flow-col-label">End Client</div>
+      <div class="flow-col-title">Legacy System</div>
+    </div>
+    <div class="flow-col-arrow">&rarr;</div>
+    <!-- Your Consultant -->
+    <div class="flow-col flow-col-consultant flow-col-border">
+      <div class="flow-col-label">Your Consultant</div>
+      <div class="flow-consultant-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        Relationship
+      </div>
+      <div class="flow-consultant-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        Sales &amp; scoping
+      </div>
+      <div class="flow-consultant-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Provides context
+      </div>
+      <div class="flow-consultant-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        Reviews outputs
+      </div>
+    </div>
+    <div class="flow-col-arrow">&rarr;</div>
+    <!-- Source AI Engine -->
+    <div class="flow-col flow-col-engine">
+      <div class="flow-engine-header">
+        <div class="flow-engine-label">Source AI Engine</div>
+        <div class="flow-engine-badge">Sub 21 Days</div>
+      </div>
+      <div class="flow-engine-grid">
+        <div class="flow-engine-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          AI Scan
+        </div>
+        <div class="flow-engine-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          Business logic
+        </div>
+        <div class="flow-engine-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          Mapping
+        </div>
+        <div class="flow-engine-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          BRD generation
+        </div>
+        <div class="flow-engine-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          Config &amp; ETL
+        </div>
+        <div class="flow-engine-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          Testing &amp; QA
+        </div>
+        <div class="flow-engine-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Validation
+        </div>
+        <div class="flow-engine-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Go-Live
+        </div>
+      </div>
+    </div>
+    <div class="flow-col-arrow-white">&rarr;</div>
+    <!-- Live System -->
+    <div class="flow-col flow-col-narrow" style="border-left:1px solid rgba(0,0,0,0.08);">
+      <div class="flow-col-label">Live System</div>
+      <div class="flow-col-title">Target ERP</div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- ─── CASE STUDY (main prominent section) ──────── -->
+  <div class="section-bar"><span class="section-bar-label">Case Study &mdash; Real Migration</span></div>
+  <div class="case-main">
+    <div class="case-main-header">
+      <div class="case-main-title">QuickBooks &rarr; NetSuite in 13 Days</div>
+      <div class="case-main-badge">Completed</div>
+    </div>
+    <div class="case-main-body">Mid-market retailer with ~120 employees and $33M in annual transactions. Full migration including 380+ accounts, 4,200+ SKUs, and integrations with Shopify, Stripe, and HubSpot. Fixed price. No scope creep. No surprises.</div>
+
+    <div class="case-main-stats">
+      <div class="case-main-stat">
+        <div class="case-main-stat-val">13</div>
+        <div class="case-main-stat-label">Days to Go-Live</div>
+      </div>
+      <div class="case-main-stat">
+        <div class="case-main-stat-val">$11K</div>
+        <div class="case-main-stat-label">Source Cost</div>
+      </div>
+      <div class="case-main-stat">
+        <div class="case-main-stat-val">50%+</div>
+        <div class="case-main-stat-label">Partner Margin</div>
+      </div>
+      <div class="case-main-stat">
+        <div class="case-main-stat-val">~12h</div>
+        <div class="case-main-stat-label">Consultant Time</div>
+      </div>
+    </div>
+
+    <div class="case-main-highlights">
+      <div class="case-highlight">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <strong>Fixed price</strong>&nbsp;&mdash; agreed upfront, no overruns
+      </div>
+      <div class="case-highlight">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <strong>White-label</strong>&nbsp;&mdash; your brand, your client
+      </div>
+    </div>
+
+    <!-- Book a Call CTA -->
+    <a href="https://cal.com/source-ai" class="cta-book" target="_blank">
+      <div class="cta-book-title">Book a Partnership Call &rarr;</div>
+      <div class="cta-book-sub">See a live demo &middot; Discuss your first migration &middot; Get pilot pricing</div>
+    </a>
+  </div>
+
+  <!-- Managed services link -->
+  <div style="text-align:center; margin: 14px 0 6px;">
+    <a href="/managed-services" style="display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:500; text-transform:uppercase; letter-spacing:0.08em; color:rgba(0,0,0,0.40); text-decoration:none; border:1px solid rgba(0,0,0,0.10); padding:8px 18px; transition:color 0.15s, border-color 0.15s;" onmouseover="this.style.color='#000';this.style.borderColor='rgba(0,0,0,0.25)'" onmouseout="this.style.color='rgba(0,0,0,0.40)';this.style.borderColor='rgba(0,0,0,0.10)'">
+      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      Also available: AI Managed Services →
+    </a>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- ─── SUPPORTED SYSTEMS ────────────────────────── -->
+  <div class="section-bar"><span class="section-bar-label">Supported Systems</span></div>
+  <div class="systems-grid" style="margin-top:12px;">
+    <div class="system-card">
+      <img class="system-logo system-logo-qb" src="/onepager/logos/quickbooks.svg" alt="QuickBooks">
+      <span class="system-name">QuickBooks</span>
+    </div>
+    <div class="system-card">
+      <img class="system-logo system-logo-netsuite" src="/onepager/logos/netsuite.svg" alt="NetSuite">
+      <span class="system-name">NetSuite</span>
+    </div>
+    <div class="system-card">
+      <img class="system-logo system-logo-xero" src="/onepager/logos/xero.svg" alt="Xero">
+      <span class="system-name">Xero</span>
+    </div>
+    <div class="system-card">
+      <img class="system-logo system-logo-d365" src="/onepager/logos/d365.svg" alt="Dynamics 365">
+      <span class="system-name">Dynamics 365</span>
+    </div>
+    <div class="system-card">
+      <img class="system-logo system-logo-acumatica" src="/onepager/logos/acumatica.svg" alt="Acumatica">
+      <span class="system-name">Acumatica</span>
+    </div>
+    <div class="system-card">
+      <img class="system-logo system-logo-sage" src="/onepager/logos/sage.png" alt="Sage">
+      <span class="system-name">Sage</span>
+    </div>
+    <div class="system-card">
+      <img class="system-logo system-logo-myob" src="/onepager/logos/myob.svg" alt="MYOB">
+      <span class="system-name">MYOB</span>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- ─── VIDEO PREVIEW (full width) ───────────────── -->
+  <div class="section-bar"><span class="section-bar-label">See It In Action</span></div>
+  <div class="video-description">Don&rsquo;t believe us? Hop on a call and watch a live QuickBooks to NetSuite migration. See how Source scans the legacy system, generates the BRD, migrates data, and configures NetSuite &mdash; all in under 21 days.</div>
+  <div class="video-preview" id="demoPlayer">
+    <div class="video-preview-bg" id="demoBg">
+      <img src="/onepager/source-preview.png" alt="Source AI Platform Preview" style="width:100%;height:100%;object-fit:cover;object-position:top center;">
+    </div>
+    <!-- Play state -->
+    <div class="video-preview-play" id="demoPlayBtn" onclick="document.getElementById('demoPlayBtn').style.display='none';document.getElementById('demoBg').style.opacity='0.08';document.getElementById('demoCTA').style.display='flex';" style="cursor:pointer;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="white" stroke="none"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+    </div>
+    <!-- CTA state -->
+    <div class="video-cta" id="demoCTA" style="display:none;">
+      <div class="video-cta-label">Book a Call</div>
+      <div class="video-cta-heading">See a live ERP implementation by Source on call</div>
+      <button class="video-cta-btn" id="demoBookBtn" onclick="document.getElementById('demoCTA').style.display='none';document.getElementById('demoCalEmbed').style.display='block';">Book a Call &rarr;</button>
+    </div>
+    <!-- Cal.com embed state -->
+    <div id="demoCalEmbed" style="display:none;position:absolute;inset:0;z-index:3;background:#fff;border-radius:6px;overflow:hidden;">
+      <iframe src="https://cal.com/source-ai?embed=true&theme=light" style="width:142.8%;height:142.8%;border:none;transform:scale(0.7);transform-origin:top left;"></iframe>
+    </div>
+    <div class="video-preview-caption">Watch a real ERP migration</div>
+  </div>
+
+  <!-- ─── TEAM + CREDIBILITY ──────────────────────── -->
+  <div class="team-credibility-section">
+  <div class="team-row">
+    <div class="team-photos">
+      <img class="team-photo" src="/team/liam.jpg" alt="Liam Fuller">
+      <img class="team-photo" src="/team/yoan.jpg" alt="Yoan Yomba">
+      <img class="team-photo" src="/team/shane.jpg" alt="Shane Duffy">
+      <img class="team-photo" src="/team/brian.jpg" alt="Brian Fabian Crain">
+      <img class="team-photo" src="/team/jiri.jpg" alt="Jiri Kobelka">
+      <img class="team-photo" src="/team/bryan.jpg" alt="Bryan Doreian">
+      <img class="team-photo" src="/team/sean.jpg" alt="Sean Gillespie">
+    </div>
+    <div class="team-label">Built by <strong style="color:#000;font-weight:700;">Source</strong> &mdash; <svg style="display:inline-block;vertical-align:-2px;margin-right:2px;" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>San Francisco</div>
+  </div>
+  <div class="credibility-row">
+    <div class="credibility-badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+      Featured in Forbes
+    </div>
+    <div class="credibility-dot"></div>
+    <div class="credibility-badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      $2M+ in venture funding
+    </div>
+    <div class="credibility-dot"></div>
+    <div class="credibility-badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      Backed by SF investors &amp; Stripe alumni
+    </div>
+  </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- ─── FOOTER ──────────────────────────────────── -->
+  <div class="footer">
+    <div>
+      <div class="cta-title">Ready to partner?</div>
+      <a href="https://cal.com/source-ai" class="cta-link" target="_blank">Book a call &rarr; cal.com/source-ai</a>
+    </div>
+    <div class="footer-right">
+      <a href="https://source.shop/partner-solution" class="cta-deck-link" target="_blank" style="margin-bottom:6px;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        View Full Partnership Deck
+      </a>
+      <div>QuickFind AI Limited &middot; Source &middot; Confidential &middot; 2026</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Scroll indicator -->
+<div id="scroll-hint" style="position:fixed;bottom:24px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:4px;opacity:0.4;transition:opacity 0.4s;z-index:50;pointer-events:none;">
+  <span style="font-family:'Inter',sans-serif;font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:0.12em;color:#000;">Scroll</span>
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+</div>
+<script>
+(function(){
+  var hint = document.getElementById('scroll-hint');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 100) {
+      hint.style.opacity = '0';
+      hint.style.pointerEvents = 'none';
+    } else {
+      hint.style.opacity = '0.4';
+    }
+  }, {passive:true});
+})();
+</script>
+<script>
+(function(){
+  var page = document.querySelector('.page');
+  if (!page || window.matchMedia('print').matches) return;
+  function scale() {
+    var pw = 900;
+    var vw = window.innerWidth;
+    var isMobile = vw <= 900;
+    var pad = isMobile ? 0 : 40;
+    var maxScale = isMobile ? 1.0 : 1.1;
+    var s = Math.min((vw - pad) / pw, maxScale);
+    if (s !== 1) {
+      page.style.transform = 'scale(' + s + ')';
+      page.style.transformOrigin = isMobile ? 'top left' : 'top center';
+      document.body.style.height = (page.scrollHeight * s + (isMobile ? 0 : 40)) + 'px';
+      document.body.style.overflow = 'hidden auto';
+    } else {
+      page.style.transform = '';
+      document.body.style.height = '';
+      document.body.style.overflow = '';
+    }
+  }
+  scale();
+  window.addEventListener('resize', scale);
+})();
+</script>
+<script>
+function shareLink() {
+  var url = 'https://source.shop/onepager';
+  var text = document.getElementById('shareBtnText');
+  if (navigator.share) {
+    navigator.share({ title: 'Source — Partner One-Pager', url: url });
+  } else {
+    navigator.clipboard.writeText(url).then(function() {
+      text.textContent = 'Copied!';
+      setTimeout(function() { text.textContent = 'Share Link'; }, 2000);
+    });
+  }
+}
+</script>
+</body>
+</html>

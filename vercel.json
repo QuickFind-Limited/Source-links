@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/onepager",
+      "destination": "/onepager/index.html"
+    },
+    {
+      "source": "/managed-services",
+      "destination": "/managed-services/index.html"
+    }
+  ]
+}
