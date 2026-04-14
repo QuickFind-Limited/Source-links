@@ -667,10 +667,6 @@ export default function FinancialsFirstPage() {
             Example prices partners can quote to clients. Source AI cost is the platform fee invoiced to the partner.
           </div>
 
-          <a href="/get-quote" className="inline-flex items-center gap-2 text-[10px] font-mono uppercase tracking-[0.12em] text-black/30 font-bold mb-3 hover:text-black/60 transition-colors group">
-            Example Pricing Scenarios
-            <span className="text-black/20 group-hover:text-black/50 transition-colors">→</span>
-          </a>
           {/* Table */}
           <div className="border border-black/[0.08] rounded-sm overflow-hidden mb-4">
             <div className="grid grid-cols-3 bg-[#f5f5f3] border-b border-black/[0.08]">
