@@ -894,8 +894,31 @@ export default function FinancialsFirstPage() {
         </div>
 
 
-        {/* ── Other Industries Toggle ─────────────────────────────────────── */}
-        <OtherIndustries />
+        {/* ── Get a Fixed Price CTA ────────────────────────────────────── */}
+        <div className="mt-8">
+          <a
+            href="https://cal.com/source-ai/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full flex items-center gap-4 px-6 sm:px-8 py-6 sm:py-7 bg-black hover:bg-black/90 transition-colors group text-left"
+          >
+            <div className="flex-1">
+              <div className="text-[11px] font-mono uppercase tracking-[0.12em] text-white/40 mb-1.5">
+                More complex implementation?
+              </div>
+              <div className="text-[20px] sm:text-[24px] font-medium tracking-tight text-white mb-1">
+                Get a fixed price for any implementation
+              </div>
+              <div className="text-[14px] sm:text-[15px] text-white/50 leading-[1.6]">
+                Per-project pricing for industries with operational components — inventory, order management, e-commerce, manufacturing, and more. Book a 30-minute call and we&apos;ll scope your project within 24 hours.
+              </div>
+            </div>
+            <div className="flex items-center gap-2 shrink-0">
+              <Calendar className="w-4 h-4 text-white/50" strokeWidth={1.75} />
+              <span className="text-[12px] font-mono uppercase tracking-[0.08em] text-white/60 group-hover:text-white transition-colors">Book a Call →</span>
+            </div>
+          </a>
+        </div>
 
         {/* ── Confidentiality notice ──────────────────────────────────────── */}
         <div className="mt-6 bg-[#f8f8f6] border border-black/[0.06] rounded-sm px-4 sm:px-5 py-3.5">

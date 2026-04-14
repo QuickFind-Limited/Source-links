@@ -5,8 +5,8 @@ const PIPELINE_ORIGIN = "https://source-pipeline-demo.vercel.app";
 const nextConfig: NextConfig = {
   async redirects() {
     return [
-      { source: "/financials", destination: "/financials-first", permanent: false },
-      { source: "/fionancials", destination: "/financials-first", permanent: false },
+      { source: "/financials-first", destination: "/financials", permanent: true },
+      { source: "/fionancials", destination: "/financials", permanent: true },
     ];
   },
   async rewrites() {

@@ -472,21 +472,23 @@ function OtherIndustries() {
   return (
     <div className="mt-10">
       <a
-        href="/get-quote"
+        href="https://cal.com/source-ai/30min"
+        target="_blank"
+        rel="noopener noreferrer"
         className="w-full flex items-center gap-6 sm:gap-8 px-8 sm:px-10 py-8 sm:py-10 bg-white border-2 border-black/[0.08] hover:border-black/[0.20] transition-colors group text-left"
       >
         <div className="flex-1">
           <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.14em] text-black/30 mb-2">
-            Need more than financials?
+            Become a Source Partner
           </div>
           <div className="text-[24px] sm:text-[30px] font-medium tracking-tight text-black/85 group-hover:text-black transition-colors mb-2 leading-[1.2]">
-            Get a fixed price for any implementation
+            Book a call to get started
           </div>
           <div className="text-[15px] sm:text-[17px] text-black/45 leading-[1.65] max-w-[700px]">
-            Inventory, order management, e-commerce, manufacturing, and more — every project scoped individually and priced as a fixed fee. Share your requirements and receive a full proposal within 24 hours.
+            Interested in offering AI-powered ERP implementations to your clients? Schedule a 30-minute call and we&apos;ll walk you through the partner program, pricing, and how Source AI delivers behind the scenes.
           </div>
         </div>
-        <span className="text-[13px] sm:text-[14px] font-mono uppercase tracking-[0.08em] text-black/25 group-hover:text-black/60 shrink-0 transition-colors font-bold">View →</span>
+        <span className="text-[13px] sm:text-[14px] font-mono uppercase tracking-[0.08em] text-black/25 group-hover:text-black/60 shrink-0 transition-colors font-bold">Book →</span>
       </a>
     </div>
   );
@@ -800,7 +802,8 @@ export default function FinancialsFirstPage() {
         </div>
 
 
-        {/* OtherIndustries removed — not ready for public access yet */}
+        {/* ── Become a Partner CTA ───────────────────────────────────────── */}
+        <OtherIndustries />
 
         {/* ── Confidentiality notice ──────────────────────────────────────── */}
         <div className="mt-6 bg-[#f8f8f6] border border-black/[0.06] rounded-sm px-4 sm:px-5 py-3.5">
