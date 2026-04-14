@@ -701,34 +701,30 @@ export default function HealthCheckPage() {
             <div className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.12em] text-black/35 font-bold mb-4">
               Category Ratings
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-              {SAMPLE_REPORT.categories.map(({ name, rating, status }) => (
-                <div
-                  key={name}
-                  className={`px-4 py-4 border text-center ${
-                    status === "critical"
-                      ? "bg-red-500/[0.03] border-red-500/15"
-                      : status === "warning"
-                      ? "bg-amber-500/[0.03] border-amber-500/15"
-                      : "bg-emerald-500/[0.03] border-emerald-500/15"
-                  }`}
-                >
-                  <div className="text-[12px] sm:text-[13px] text-black/55 font-medium mb-2">
-                    {name}
-                  </div>
-                  <span
-                    className={`text-[10px] font-mono uppercase tracking-[0.08em] font-bold px-3 py-1 inline-block ${
-                      status === "critical"
-                        ? "bg-red-500/10 text-red-600"
-                        : status === "warning"
-                        ? "bg-amber-500/10 text-amber-700"
-                        : "bg-emerald-500/10 text-emerald-700"
-                    }`}
+            <div className="border border-black/[0.08] bg-[#fafafa] p-4 sm:p-5">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {SAMPLE_REPORT.categories.map(({ name, rating, status }) => (
+                  <div
+                    key={name}
+                    className="bg-white border border-black/[0.06] px-4 py-4 text-center"
                   >
-                    {rating}
-                  </span>
-                </div>
-              ))}
+                    <div className="text-[12px] sm:text-[13px] text-black/55 font-medium mb-2.5">
+                      {name}
+                    </div>
+                    <span
+                      className={`text-[10px] font-mono uppercase tracking-[0.08em] font-bold px-3 py-1 inline-block ${
+                        status === "critical"
+                          ? "bg-red-500/10 text-red-600 border border-red-500/20"
+                          : status === "warning"
+                          ? "bg-amber-500/10 text-amber-700 border border-amber-500/20"
+                          : "bg-emerald-500/10 text-emerald-700 border border-emerald-500/20"
+                      }`}
+                    >
+                      {rating}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
