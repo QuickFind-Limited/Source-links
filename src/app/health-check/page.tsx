@@ -186,7 +186,7 @@ const DIMENSIONS_DETAIL: {
 
 const SAMPLE_REPORT = {
   company: "Westfield Manufacturing",
-  system: "NetSuite OneWorld",
+  systems: ["NetSuite OneWorld", "Shopify", "Excel (production scheduling)"],
   scanned: "March 2026",
   overallRating: "Needs Attention" as const,
   categories: [
@@ -425,7 +425,7 @@ export default function HealthCheckPage() {
         {/* ── Subtitle ───────────────────────────────────────────────────── */}
         <div className="mb-6">
           <div className="text-[13px] sm:text-[14px] font-mono uppercase tracking-[0.08em] text-black/40 mb-1">
-            Rapid, Evidence-Backed ERP Assessment &mdash; Free for Every Prospect
+            Rapid, Evidence-Backed ERP Assessment &mdash; 24hr Turnaround
           </div>
           <p className="text-[17px] sm:text-[20px] italic text-black/55 leading-[1.5]">
             Give prospects a fast, evidence-backed view of how their ERP is
@@ -441,10 +441,10 @@ export default function HealthCheckPage() {
               strokeWidth={1.75}
             />
             <div className="text-[32px] sm:text-[36px] font-medium tracking-tight text-black select-none">
-              ~5 Hours
+              24 Hours
             </div>
             <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.12em] text-black/50 font-bold mt-1">
-              End-to-End Assessment
+              Source Turnaround
             </div>
           </div>
           <div className="bg-white border border-black/[0.06] px-5 sm:px-6 py-5 sm:py-6 text-center">
@@ -453,10 +453,10 @@ export default function HealthCheckPage() {
               strokeWidth={1.75}
             />
             <div className="text-[32px] sm:text-[36px] font-medium tracking-tight text-black select-none">
-              Free
+              5 Hours
             </div>
             <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.12em] text-black/50 font-bold mt-1">
-              For Every Prospect, Any System
+              Sell as a 5hr Engagement
             </div>
           </div>
           <div className="bg-white border border-black/[0.06] px-5 sm:px-6 py-5 sm:py-6 text-center">
@@ -481,14 +481,10 @@ export default function HealthCheckPage() {
               {/* Value prop bold box */}
               <div className="border-2 border-black/[0.08] px-6 sm:px-8 py-5 sm:py-6 mb-5">
                 <p className="text-[20px] sm:text-[24px] md:text-[28px] font-semibold text-black/90 leading-[1.35]">
-                  Live system evidence in hours, not weeks. Any ERP system.
-                  Free.
+                  From healthcheck to SOW with AI &mdash; live system evidence in hours, not weeks
                 </p>
                 <p className="text-[14px] sm:text-[15px] text-black/50 mt-3 leading-[1.65]">
-                  Discovery today is slow, opinion-based, and expensive. Source
-                  Healthcheck replaces weeks of workshops with an AI-powered
-                  scan across 6 dimensions &mdash; architecture, data quality,
-                  processes, security, integrations, and reporting.
+                  Source Healthcheck scans any ERP environment &mdash; multiple systems, any platform &mdash; and delivers evidence-backed findings in 24 hours. Every finding is quantified and maps directly to a scoped SOW. Partners sell a 5-hour engagement, Source delivers the intelligence.
                 </p>
               </div>
 
@@ -498,15 +494,15 @@ export default function HealthCheckPage() {
                   The Partner Pitch
                 </div>
                 <p className="text-[17px] sm:text-[21px] italic leading-[1.6] text-black/70 mb-5">
-                  &ldquo;We include a free healthcheck with every prospect.
-                  Source runs it in{" "}
+                  &ldquo;We offer a 5-hour healthcheck for every prospect.
+                  Source delivers the findings in{" "}
                   <span className="not-italic font-semibold text-black">
-                    5 hours
+                    24 hours
                   </span>
-                  , you present the findings under your brand, and the client
-                  can see exactly what&apos;s broken and what it&apos;s costing
-                  them. Each finding maps to a scoped SOW. Typical pipeline from
-                  a single healthcheck:{" "}
+                  , you present under your brand, and the client sees exactly
+                  what&apos;s broken and what it&apos;s costing them. Each
+                  finding maps to a scoped SOW. Typical pipeline from a single
+                  healthcheck:{" "}
                   <span className="not-italic font-semibold text-black">
                     $36K&ndash;$98K
                   </span>{" "}
@@ -525,40 +521,7 @@ export default function HealthCheckPage() {
               </div>
 
               {/* ERP logos */}
-              <div className="mt-auto">
-                <div className="w-full flex items-center justify-between px-2 sm:px-4 py-4 border-t border-black/[0.06]">
-                  {[
-                    {
-                      src: "/logos/netsuite.svg",
-                      alt: "NetSuite",
-                      h: "h-[60px] sm:h-[76px] md:h-[92px]",
-                    },
-                    {
-                      src: "/logos/dynamics365.svg",
-                      alt: "Dynamics 365",
-                      h: "h-[46px] sm:h-[60px] md:h-[74px]",
-                    },
-                    {
-                      src: "/logos/sap.svg",
-                      alt: "SAP",
-                      h: "h-[42px] sm:h-[56px] md:h-[68px]",
-                    },
-                    {
-                      src: "/logos/sage.svg",
-                      alt: "Sage",
-                      h: "h-[40px] sm:h-[52px] md:h-[64px]",
-                    },
-                  ].map((logo) => (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
-                      key={logo.alt}
-                      src={logo.src}
-                      alt={logo.alt}
-                      className={`${logo.h} w-auto object-contain`}
-                    />
-                  ))}
-                </div>
-              </div>
+              <div className="mt-auto" />
             </div>
 
             {/* Black sidebar */}
@@ -670,7 +633,7 @@ export default function HealthCheckPage() {
               What We&apos;re Answering in Each Dimension
             </div>
             <div className="text-[13px] sm:text-[14px] text-black/45 leading-snug">
-              Real example findings from a NetSuite OneWorld environment. Every
+              Real example findings across multiple systems. Every
               finding is evidence-backed &mdash; not a checklist.
             </div>
           </div>
@@ -708,7 +671,7 @@ export default function HealthCheckPage() {
                 </div>
                 <div className="flex flex-wrap gap-x-3 gap-y-0.5 mt-1.5">
                   <div className="text-[12px] sm:text-[13px] text-white/40">
-                    System: {SAMPLE_REPORT.system}
+                    Systems: {SAMPLE_REPORT.systems.join(" · ")}
                   </div>
                   <div className="text-[12px] sm:text-[13px] text-white/25">&middot;</div>
                   <div className="text-[12px] sm:text-[13px] text-white/40">
@@ -1006,7 +969,7 @@ export default function HealthCheckPage() {
           <div className="flex items-center gap-3 mb-2">
             <Globe className="w-5 h-5 text-black/25 shrink-0" strokeWidth={1.75} />
             <div className="text-[16px] sm:text-[22px] font-medium tracking-tight text-black">
-              Any System. Free.
+              Any System. Multiple Systems.
             </div>
           </div>
           <p className="text-[14px] sm:text-[15px] text-black/55 leading-[1.65] mb-5">
@@ -1054,11 +1017,11 @@ export default function HealthCheckPage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-5">
             {[
               {
-                title: "Free for Clients",
-                desc: "Offer it at no cost to open doors. The value is in what comes after.",
+                title: "Sell as 5 Hours",
+                desc: "Partner sells a 5-hour engagement. Source delivers the intelligence in 24hrs.",
               },
               {
-                title: "5-Hour Turnaround",
+                title: "24hr Turnaround",
                 desc: "Request today, deliver findings tomorrow. Fast enough for any sales cycle.",
               },
               {
@@ -1099,7 +1062,7 @@ export default function HealthCheckPage() {
         {/* ── Footer ──────────────────────────────────────────────────────── */}
         <div className="mt-8 text-center">
           <p className="text-[10px] font-mono uppercase tracking-[0.12em] text-black/20">
-            Source Healthcheck. Free for all partners and prospects.
+            Source Healthcheck. Confidential.
             Confidential.
           </p>
         </div>
