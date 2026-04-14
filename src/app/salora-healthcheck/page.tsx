@@ -701,19 +701,28 @@ export default function HealthCheckPage() {
             <div className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.12em] text-black/35 font-bold mb-4">
               Category Ratings
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               {SAMPLE_REPORT.categories.map(({ name, rating, status }) => (
-                <div key={name} className="flex items-center justify-between gap-3 py-1">
-                  <div className="text-[13px] sm:text-[14px] text-black/60 font-medium truncate">
+                <div
+                  key={name}
+                  className={`px-4 py-4 border text-center ${
+                    status === "critical"
+                      ? "bg-red-500/[0.03] border-red-500/15"
+                      : status === "warning"
+                      ? "bg-amber-500/[0.03] border-amber-500/15"
+                      : "bg-emerald-500/[0.03] border-emerald-500/15"
+                  }`}
+                >
+                  <div className="text-[12px] sm:text-[13px] text-black/55 font-medium mb-2">
                     {name}
                   </div>
                   <span
-                    className={`text-[9px] font-mono uppercase tracking-[0.10em] font-bold px-2.5 py-1 shrink-0 ${
+                    className={`text-[10px] font-mono uppercase tracking-[0.08em] font-bold px-3 py-1 inline-block ${
                       status === "critical"
-                        ? "bg-red-500/10 text-red-600 border border-red-500/20"
+                        ? "bg-red-500/10 text-red-600"
                         : status === "warning"
-                        ? "bg-amber-500/10 text-amber-700 border border-amber-500/20"
-                        : "bg-emerald-500/10 text-emerald-700 border border-emerald-500/20"
+                        ? "bg-amber-500/10 text-amber-700"
+                        : "bg-emerald-500/10 text-emerald-700"
                     }`}
                   >
                     {rating}
