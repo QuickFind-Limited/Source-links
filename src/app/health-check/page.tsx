@@ -389,11 +389,11 @@ function DimensionSection({
           <div className="text-[12px] sm:hidden font-medium text-black/35 italic mb-3">
             {question}
           </div>
-          <div className="space-y-2.5">
+          <div className="space-y-3">
             {examples.map((ex) => (
               <div key={ex} className="flex items-start gap-3">
-                <span className="mt-[7px] w-1.5 h-1.5 rounded-full bg-black/20 shrink-0" />
-                <span className="text-[13px] sm:text-[14px] text-black/60 leading-snug font-[450]">
+                <span className="mt-[9px] w-1.5 h-1.5 rounded-full bg-black/20 shrink-0" />
+                <span className="text-[15px] sm:text-[16px] text-black/60 leading-[1.55] font-[450]">
                   {ex}
                 </span>
               </div>
@@ -654,27 +654,6 @@ export default function HealthCheckPage() {
           </div>
         </div>
 
-        {/* ── Evidence Classification ─────────────────────────────────────── */}
-        <div className="bg-white border border-black/[0.08] p-4 sm:p-6 mb-6">
-          <div className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.12em] text-black/35 font-bold mb-4">
-            Evidence Classification
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            {EVIDENCE_TYPES.map(({ label, desc, color, bg, dot }) => (
-              <div key={label} className={`border px-5 py-4 ${bg}`}>
-                <div className="flex items-center gap-2 mb-2">
-                  <span className={`w-2 h-2 rounded-full shrink-0 ${dot}`} />
-                  <span className={`text-[13px] sm:text-[14px] font-semibold ${color}`}>
-                    {label}
-                  </span>
-                </div>
-                <p className="text-[12px] sm:text-[13px] text-black/50 leading-[1.6]">
-                  {desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
 
         {/* ── 6 Dimensions Detail (Accordion) ────────────────────────────── */}
         <div className="flex items-center gap-3 mt-8 mb-4">
