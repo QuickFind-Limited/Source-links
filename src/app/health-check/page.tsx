@@ -119,10 +119,10 @@ const DIMENSIONS_DETAIL: {
     question: "How complex is this environment?",
     Icon: Settings,
     examples: [
-      "43 custom fields on Sales Order — 18 have no data in last 12 months",
-      "18 months of open accounting periods — none are locked",
-      "Advanced Revenue Management enabled, zero transactions processed",
-      "3 subsidiaries in OneWorld — 1 has never been used",
+      "Source found 43 custom fields on Sales Order — 18 have no data in last 12 months",
+      "Source detected 18 months of open accounting periods — none are locked",
+      "Source flagged Advanced Revenue Management as enabled with zero transactions processed",
+      "Source identified 3 subsidiaries in OneWorld — 1 has never been used",
     ],
   },
   {
@@ -130,10 +130,10 @@ const DIMENSIONS_DETAIL: {
     question: "Is the data clean enough for migration?",
     Icon: Database,
     examples: [
-      "147 duplicate vendors — $34K/yr duplicate payment risk",
-      "GL out of balance by $12,847 across 2 subsidiaries",
-      "4,200 inactive items (47% of total catalogue)",
-      "312 customer records with missing ABN / tax ID fields",
+      "Source identified 147 duplicate vendors across 3 subsidiaries — $34K/yr duplicate payment risk",
+      "Source detected GL out of balance by $12,847 across 2 subsidiaries",
+      "Source found 4,200 inactive items (47% of total catalogue) — cleanup required before migration",
+      "Source flagged 312 customer records with missing ABN / tax ID fields — compliance exposure",
     ],
   },
   {
@@ -141,10 +141,10 @@ const DIMENSIONS_DETAIL: {
     question: "Where are the bottlenecks?",
     Icon: Workflow,
     examples: [
-      "Manual journal entries are 34% of all GL postings",
-      "Month-end close averaging 14 days — industry benchmark is 5",
-      "Void rate of 12% on AP invoices in last 90 days",
-      "6 process steps confirmed to happen outside the ERP in spreadsheets",
+      "Source found manual journal entries account for 34% of all GL postings — automation opportunity",
+      "Source measured month-end close averaging 14 days — industry benchmark is 5 days",
+      "Source detected a void rate of 12% on AP invoices in last 90 days — process issues upstream",
+      "Source confirmed 6 process steps happening outside the ERP in spreadsheets",
     ],
   },
   {
@@ -152,10 +152,10 @@ const DIMENSIONS_DETAIL: {
     question: "Who has access to what?",
     Icon: Shield,
     examples: [
-      "8 users with full Administrator access — 4 are non-IT staff",
-      "No segregation of duties between payment approval and execution",
-      "23 users inactive 90+ days — accounts still active",
-      "AP role has view access to payroll records",
+      "Source found 8 users with full Administrator access — 4 are non-IT staff (2 AP, 1 AR, 1 Warehouse)",
+      "Source identified no segregation of duties between payment approval and execution — SOX risk",
+      "Source flagged 23 users inactive 90+ days with accounts still active",
+      "Source detected AP role has view access to payroll records — access control gap",
     ],
   },
   {
@@ -163,10 +163,10 @@ const DIMENSIONS_DETAIL: {
     question: "Are integrations healthy?",
     Icon: Link,
     examples: [
-      "Shopify integration — 312 failed syncs in last 90 days, no alerts set",
-      "31 script deployments with DEBUG logging active in production",
-      "3 RESTlets deployed — zero API calls in 6 months",
-      "No retry logic on payment gateway connector",
+      "Source found Shopify integration with 312 failed syncs in last 90 days — no alerts configured",
+      "Source detected 31 script deployments with DEBUG logging active in production — performance risk",
+      "Source identified 3 RESTlets deployed with zero API calls in 6 months — dead integrations",
+      "Source flagged no retry logic on payment gateway connector — silent failure risk",
     ],
   },
   {
@@ -174,10 +174,10 @@ const DIMENSIONS_DETAIL: {
     question: "How much customisation sprawl?",
     Icon: BarChart3,
     examples: [
-      "1,247 saved searches — 40% with zero views in 12 months",
-      "Sales Order has 83 custom fields — 31 are mandatory",
-      "No executive dashboard configured for CFO role",
-      "14 custom reports duplicating standard NetSuite functionality",
+      "Source found 1,247 saved searches — 40% with zero views in 12 months — cleanup opportunity",
+      "Source detected Sales Order with 83 custom fields — 31 are mandatory — UI performance concern",
+      "Source identified no executive dashboard configured for CFO role — reporting gap",
+      "Source flagged 14 custom reports duplicating standard NetSuite functionality — unnecessary overhead",
     ],
   },
 ];
@@ -630,11 +630,10 @@ export default function HealthCheckPage() {
         <div className="bg-white border border-black/[0.08] mb-6">
           <div className="px-4 sm:px-5 py-4 border-b border-black/[0.06]">
             <div className="text-[15px] sm:text-[18px] font-medium tracking-tight text-black mb-1">
-              What We&apos;re Answering in Each Dimension
+              What Source Has Found
             </div>
             <div className="text-[13px] sm:text-[14px] text-black/45 leading-snug">
-              Real example findings across multiple systems. Every
-              finding is evidence-backed &mdash; not a checklist.
+              Real findings from Source scans across live environments. Every item below is evidence Source has surfaced &mdash; not a checklist.
             </div>
           </div>
           {DIMENSIONS_DETAIL.map((dim, i) => (

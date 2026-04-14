@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Source — Fixed-Fee Financials Implementations | $7.5K–$25K | Under 30 Days";
+export const alt = "ERP Implementations — For $10K and Under 30 Days with AI";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -42,7 +42,7 @@ export default function Image() {
               lineHeight: 1.1,
             }}
           >
-            $7.5K – $25K
+            For $10K and Under 30 Days
           </div>
           <div
             style={{
@@ -52,7 +52,7 @@ export default function Image() {
               letterSpacing: "-0.01em",
             }}
           >
-            Fixed-fee financials implementations, under 30 days
+            with AI
           </div>
         </div>
 
