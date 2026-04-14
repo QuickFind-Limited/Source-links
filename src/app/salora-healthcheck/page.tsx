@@ -1038,24 +1038,6 @@ export default function HealthCheckPage() {
               </div>
             ))}
           </div>
-          <div className="flex flex-col sm:flex-row gap-3">
-            <a
-              href="https://cal.com/source-ai/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 text-[11px] font-mono uppercase tracking-[0.08em] bg-white text-black px-5 py-3 hover:bg-white/90 transition-colors"
-            >
-              <Calendar className="w-3.5 h-3.5" strokeWidth={1.75} />
-              Schedule a Call
-            </a>
-            <a
-              href="/api/export/health-check"
-              className="inline-flex items-center justify-center gap-2 text-[11px] font-mono uppercase tracking-[0.08em] text-white/70 border border-white/20 px-5 py-3 hover:text-white hover:border-white/40 transition-colors"
-            >
-              <Download className="w-3.5 h-3.5" strokeWidth={1.75} />
-              Download PDF
-            </a>
-          </div>
         </div>
 
         {/* ── Footer ──────────────────────────────────────────────────────── */}
