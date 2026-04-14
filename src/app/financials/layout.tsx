@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
-const title = "Source Financials First - Fixed-Fee ERP Implementation";
+const title = "Source — Fixed-Fee Financials Implementations in Under 30 Days";
 const description =
-  "Financials First partner pricing, scope, and terms. Fixed-fee ERP implementations in under 30 days.";
+  "Complete financials implementations with Source AI for a fixed price, in under 30 days. $7.5K–$25K fixed fee. Partner pricing, scope & terms.";
 const url = "https://www.source.shop/financials";
 const imageUrl = "https://www.source.shop/financials/opengraph-image";
 
