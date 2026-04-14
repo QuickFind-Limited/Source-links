@@ -465,7 +465,7 @@ export default function HealthCheckPage() {
               strokeWidth={1.75}
             />
             <div className="text-[32px] sm:text-[36px] font-medium tracking-tight text-black select-none">
-              $36K–$98K
+              $25K–$65K
             </div>
             <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.12em] text-black/50 font-bold mt-1">
               Addressable SOW Per Healthcheck
@@ -504,7 +504,7 @@ export default function HealthCheckPage() {
                   finding maps to a scoped SOW. Typical pipeline from a single
                   healthcheck:{" "}
                   <span className="not-italic font-semibold text-black">
-                    $36K&ndash;$98K
+                    $25K&ndash;$65K
                   </span>{" "}
                   in addressable work.&rdquo;
                 </p>
