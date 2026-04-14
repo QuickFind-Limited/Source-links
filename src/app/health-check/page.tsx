@@ -188,16 +188,16 @@ const SAMPLE_REPORT = {
   company: "Westfield Manufacturing",
   system: "NetSuite OneWorld",
   scanned: "March 2026",
-  overallScore: 62,
+  overallRating: "Needs Attention" as const,
   categories: [
-    { name: "Environment & Architecture", score: 78, status: "healthy" as const },
-    { name: "Data Integrity", score: 41, status: "critical" as const },
-    { name: "Business Processes", score: 68, status: "healthy" as const },
-    { name: "Security", score: 55, status: "warning" as const },
-    { name: "Integrations", score: 52, status: "warning" as const },
-    { name: "Reporting", score: 71, status: "healthy" as const },
-    { name: "License Efficiency", score: 64, status: "warning" as const },
-    { name: "Compliance", score: 59, status: "warning" as const },
+    { name: "Environment & Architecture", rating: "Healthy" as const, status: "healthy" as const },
+    { name: "Data Integrity", rating: "Critical" as const, status: "critical" as const },
+    { name: "Business Processes", rating: "Healthy" as const, status: "healthy" as const },
+    { name: "Security", rating: "Medium" as const, status: "warning" as const },
+    { name: "Integrations", rating: "Medium" as const, status: "warning" as const },
+    { name: "Reporting", rating: "Healthy" as const, status: "healthy" as const },
+    { name: "License Efficiency", rating: "Medium" as const, status: "warning" as const },
+    { name: "Compliance", rating: "Medium" as const, status: "warning" as const },
   ],
   greenFlags: [
     {
@@ -718,21 +718,14 @@ export default function HealthCheckPage() {
               </div>
               <div className="flex items-center gap-4 sm:gap-5">
                 <div className="text-right">
-                  <div className="text-[10px] font-mono uppercase tracking-[0.12em] text-white/30 mb-0.5">
-                    Overall Score
+                  <div className="text-[10px] font-mono uppercase tracking-[0.12em] text-white/30 mb-1">
+                    Overall
                   </div>
-                  <div className="text-[40px] sm:text-[48px] font-bold text-white leading-none tracking-tight">
-                    {SAMPLE_REPORT.overallScore}
-                    <span className="text-[16px] sm:text-[18px] text-white/30 font-medium">
-                      /100
-                    </span>
+                  <div className="text-[10px] font-mono uppercase tracking-[0.10em] text-amber-400 font-bold px-3 py-1.5 border border-amber-400/30 bg-amber-400/10">
+                    {SAMPLE_REPORT.overallRating}
                   </div>
                 </div>
-                <div className="w-px h-12 bg-white/10 hidden sm:block" />
-                <div className="hidden sm:block">
-                  <div className="text-[10px] font-mono uppercase tracking-[0.12em] text-amber-400/80 font-bold">
-                    Needs Attention
-                  </div>
+                <div className="hidden sm:block text-right">
                   <div className="text-[12px] text-white/40 mt-0.5">
                     5 findings identified
                   </div>
@@ -741,40 +734,28 @@ export default function HealthCheckPage() {
             </div>
           </div>
 
-          {/* Category scores */}
+          {/* Category ratings */}
           <div className="px-5 sm:px-8 py-5 sm:py-6 border-b border-black/[0.06]">
             <div className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.12em] text-black/35 font-bold mb-4">
-              Category Scores
+              Category Ratings
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3">
-              {SAMPLE_REPORT.categories.map(({ name, score, status }) => (
-                <div key={name} className="flex items-center gap-3">
-                  <div className="w-[155px] sm:w-[180px] text-[13px] sm:text-[14px] text-black/60 font-medium shrink-0 truncate">
+              {SAMPLE_REPORT.categories.map(({ name, rating, status }) => (
+                <div key={name} className="flex items-center justify-between gap-3 py-1">
+                  <div className="text-[13px] sm:text-[14px] text-black/60 font-medium truncate">
                     {name}
                   </div>
-                  <div className="flex-1 h-2 bg-black/[0.06] overflow-hidden">
-                    <div
-                      className={`h-full transition-all ${
-                        status === "critical"
-                          ? "bg-red-500"
-                          : status === "warning"
-                          ? "bg-amber-500"
-                          : "bg-emerald-500"
-                      }`}
-                      style={{ width: `${score}%` }}
-                    />
-                  </div>
-                  <div
-                    className={`text-[14px] sm:text-[15px] font-bold tabular-nums w-8 text-right ${
+                  <span
+                    className={`text-[9px] font-mono uppercase tracking-[0.10em] font-bold px-2.5 py-1 shrink-0 ${
                       status === "critical"
-                        ? "text-red-500"
+                        ? "bg-red-500/10 text-red-600 border border-red-500/20"
                         : status === "warning"
-                        ? "text-amber-600"
-                        : "text-emerald-600"
+                        ? "bg-amber-500/10 text-amber-700 border border-amber-500/20"
+                        : "bg-emerald-500/10 text-emerald-700 border border-emerald-500/20"
                     }`}
                   >
-                    {score}
-                  </div>
+                    {rating}
+                  </span>
                 </div>
               ))}
             </div>
