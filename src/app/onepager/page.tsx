@@ -185,6 +185,26 @@ export default function OnePagerPage() {
           ))}
         </div>
 
+        {/* ── Supported Systems (moved up — trust-signal row) ────────────── */}
+        <div className="bg-white border border-black/[0.08] px-4 sm:px-6 py-3 sm:py-4 mb-6">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
+            <div className="text-[10px] font-mono uppercase tracking-[0.15em] text-black/30 whitespace-nowrap shrink-0">
+              Supported Systems
+            </div>
+            <div className="flex flex-wrap items-center justify-evenly flex-1 gap-x-6 gap-y-3 sm:gap-x-8">
+              {ERP_LOGOS.map(({ src, alt, h }) => (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  key={alt}
+                  src={src}
+                  alt={alt}
+                  className={`${h} w-auto object-contain grayscale opacity-80`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+
         {/* ── Main two-panel ──────────────────────────────────────────────── */}
         <div className="bg-white border border-black/[0.08] mb-6">
           <div className="flex flex-col md:flex-row">
@@ -517,22 +537,6 @@ export default function OnePagerPage() {
                 on us. No cost, no commitment.
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* ── Supported Systems ────────────────────────────────────────────── */}
-        <div className="bg-white border border-black/[0.08] p-4 sm:p-6 mb-6">
-          <SectionLabel>Supported Systems</SectionLabel>
-          <div className="flex flex-wrap items-center justify-evenly gap-6 sm:gap-8 py-4">
-            {ERP_LOGOS.map(({ src, alt, h }) => (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
-                key={alt}
-                src={src}
-                alt={alt}
-                className={`${h} w-auto object-contain grayscale`}
-              />
-            ))}
           </div>
         </div>
 
