@@ -18,6 +18,8 @@ import {
   Layers,
   Zap,
   Clock,
+  Scan,
+  DollarSign,
 } from "lucide-react";
 
 // ─── Data ────────────────────────────────────────────────────────────────────
@@ -77,37 +79,24 @@ const CASE_STUDY_HIGHLIGHTS = [
   "No scope creep, no overruns",
 ];
 
-const ECONOMICS_TABLE = [
+const PRICING_STEPS = [
   {
-    metric: "Revenue",
-    traditional: "$25,000",
-    source: "$25,000",
-    note: "Same client price",
+    n: "01",
+    title: "You send the SOW",
+    body: "Drop in the client's scope, transcripts, requirements, or existing SOW — however detailed or rough.",
+    Icon: FileText,
   },
   {
-    metric: "COGS (hours × rate)",
-    traditional: "$20,000",
-    source: "$11,000",
-    note: "Source platform fee",
+    n: "02",
+    title: "We scope & price",
+    body: "Source AI reads the scope, runs a system scan, and sends back a fixed price within 24 hours.",
+    Icon: Scan,
   },
   {
-    metric: "Gross Margin",
-    traditional: "$5,000 (20%)",
-    source: "$14,000 (56%)",
-    note: "Your take",
-    highlight: true,
-  },
-  {
-    metric: "Delivery Time",
-    traditional: "4–6 months",
-    source: "Sub 21 days",
-    note: "",
-  },
-  {
-    metric: "Scope Risk",
-    traditional: "High — hourly blowout",
-    source: "Fixed — capped cost",
-    note: "",
+    n: "03",
+    title: "You charge the client",
+    body: "You mark up, invoice your client directly, and keep the margin. Source is your back-office engine.",
+    Icon: DollarSign,
   },
 ];
 
@@ -465,71 +454,69 @@ export default function OnePagerPage() {
           </div>
         </div>
 
-        {/* ── Partner Economics Table ──────────────────────────────────────── */}
+        {/* ── Partner Economics — Send SOW. Get Price. Charge Client. ───────── */}
         <div className="bg-white border border-black/[0.08] p-4 sm:p-6 mb-6">
-          <div className="text-[19px] sm:text-[24px] font-medium tracking-tight text-black mb-1.5">
+          <div className="text-[10px] font-mono uppercase tracking-[0.15em] text-black/30 mb-2">
             Partner Economics
           </div>
-          <div className="text-[13px] sm:text-[15px] text-black/45 leading-[1.65] mb-5">
-            Same client engagement. Completely different economics. Source makes
-            the fixed-price model possible.
+          <div className="text-[22px] sm:text-[30px] font-semibold tracking-[-0.02em] text-black mb-2 leading-[1.1]">
+            Send SOW. Get Price. Charge Client.
+          </div>
+          <div className="text-[13px] sm:text-[15px] text-black/45 leading-[1.65] mb-6 max-w-[720px]">
+            No quoting calls, no scoping workshops, no T&amp;M surprises. Three
+            steps from SOW to invoice.
           </div>
 
-          <div className="border border-black/[0.08] overflow-hidden">
-            {/* Header row */}
-            <div className="grid grid-cols-4 bg-black">
-              <div className="px-4 sm:px-5 py-3.5 text-[11px] font-mono uppercase tracking-[0.10em] text-white/70 font-bold">
-                Metric
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr_auto_1fr] gap-3 md:gap-0 items-stretch">
+            {PRICING_STEPS.map(({ n, title, body, Icon }, i) => (
+              <React.Fragment key={n}>
+                <div className="border border-black/[0.08] bg-white p-5 sm:p-6 flex flex-col">
+                  <div className="flex items-start justify-between mb-5">
+                    <div className="w-9 h-9 bg-black flex items-center justify-center">
+                      <Icon
+                        className="w-4 h-4 text-white"
+                        strokeWidth={1.75}
+                      />
+                    </div>
+                    <div className="text-[10px] font-mono tracking-[0.12em] text-black/30">
+                      {n}
+                    </div>
+                  </div>
+                  <div className="text-[15px] sm:text-[17px] font-semibold text-black mb-2">
+                    {title}
+                  </div>
+                  <div className="text-[13px] text-black/50 leading-[1.6]">
+                    {body}
+                  </div>
+                </div>
+                {i < PRICING_STEPS.length - 1 && (
+                  <div className="hidden md:flex items-center justify-center px-3 text-black/25 text-[18px]">
+                    →
+                  </div>
+                )}
+              </React.Fragment>
+            ))}
+          </div>
+
+          {/* FREE first migration callout */}
+          <div className="flex items-stretch bg-black text-white mt-5">
+            <div className="px-6 py-5 border-r border-white/[0.10] flex flex-col items-center justify-center min-w-[140px]">
+              <div className="text-[28px] sm:text-[34px] font-semibold leading-none tracking-[-0.02em]">
+                FREE
               </div>
-              <div className="px-4 sm:px-5 py-3.5 text-[11px] font-mono uppercase tracking-[0.10em] text-white/70 font-bold border-l border-white/[0.08]">
-                Traditional
-              </div>
-              <div className="px-4 sm:px-5 py-3.5 text-[11px] font-mono uppercase tracking-[0.10em] text-white/70 font-bold border-l border-white/[0.08]">
-                With Source
-              </div>
-              <div className="px-4 sm:px-5 py-3.5 text-[11px] font-mono uppercase tracking-[0.10em] text-white/70 font-bold border-l border-white/[0.08]">
-                Note
+              <div className="text-[9px] font-mono uppercase tracking-[0.15em] text-white/40 mt-2">
+                First Migration
               </div>
             </div>
-
-            {/* Body rows */}
-            {ECONOMICS_TABLE.map((row, i) => (
-              <div
-                key={row.metric}
-                className={`grid grid-cols-4 border-b border-black/[0.06] last:border-b-0 ${
-                  row.highlight
-                    ? "border-t-2 border-b-2 border-black/[0.12]"
-                    : i % 2 === 0
-                    ? "bg-white"
-                    : "bg-[#fafafa]"
-                }`}
-              >
-                <div
-                  className={`px-4 sm:px-5 py-3.5 text-[13px] sm:text-[14px] font-medium ${
-                    row.highlight ? "text-black font-semibold" : "text-black/70"
-                  }`}
-                >
-                  {row.metric}
-                </div>
-                <div
-                  className={`px-4 sm:px-5 py-3.5 text-[13px] sm:text-[14px] border-l border-black/[0.06] ${
-                    row.highlight ? "text-black/50" : "text-black/50"
-                  }`}
-                >
-                  {row.traditional}
-                </div>
-                <div
-                  className={`px-4 sm:px-5 py-3.5 text-[13px] sm:text-[14px] border-l border-black/[0.06] font-semibold ${
-                    row.highlight ? "text-[#16a34a]" : "text-black/80"
-                  }`}
-                >
-                  {row.source}
-                </div>
-                <div className="px-4 sm:px-5 py-3.5 text-[12px] sm:text-[13px] border-l border-black/[0.06] text-black/35 italic">
-                  {row.note}
-                </div>
+            <div className="flex-1 px-5 sm:px-6 py-5 flex flex-col justify-center">
+              <div className="text-[15px] sm:text-[17px] font-semibold mb-1">
+                Your first migration is free.
               </div>
-            ))}
+              <div className="text-[13px] text-white/55 leading-[1.55]">
+                Send us your first SOW — we&apos;ll scope, price, and deliver it
+                on us. No cost, no commitment.
+              </div>
+            </div>
           </div>
         </div>
 
