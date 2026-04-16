@@ -166,7 +166,7 @@ function MarginCalculator() {
       <div className="flex flex-col sm:flex-row items-start gap-4">
         <div className="w-full sm:w-[220px]">
           <label className="text-[11px] font-mono uppercase tracking-[0.08em] text-black/40 mb-1.5 block">
-            Client Price
+            Price (Quoted to Client)
           </label>
           <div className="relative">
             <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[14px] text-black/30">$</span>
@@ -483,7 +483,7 @@ function CopySendTabs() {
 const TERMS_TABS = {
   "Scope & Pricing": [
     "Fixed price covers financials-only modules as defined in scope",
-    "$7.5K–$25K applies strictly to defined financial deliverables",
+    "$10K–$25K applies strictly to defined financial deliverables",
     "External integrations scoped and quoted separately",
     "Reporting and dashboards available as an add-on",
   ],
@@ -609,7 +609,7 @@ export default function FinancialsFirstPage() {
               $7.5K – $25K
             </div>
             <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.12em] text-black/50 font-bold mt-1">
-              Fixed fee, no surprises
+              Quote to your client
             </div>
           </div>
           <div className="bg-white border border-black/[0.06] px-5 sm:px-6 py-5 sm:py-6 text-center">
@@ -621,6 +621,13 @@ export default function FinancialsFirstPage() {
               Powered by Source AI
             </div>
           </div>
+        </div>
+
+        {/* Partner pricing callout */}
+        <div className="bg-white border-[3px] border-black rounded-sm px-6 sm:px-8 py-6 sm:py-8 mb-6">
+          <p className="text-[18px] sm:text-[22px] text-black/70 leading-[1.65] font-[450]">
+            Quote your client anywhere from <span className="font-semibold text-black">$7,500</span> to <span className="font-semibold text-black">$25,000</span> for a complete financials implementation. Source AI&apos;s fee is <span className="font-semibold text-black">50% of what you charge</span> — you keep a <span className="font-semibold text-[#16a34a]">50% margin</span>, guaranteed.
+          </p>
         </div>
 
         {/* Overview + What's Included sidebar */}
@@ -645,7 +652,7 @@ export default function FinancialsFirstPage() {
                 <p className="text-[20px] sm:text-[25px] md:text-[27px] italic leading-[1.55] text-black/70 mb-7">
                   &ldquo;We can get you off your system and fully live on NetSuite Financials in under{" "}
                   <span className="not-italic font-semibold text-black">30 days</span> for{" "}
-                  <span className="not-italic font-semibold text-black">$10K</span>, no
+                  <span className="not-italic font-semibold text-black">$9K</span>, no
                   hourly billing, no scope creep, no surprises.&rdquo;
                 </p>
                 <div className="pt-5 border-t border-black/[0.08]">
@@ -732,9 +739,6 @@ export default function FinancialsFirstPage() {
             Example prices partners can quote to clients. Source AI cost is the platform fee invoiced to the partner.
           </div>
 
-          <div className="text-[10px] font-mono uppercase tracking-[0.12em] text-black/30 font-bold mb-3">
-            Example Pricing Scenarios
-          </div>
           {/* Table */}
           <div className="border border-black/[0.08] rounded-sm overflow-hidden mb-4">
             <div className="grid grid-cols-3 bg-[#f5f5f3] border-b border-black/[0.08]">
@@ -745,7 +749,7 @@ export default function FinancialsFirstPage() {
                 Source AI Cost
               </div>
               <div className="px-4 sm:px-6 py-4 sm:py-5 text-[12px] sm:text-[13px] font-mono uppercase tracking-[0.10em] font-bold text-black/50 border-l border-black/[0.06]">
-                Your Margin
+                Example Margin
               </div>
             </div>
             {PRICING_TABLE.map((row, i) => (
@@ -769,9 +773,9 @@ export default function FinancialsFirstPage() {
             ))}
           </div>
 
-          <div className="bg-[#f8f8f6] border border-black/[0.06] rounded-sm px-4 sm:px-5 py-3.5 mt-4">
-            <p className="text-[13px] sm:text-[14px] text-black/50 leading-[1.65] mb-4">
-              You can charge your end client anywhere from <span className="font-semibold text-black/70">$7,500</span> to <span className="font-semibold text-black/70">$25,000</span> knowing you&apos;ll keep a <span className="font-semibold text-[#16a34a]">50% margin</span> on every deal. Higher volume partners can negotiate improved margins directly with Source for custom arrangements.
+          <div className="bg-white border-2 border-black/[0.08] rounded-sm px-5 sm:px-7 py-5 sm:py-6 mt-4">
+            <p className="text-[16px] sm:text-[18px] text-black/65 leading-[1.65] font-[450]">
+              You can charge your client anywhere from <span className="font-semibold text-black">$7,500</span> to <span className="font-semibold text-black">$25,000</span> knowing you&apos;ll keep a <span className="font-semibold text-[#16a34a]">50% margin</span> on every deal, guaranteed. Higher volume partners can negotiate improved margins directly with Source.
             </p>
           </div>
 
