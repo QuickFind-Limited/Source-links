@@ -3,6 +3,10 @@
     {
       "source": "/managed-services",
       "destination": "/managed-services/index.html"
+    },
+    {
+      "source": "/onepager-original",
+      "destination": "/onepager-original/index.html"
     }
   ]
 }
