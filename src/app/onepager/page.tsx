@@ -220,10 +220,15 @@ export default function OnePagerPage() {
                   <span className="text-black">85% of ERP implementation delivery</span>{" "}
                   — scanning, BRD generation, data migration, configuration, testing.
                 </p>
+                <p className="text-[14px] sm:text-[15px] text-black/50 mt-3 leading-[1.65]">
+                  Better contribution margins, faster delivery, win more deals, and offer
+                  fixed-price engagements. Your consultancy keeps the client relationship
+                  and presents it as your own methodology.
+                </p>
               </div>
 
-              {/* Partner pitch — quote + differentiation */}
-              <div className="flex-1 min-h-0 bg-[#f5f5f3] border border-black/[0.08] px-6 sm:px-8 py-7 sm:py-8">
+              {/* Recessed partner pitch box */}
+              <div className="bg-[#f5f5f3] border border-black/[0.08] px-6 sm:px-8 py-7 sm:py-8">
                 <div className="text-[10px] font-mono uppercase tracking-[0.15em] text-black/30 mb-5">
                   The Partner Pitch
                 </div>
@@ -244,7 +249,6 @@ export default function OnePagerPage() {
                   </div>
                 </div>
               </div>
-
             </div>
 
             {/* Black right sidebar */}
