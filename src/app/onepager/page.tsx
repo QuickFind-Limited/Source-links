@@ -25,6 +25,7 @@ import {
   DollarSign,
   ChevronDown,
   Download,
+  MapPin,
 } from "lucide-react";
 
 // ─── Data ────────────────────────────────────────────────────────────────────
@@ -745,12 +746,23 @@ export default function OnePagerPage() {
         </div>
 
         {/* ── Credibility ───────────────────────────────────────────────────── */}
-        <div className="bg-white border border-black/[0.08] px-5 sm:px-8 py-7 sm:py-9 mb-6">
-          <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.18em] text-black/45 font-bold mb-5">
-            Built by the Source team
+        <div className="bg-white border border-black/[0.08] mb-6 overflow-hidden">
+          {/* Header */}
+          <div className="flex items-center justify-between gap-3 px-5 sm:px-8 py-4 border-b border-black/[0.06] bg-[#fafafa]">
+            <div className="flex items-center gap-2.5">
+              <Users className="w-4 h-4 text-black/50" strokeWidth={2} />
+              <span className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.18em] text-black font-bold">
+                Built by the Source team
+              </span>
+            </div>
+            <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.12em] text-black/40 font-semibold">
+              {TEAM_PHOTOS.length} operators · engineers · finance leads
+            </span>
           </div>
-          <div className="flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-10">
-            <div className="flex items-center -space-x-3 shrink-0">
+
+          {/* Team photo strip */}
+          <div className="px-5 sm:px-8 py-6 sm:py-7">
+            <div className="flex items-center -space-x-3">
               {TEAM_PHOTOS.map(({ src, name }) => (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img
@@ -762,27 +774,56 @@ export default function OnePagerPage() {
                 />
               ))}
             </div>
-            <div className="h-px lg:h-auto lg:w-px lg:min-h-[60px] bg-black/[0.08] lg:shrink-0" />
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3.5 text-[15px] sm:text-[16px] text-black/75 flex-1">
-              <div className="flex items-center gap-3">
-                <Users className="w-5 h-5 text-black/40 shrink-0" strokeWidth={1.75} />
-                <span>
-                  Built by <span className="font-semibold text-black">Source</span> — San Francisco
-                </span>
+          </div>
+
+          {/* Stat strip */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 border-t border-black/[0.06]">
+            {[
+              {
+                Icon: MapPin,
+                label: "Headquarters",
+                value: "San Francisco",
+                sub: "Built by Source",
+              },
+              {
+                Icon: DollarSign,
+                label: "Funding",
+                value: "$2M+",
+                sub: "Venture-backed",
+              },
+              {
+                Icon: FileText,
+                label: "Press",
+                value: "Forbes",
+                sub: "Featured",
+              },
+              {
+                Icon: Globe,
+                label: "Backed by",
+                value: "Stripe alumni",
+                sub: "& SF investors",
+              },
+            ].map(({ Icon, label, value, sub }, i) => (
+              <div
+                key={label}
+                className={`px-5 sm:px-7 py-5 sm:py-6 ${
+                  i > 0 ? "border-l border-black/[0.06]" : ""
+                } ${i >= 2 ? "border-t lg:border-t-0 lg:border-l border-black/[0.06]" : ""}`}
+              >
+                <div className="flex items-center gap-2 mb-2">
+                  <Icon className="w-3.5 h-3.5 text-black/40" strokeWidth={2} />
+                  <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.14em] text-black/45 font-bold">
+                    {label}
+                  </span>
+                </div>
+                <div className="text-[18px] sm:text-[22px] font-semibold text-black tracking-[-0.01em] leading-tight mb-0.5">
+                  {value}
+                </div>
+                <div className="text-[12px] sm:text-[13px] text-black/50 leading-snug">
+                  {sub}
+                </div>
               </div>
-              <div className="flex items-center gap-3">
-                <FileText className="w-5 h-5 text-black/40 shrink-0" strokeWidth={1.75} />
-                <span>Featured in <span className="font-semibold text-black">Forbes</span></span>
-              </div>
-              <div className="flex items-center gap-3">
-                <DollarSign className="w-5 h-5 text-black/40 shrink-0" strokeWidth={1.75} />
-                <span><span className="font-semibold text-black">$2M+</span> in venture funding</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Globe className="w-5 h-5 text-black/40 shrink-0" strokeWidth={1.75} />
-                <span><span className="font-semibold text-black">SF investors</span> &amp; <span className="font-semibold text-black">Stripe alumni</span></span>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
 
