@@ -172,14 +172,14 @@ export default function OnePagerPage() {
         </div>
 
         {/* ── Subtitle ────────────────────────────────────────────────────── */}
-        <div className="mb-7">
-          <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.12em] text-black/35 mb-2">
+        <div className="mb-8 sm:mb-10">
+          <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.16em] text-black/40 font-bold mb-3">
             Partner One-Pager
           </div>
-          <p className="text-[22px] sm:text-[30px] font-semibold tracking-[-0.02em] text-black leading-[1.15] mb-3 max-w-[780px]">
-            The go-to AI partner for ERP VARs &amp; Firms.
-          </p>
-          <p className="text-[20px] sm:text-[26px] italic text-black/65 leading-[1.5] max-w-[880px]">
+          <h1 className="text-[34px] sm:text-[52px] md:text-[64px] font-bold tracking-[-0.035em] text-black leading-[1.02] mb-5 max-w-[980px]">
+            The go-to AI partner for <br className="hidden sm:block" />ERP VARs &amp; Firms.
+          </h1>
+          <p className="text-[17px] sm:text-[22px] md:text-[24px] italic text-black/65 leading-[1.45] max-w-[880px]">
             We automate ERP implementations with AI. You keep the client, the
             brand, and you make{" "}
             <span className="not-italic font-semibold text-black">50%+ margins.</span>
@@ -342,9 +342,9 @@ export default function OnePagerPage() {
             <div className="text-[12px] sm:text-[13px] font-mono uppercase tracking-[0.14em] text-black/45 font-bold mb-4">
               After
             </div>
-            <div className="grid grid-cols-[1fr_28px_2fr_28px_1fr] items-stretch border border-black/[0.10] overflow-hidden bg-white">
+            <div className="grid grid-cols-1 md:grid-cols-[1fr_28px_2fr_28px_1fr] items-stretch border border-black/[0.10] overflow-hidden bg-white">
               {/* End Client */}
-              <div className="min-w-0 flex flex-col justify-center px-5 sm:px-7 py-7 sm:py-8">
+              <div className="min-w-0 flex flex-col justify-center px-5 sm:px-7 py-6 sm:py-8">
                 <div className="text-[11px] font-mono uppercase tracking-[0.14em] text-black/45 font-bold mb-2">
                   End Client
                 </div>
@@ -352,32 +352,34 @@ export default function OnePagerPage() {
                   Legacy System
                 </div>
               </div>
-              <div className="flex items-center justify-center text-black/30 text-[20px] border-l border-black/[0.08]">
-                →
+              <div className="flex items-center justify-center text-black/30 text-[24px] md:text-[20px] py-1 md:py-0 border-t md:border-t-0 md:border-l border-black/[0.08]">
+                <span className="md:hidden">↓</span>
+                <span className="hidden md:inline">→</span>
               </div>
 
               {/* Your Consultant — 2×2 grid */}
-              <div className="min-w-0 px-5 sm:px-7 py-7 sm:py-8 border-l border-black/[0.08] flex flex-col justify-center">
+              <div className="min-w-0 px-5 sm:px-7 py-6 sm:py-8 border-t md:border-t-0 md:border-l border-black/[0.08] flex flex-col justify-center">
                 <div className="text-[11px] font-mono uppercase tracking-[0.14em] text-black/45 font-bold mb-4">
                   Your Consultant
                 </div>
-                <div className="grid grid-cols-2 gap-x-8 gap-y-3">
+                <div className="grid grid-cols-2 gap-x-6 sm:gap-x-8 gap-y-3">
                   {CONSULTANT_AFTER_FLOW.map(({ label, Icon }) => (
                     <div key={label} className="flex items-center gap-2.5 min-w-0">
                       <Icon className="w-4 h-4 text-black/55 shrink-0" strokeWidth={1.75} />
-                      <span className="text-[14px] sm:text-[15px] text-black/75 leading-tight truncate font-medium">
+                      <span className="text-[13px] sm:text-[15px] text-black/75 leading-tight truncate font-medium">
                         {label}
                       </span>
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="flex items-center justify-center text-black/30 text-[20px] border-l border-black/[0.08]">
-                →
+              <div className="flex items-center justify-center text-black/30 text-[24px] md:text-[20px] py-1 md:py-0 border-t md:border-t-0 md:border-l border-black/[0.08]">
+                <span className="md:hidden">↓</span>
+                <span className="hidden md:inline">→</span>
               </div>
 
               {/* Live System */}
-              <div className="min-w-0 flex flex-col justify-center px-5 sm:px-7 py-7 sm:py-8 border-l border-black/[0.08]">
+              <div className="min-w-0 flex flex-col justify-center px-5 sm:px-7 py-6 sm:py-8 border-t md:border-t-0 md:border-l border-black/[0.08]">
                 <div className="text-[11px] font-mono uppercase tracking-[0.14em] text-emerald-700 mb-2 font-bold">
                   Live System
                 </div>
