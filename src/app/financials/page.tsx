@@ -15,7 +15,6 @@ import {
   ShieldCheck,
   ArrowRightLeft,
   TestTube,
-  BookOpen,
   Receipt,
   CreditCard,
   Globe,
@@ -821,91 +820,6 @@ export default function FinancialsFirstPage() {
                 </div>
               </div>
 
-              {/* Agent activity strip — illustrative snapshot of what AI agents produce per phase */}
-              <div className="mt-4 grid grid-cols-2 md:grid-cols-5 gap-1.5">
-                {[
-                  {
-                    phase: "Scope",
-                    Icon: FileText,
-                    status: "LOCKED",
-                    statusClass: "bg-black/[0.05] text-black/55",
-                    lines: [
-                      { k: "Partner SOW", v: "v1" },
-                      { k: "Fixed fee", v: "$10K" },
-                    ],
-                  },
-                  {
-                    phase: "Discovery",
-                    Icon: BookOpen,
-                    status: "DONE",
-                    statusClass: "bg-emerald-50 text-emerald-700",
-                    lines: [
-                      { k: "Calls", v: "2 · 1h 28m" },
-                      { k: "Topics", v: "23" },
-                    ],
-                  },
-                  {
-                    phase: "Scan",
-                    Icon: Database,
-                    status: "SCANNED",
-                    statusClass: "bg-emerald-50 text-emerald-700",
-                    lines: [
-                      { k: "Records", v: "94,127" },
-                      { k: "Accounts", v: "247" },
-                    ],
-                  },
-                  {
-                    phase: "Migrate",
-                    Icon: Workflow,
-                    status: "RUNNING",
-                    statusClass: "bg-emerald-50 text-emerald-700",
-                    lines: [
-                      { k: "CoA mapped", v: "100%" },
-                      { k: "Records", v: "82%" },
-                    ],
-                  },
-                  {
-                    phase: "Sign-off",
-                    Icon: ShieldCheck,
-                    status: "AWAITING",
-                    statusClass: "bg-amber-50 text-amber-700",
-                    lines: [
-                      { k: "Parallel run", v: "Passed" },
-                      { k: "Variance", v: "0" },
-                    ],
-                  },
-                ].map(({ phase, Icon, status, statusClass, lines }) => (
-                  <div
-                    key={phase}
-                    className="bg-white border border-black/[0.08] rounded-sm p-2.5 flex flex-col"
-                  >
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="flex items-center gap-1.5 min-w-0">
-                        <Icon className="w-3 h-3 text-black/45 shrink-0" strokeWidth={1.75} />
-                        <span className="text-[10px] font-mono font-bold uppercase tracking-[0.08em] text-black/55 truncate">
-                          {phase}
-                        </span>
-                      </div>
-                      <span
-                        className={`text-[8.5px] font-mono font-bold uppercase tracking-[0.06em] px-1.5 py-0.5 rounded-sm shrink-0 ${statusClass}`}
-                      >
-                        {status}
-                      </span>
-                    </div>
-                    <div className="space-y-1 mt-auto">
-                      {lines.map((l) => (
-                        <div key={l.k} className="flex items-baseline justify-between gap-2 text-[10.5px]">
-                          <span className="text-black/40 truncate">{l.k}</span>
-                          <span className="font-mono font-medium text-black/75 tabular-nums">{l.v}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-2 text-[10.5px] sm:text-[11px] font-mono italic text-black/35 leading-snug">
-                Illustrative — AI agents produce live artifacts at each phase, visible to the partner and end-client.
-              </div>
             </div>
           </div>
 
