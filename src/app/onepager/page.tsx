@@ -226,32 +226,27 @@ export default function OnePagerPage() {
                   <span className="text-black">85% of ERP implementation delivery</span>{" "}
                   — scanning, BRD generation, data migration, configuration, testing.
                 </p>
-                <p className="text-[14px] sm:text-[15px] text-black/50 mt-3 leading-[1.65]">
-                  Better contribution margins, faster delivery, win more deals, and offer
-                  fixed-price engagements. Your consultancy keeps the client relationship
-                  and presents it as your own methodology.
-                </p>
               </div>
 
               {/* What partners are saying */}
-              <div className="bg-[#f5f5f3] border border-black/[0.08] px-6 sm:px-8 py-7 sm:py-8">
+              <div className="bg-[#f5f5f3] border border-black/[0.08] px-6 sm:px-8 py-7 sm:py-8 flex-1">
                 <div className="text-[10px] font-mono uppercase tracking-[0.15em] text-black/35 mb-5">
                   What Partners Are Saying
                 </div>
-                <p className="text-[20px] sm:text-[26px] md:text-[28px] italic leading-[1.45] text-black/80 mb-7 tracking-[-0.01em] font-serif">
-                  Source handles the materials, the configuration, the full ERP implementation
-                  end-to-end. We focus on the upsell, the client experience, the relationship — and
-                  we&apos;re finally able to{" "}
-                  <span className="not-italic font-sans font-semibold text-black">
+                <p className="text-[17px] sm:text-[19px] md:text-[20px] leading-[1.55] text-black/75 mb-7 tracking-[-0.005em]">
+                  &ldquo;Source handles the materials, the configuration, the full ERP
+                  implementation end-to-end. We focus on the upsell, the client experience, the
+                  relationship — and we&apos;re finally able to{" "}
+                  <span className="font-semibold text-black">
                     scale our services firm with Source
                   </span>{" "}
-                  without scaling headcount.
+                  without scaling headcount.&rdquo;
                 </p>
                 <div className="h-px bg-black/[0.08] mb-4" />
-                <div className="text-[15px] sm:text-[16px] font-semibold text-black">
+                <div className="text-[14px] sm:text-[15px] font-semibold text-black">
                   COO, California Services Firm
                 </div>
-                <div className="text-[13px] sm:text-[14px] text-black/45 mt-1 leading-[1.55]">
+                <div className="text-[12px] sm:text-[13px] text-black/45 mt-1 leading-[1.55]">
                   Source partner since 2025 · 50%+ contribution margin on every engagement
                 </div>
               </div>
@@ -353,9 +348,9 @@ export default function OnePagerPage() {
             <div className="text-[10px] font-mono uppercase tracking-[0.12em] text-black/30 font-semibold mb-3">
               After
             </div>
-            <div className="flex items-stretch border border-black/[0.08] overflow-hidden bg-white">
+            <div className="grid grid-cols-[1fr_24px_2fr_24px_1fr] items-stretch border border-black/[0.08] overflow-hidden bg-white">
               {/* End Client */}
-              <div className="flex-1 min-w-0 flex flex-col justify-center px-4 sm:px-6 py-5">
+              <div className="min-w-0 flex flex-col justify-center px-4 sm:px-6 py-5">
                 <div className="text-[9px] font-mono uppercase tracking-[0.10em] text-black/30 mb-1">
                   End Client
                 </div>
@@ -363,32 +358,32 @@ export default function OnePagerPage() {
                   Legacy System
                 </div>
               </div>
-              <div className="flex items-center justify-center px-3 text-black/20 text-[15px] shrink-0 border-l border-black/[0.08]">
+              <div className="flex items-center justify-center text-black/25 text-[15px] border-l border-black/[0.08]">
                 →
               </div>
 
               {/* Your Consultant — 2×2 grid */}
-              <div className="flex-[1.6] min-w-0 px-4 sm:px-6 py-5 border-l border-black/[0.08] flex flex-col justify-center">
+              <div className="min-w-0 px-4 sm:px-6 py-5 border-l border-black/[0.08] flex flex-col justify-center">
                 <div className="text-[9px] font-mono uppercase tracking-[0.10em] text-black/30 mb-3">
                   Your Consultant
                 </div>
-                <div className="grid grid-cols-2 gap-x-5 gap-y-2.5">
+                <div className="grid grid-cols-2 gap-x-6 gap-y-2.5">
                   {CONSULTANT_AFTER_FLOW.map(({ label, Icon }) => (
                     <div key={label} className="flex items-center gap-2 min-w-0">
                       <Icon className="w-3.5 h-3.5 text-black/35 shrink-0" strokeWidth={1.75} />
-                      <span className="text-[11.5px] sm:text-[12px] text-black/55 leading-tight truncate">
+                      <span className="text-[12px] sm:text-[12.5px] text-black/55 leading-tight truncate">
                         {label}
                       </span>
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="flex items-center justify-center px-3 text-black/20 text-[15px] shrink-0 border-l border-black/[0.08]">
+              <div className="flex items-center justify-center text-black/25 text-[15px] border-l border-black/[0.08]">
                 →
               </div>
 
               {/* Live System */}
-              <div className="flex-1 min-w-0 flex flex-col justify-center px-4 sm:px-6 py-5 border-l border-black/[0.08]">
+              <div className="min-w-0 flex flex-col justify-center px-4 sm:px-6 py-5 border-l border-black/[0.08]">
                 <div className="text-[9px] font-mono uppercase tracking-[0.10em] text-emerald-700/90 mb-1 font-semibold">
                   Live System
                 </div>
