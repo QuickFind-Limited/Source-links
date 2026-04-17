@@ -959,10 +959,13 @@ export default function FinancialsFirstPage() {
 
           {/* Per-project flow + CTA (sits with exclusions / terms) */}
           <div className="border-t border-black/[0.06] bg-[#f5f5f3] p-4 sm:p-6">
-            <div className="text-[10px] font-mono uppercase tracking-[0.14em] text-black/40 font-bold mb-1.5">
-              More complex implementation?
+            <div className="flex items-center gap-2.5 mb-3">
+              <span className="w-1 h-5 bg-black rounded-sm" aria-hidden />
+              <span className="text-[13px] sm:text-[14px] font-mono uppercase tracking-[0.14em] text-black font-bold">
+                More complex implementation?
+              </span>
             </div>
-            <div className="text-[18px] sm:text-[22px] font-medium tracking-tight text-black/85 mb-4 sm:mb-5 leading-[1.3]">
+            <div className="text-[22px] sm:text-[28px] font-semibold tracking-[-0.01em] text-black/90 mb-4 sm:mb-5 leading-[1.2]">
               Send your SOW. Get an AI price. We deliver.
             </div>
 
