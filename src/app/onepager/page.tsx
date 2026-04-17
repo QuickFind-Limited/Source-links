@@ -624,22 +624,24 @@ export default function OnePagerPage() {
               </div>
             </div>
 
-            {/* Strong overlay + play */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-b from-black/55 via-black/65 to-black/80 transition-colors group-hover:from-black/65 group-hover:via-black/75 group-hover:to-black/85">
-              <div className="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-full bg-white flex items-center justify-center shadow-[0_22px_50px_-10px_rgba(0,0,0,0.65)] mb-6 group-hover:scale-105 transition-transform">
-                <div className="w-0 h-0 border-l-[24px] sm:border-l-[28px] lg:border-l-[32px] border-l-black border-y-[16px] sm:border-y-[18px] lg:border-y-[20px] border-y-transparent ml-2" />
-              </div>
-              <div className="text-[13px] sm:text-[14px] font-mono uppercase tracking-[0.24em] text-white/90 mb-5 font-bold">
-                Book a call
-              </div>
-              <div className="text-[30px] sm:text-[40px] lg:text-[46px] font-semibold text-white text-center px-6 leading-[1.1] max-w-[880px] tracking-tight">
-                See a live ERP implementation by Source on call
-              </div>
-              <div className="text-[16px] sm:text-[18px] text-white/80 mt-5 text-center px-6 max-w-[720px]">
-                Real QuickBooks → NetSuite · Real data · Real config
-              </div>
-              <div className="mt-6 inline-flex items-center gap-2 border border-white/30 bg-white/10 backdrop-blur-sm px-5 py-2.5 rounded-full text-[12px] sm:text-[13px] font-mono uppercase tracking-[0.14em] text-white font-bold">
-                Book a 30-min slot →
+            {/* Overlay — lets the mockup read through, centered panel with compact play + CTA */}
+            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-b from-black/20 via-black/35 to-black/55 transition-colors group-hover:from-black/30 group-hover:via-black/45 group-hover:to-black/60">
+              <div className="flex flex-col items-center text-center px-5 sm:px-7 py-5 sm:py-6 rounded-md bg-black/55 backdrop-blur-sm border border-white/15 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.5)] max-w-[520px] mx-4">
+                <div className="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white shadow-[0_10px_24px_-6px_rgba(0,0,0,0.4)] mb-3.5 group-hover:scale-105 transition-transform">
+                  <div className="w-0 h-0 border-l-[14px] sm:border-l-[16px] border-l-black border-y-[9px] sm:border-y-[10px] border-y-transparent ml-1" />
+                </div>
+                <div className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.24em] text-white/70 mb-2 font-bold">
+                  Live demo · 30 min
+                </div>
+                <div className="text-[17px] sm:text-[20px] font-semibold text-white leading-[1.25] tracking-tight">
+                  See a live ERP implementation by Source
+                </div>
+                <div className="text-[12.5px] sm:text-[13.5px] text-white/70 mt-1.5 leading-snug">
+                  Real QuickBooks → NetSuite · Real data · Real config
+                </div>
+                <div className="mt-4 inline-flex items-center gap-1.5 bg-white text-black px-4 py-2 rounded-full text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.14em] font-bold group-hover:bg-white/90 transition-colors">
+                  Book a 30-min slot →
+                </div>
               </div>
             </div>
           </a>
