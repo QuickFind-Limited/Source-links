@@ -81,19 +81,12 @@ const CASE_STUDY_STATS = [
 ];
 
 const CASE_STUDY_DELIVERED = [
-  "Chart of Accounts designed & migrated with AI",
-  "4,200+ SKUs & product catalog migrated with AI",
-  "10 years of historical financials & transactions migrated",
-  "Legacy spreadsheet data ingested — Excel, Google Sheets, CSV",
-  "Tax rules, approval workflows & chart of accounts mapped",
-  "UAT-ready sandbox delivered in 8 days, production cutover in 13",
-  "Fixed-price, no scope creep, no overruns",
-  "380+ GL accounts migrated with AI",
-  "Full NetSuite configuration — subsidiaries, classes, locations",
-  "Business requirements doc (BRD) auto-generated from client systems",
-  "QuickBooks, Xero, Shopify, Stripe, HubSpot pulled directly",
-  "Custom fields, saved searches & dashboards configured",
-  "White-label — client never saw Source branding",
+  "Chart of Accounts + 380 GL accounts migrated",
+  "4,200+ SKUs & product catalog migrated",
+  "10 years of historical financials migrated",
+  "Full NetSuite config — subsidiaries, classes, locations",
+  "Shopify, Stripe, HubSpot connectors live",
+  "White-label, fixed price, zero scope creep",
 ];
 
 const PRICING_STEPS = [
@@ -528,67 +521,89 @@ export default function OnePagerPage() {
             Don&apos;t believe us? Hop on a call and watch a live QuickBooks → NetSuite migration. See how Source scans
             the legacy system, generates the BRD, migrates data, and configures NetSuite — all in under 21 days.
           </p>
-          <div className="relative rounded-sm border border-black/[0.10] bg-[#f4f4f2] overflow-hidden shadow-sm">
-            <div className="flex flex-wrap items-center justify-between gap-2 px-3 py-2 border-b border-black/[0.08] bg-white text-[10px] font-mono uppercase tracking-[0.08em] text-black/45">
-              <span>0% complete</span>
-              <span className="text-black/60">2nd BRD draft status</span>
-              <span>$7K – $11.5K price range</span>
-              <span className="hidden sm:inline text-black/35">Watch a real ERP migration · 1 day</span>
+          <a
+            href="https://cal.com/source-ai/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative block rounded-md border border-black/[0.10] bg-white overflow-hidden shadow-[0_24px_60px_-20px_rgba(0,0,0,0.25),0_8px_20px_-8px_rgba(0,0,0,0.12)] hover:shadow-[0_32px_80px_-24px_rgba(0,0,0,0.32),0_10px_24px_-8px_rgba(0,0,0,0.16)] transition-shadow"
+          >
+            {/* Browser-style chrome */}
+            <div className="flex items-center gap-2 px-4 py-2.5 border-b border-black/[0.08] bg-[#fafafa]">
+              <div className="flex items-center gap-1.5">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" />
+                <span className="w-2.5 h-2.5 rounded-full bg-[#febc2e]" />
+                <span className="w-2.5 h-2.5 rounded-full bg-[#28c840]" />
+              </div>
+              <div className="flex-1 mx-3 px-3 py-1 rounded-sm bg-white border border-black/[0.06] text-[10px] sm:text-[11px] font-mono text-black/40 truncate">
+                source.shop / live-implementation · QBO → NetSuite
+              </div>
+              <span className="hidden sm:inline text-[10px] font-mono uppercase tracking-[0.12em] text-emerald-700/80 font-bold">
+                Live
+              </span>
             </div>
-            <div className="p-4 sm:p-5 grid grid-cols-1 lg:grid-cols-[1fr_200px] gap-4">
-              <div>
-                <div className="text-[18px] sm:text-[20px] font-semibold text-black">BRD v2 + Price</div>
-                <div className="text-[12px] text-black/45 mt-1 mb-4">
-                  Updated BRD with new requirements and revised pricing
+
+            {/* App body */}
+            <div className="p-6 sm:p-10 lg:p-12 bg-white">
+              <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-8 lg:gap-12 items-start">
+                <div>
+                  <div className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.14em] text-black/40 mb-3">
+                    BRD v2 · Locked Quote
+                  </div>
+                  <div className="text-[26px] sm:text-[34px] font-semibold tracking-tight text-black leading-tight mb-3">
+                    QuickBooks → NetSuite
+                  </div>
+                  <div className="text-[40px] sm:text-[56px] font-bold tracking-[-0.03em] text-black leading-none mb-3">
+                    $7,000 – $11,500
+                  </div>
+                  <p className="text-[13px] sm:text-[14px] text-black/55 leading-[1.6] max-w-[480px] mb-6">
+                    Source AI implementation fee, fixed after sign-off. 93–95% below traditional
+                    implementation ($150K–$250K).
+                  </p>
+                  <div className="inline-flex items-center gap-2 border border-black/[0.12] bg-white px-3.5 py-2.5 text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.06em] text-black/65 rounded-sm">
+                    <Download className="w-3.5 h-3.5" strokeWidth={1.75} />
+                    Download SOW + cost breakdown
+                  </div>
                 </div>
-                <div className="text-[28px] sm:text-[34px] font-bold tracking-tight text-black mb-1">
-                  $7,000 – $11,500
-                </div>
-                <div className="text-[11px] text-black/45 leading-snug max-w-[480px] mb-4">
-                  Source AI implementation fee (fixed after sign-off). 93–95% below traditional implementation
-                  ($150K–$250K).
-                </div>
-                <div className="inline-flex items-center gap-2 border border-black/[0.12] bg-white px-3 py-2 text-[11px] font-mono uppercase tracking-[0.06em] text-black/60">
-                  <Download className="w-3.5 h-3.5" strokeWidth={1.75} />
-                  Download SOW + cost breakdown
-                </div>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mt-5 text-[10px] font-mono uppercase tracking-[0.06em] text-black/40">
+
+                <div className="grid grid-cols-2 gap-3">
                   {[
                     ["Edition", "OneWorld"],
-                    ["In-live modules", "24"],
-                    ["Migration records", "~318K"],
-                    ["Entities", "US + Ireland"],
-                    ["Unique identifiers", "28"],
-                    ["Complexity", "3.2/5"],
+                    ["Modules live", "24"],
+                    ["Records migrated", "318K"],
+                    ["Timeline", "13 days"],
                   ].map(([k, v]) => (
-                    <div key={k} className="border border-black/[0.08] bg-white px-2.5 py-2">
-                      <div className="text-black/35 mb-0.5">{k}</div>
-                      <div className="text-black/75 font-medium normal-case tracking-normal text-[12px]">{v}</div>
+                    <div
+                      key={k}
+                      className="border border-black/[0.08] rounded-sm bg-white px-4 py-3.5"
+                    >
+                      <div className="text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.12em] text-black/35 mb-1.5">
+                        {k}
+                      </div>
+                      <div className="text-[18px] sm:text-[22px] font-semibold tracking-tight text-black leading-none">
+                        {v}
+                      </div>
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="hidden lg:flex flex-col border border-black/[0.08] bg-white p-3 text-[10px] text-black/50 leading-snug">
-                <div className="font-mono uppercase tracking-[0.1em] text-black/35 mb-2">Business requirements</div>
-                <div className="text-black/70 text-[11px] leading-relaxed">
-                  Prepared by Meridian ERP Advisory · Powered by Source AI
-                </div>
-                <div className="mt-auto pt-3 text-black/35">March 1, 2024</div>
-              </div>
             </div>
-            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/[0.35] backdrop-blur-[1px] pointer-events-none">
-              <div className="w-14 h-14 rounded-full border-2 border-white/90 flex items-center justify-center mb-3">
-                <div className="w-0 h-0 border-l-[12px] border-l-white border-y-[8px] border-y-transparent ml-1" />
+
+            {/* Soft overlay + play */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-b from-black/0 via-black/[0.18] to-black/45 transition-colors group-hover:via-black/[0.22] group-hover:to-black/55">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/95 flex items-center justify-center shadow-[0_10px_30px_-8px_rgba(0,0,0,0.45)] mb-4 group-hover:scale-105 transition-transform">
+                <div className="w-0 h-0 border-l-[16px] sm:border-l-[18px] border-l-black border-y-[11px] sm:border-y-[12px] border-y-transparent ml-1.5" />
               </div>
-              <div className="text-[10px] font-mono uppercase tracking-[0.15em] text-white/80 mb-1">Book a call</div>
-              <div className="text-[15px] sm:text-[17px] font-semibold text-white text-center px-6">
+              <div className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.18em] text-white/85 mb-2">
+                Book a call
+              </div>
+              <div className="text-[18px] sm:text-[22px] font-semibold text-white text-center px-6 leading-tight max-w-[640px]">
                 See a live ERP implementation by Source on call
               </div>
-              <div className="text-[11px] text-white/60 mt-2">
+              <div className="text-[12px] sm:text-[13px] text-white/70 mt-2">
                 Real QuickBooks → NetSuite · Real data · Real config
               </div>
             </div>
-          </div>
+          </a>
         </div>
 
         {/* ── Pricing — Send SOW. Get AI Price. Charge Client. ─────────────── */}
