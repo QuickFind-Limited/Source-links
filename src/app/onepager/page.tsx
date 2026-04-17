@@ -220,35 +220,8 @@ export default function OnePagerPage() {
                   <span className="text-black">85% of ERP implementation delivery</span>{" "}
                   — scanning, BRD generation, data migration, configuration, testing.
                 </p>
-                <p className="text-[14px] sm:text-[15px] text-black/50 mt-3 leading-[1.65]">
-                  Better contribution margins, faster delivery, win more deals, and offer
-                  fixed-price engagements. Your consultancy keeps the client relationship
-                  and presents it as your own methodology.
-                </p>
               </div>
 
-              {/* Recessed partner pitch box */}
-              <div className="bg-[#f5f5f3] border border-black/[0.08] px-6 sm:px-8 py-7 sm:py-8">
-                <div className="text-[10px] font-mono uppercase tracking-[0.15em] text-black/30 mb-5">
-                  The Partner Pitch
-                </div>
-                <p className="text-[18px] sm:text-[22px] italic leading-[1.55] text-black/65 mb-6">
-                  &ldquo;We handle the full ERP implementation end-to-end. You stay in
-                  control of the client, the deliverables carry your brand, and the
-                  economics work — you make{" "}
-                  <span className="not-italic font-semibold text-black">50%+ margin</span>{" "}
-                  on every engagement.&rdquo;
-                </p>
-                <div className="pt-5 border-t border-black/[0.07]">
-                  <div className="text-[15px] sm:text-[17px] font-semibold text-black/75 mb-1">
-                    No other provider offers this.
-                  </div>
-                  <div className="text-[13px] sm:text-[14px] text-black/40 leading-[1.6]">
-                    Traditional ERP implementations take 4–6 months and deliver ~20%
-                    margins. Source is a different category.
-                  </div>
-                </div>
-              </div>
             </div>
 
             {/* Black right sidebar */}

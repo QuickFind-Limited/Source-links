@@ -7,6 +7,8 @@ const nextConfig: NextConfig = {
     return [
       { source: "/financials-first", destination: "/financials", permanent: true },
       { source: "/fionancials", destination: "/financials", permanent: true },
+      { source: "/salora-healthcheck", destination: "/healthcheck", permanent: true },
+      { source: "/health-check", destination: "/healthcheck", permanent: true },
     ];
   },
   async rewrites() {

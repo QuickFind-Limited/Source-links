@@ -46,6 +46,22 @@ export default function HomePage() {
             Talk to us
           </a>
         </div>
+
+        {/* Partner quote */}
+        <figure className="mt-16 md:mt-20 max-w-[640px] px-6 text-center">
+          <blockquote className="text-[18px] md:text-[22px] italic leading-[1.55] text-black/60 tracking-[-0.01em]">
+            &ldquo;Source handles the materials, the configuration, the full ERP
+            implementation end-to-end. We focus on the upsell and the client
+            experience — and we&rsquo;re finally able to{" "}
+            <span className="not-italic font-semibold text-black">
+              scale our services firm with Source
+            </span>{" "}
+            without scaling headcount.&rdquo;
+          </blockquote>
+          <figcaption className="mt-4 font-mono text-[11px] md:text-[12px] uppercase tracking-[0.15em] text-black/35">
+            COO · California Services Firm · Source Partner
+          </figcaption>
+        </figure>
       </div>
 
       {/* LinkedIn icon — bottom right */}

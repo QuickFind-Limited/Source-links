@@ -583,12 +583,15 @@ export default function FinancialsFirstPage() {
         </div>
 
         {/* Subtitle */}
-        <div className="mb-6">
+        <div className="mb-7">
           <div className="text-[13px] sm:text-[14px] font-mono uppercase tracking-[0.08em] text-black/40 mb-1">
-            Partner Pricing, Scope & Terms of Engagement
+            Partner Pricing, Scope & Terms
           </div>
-          <p className="text-[17px] sm:text-[20px] italic text-black/55 leading-[1.5]">
-            Scale your finance-heavy implementations with AI and make 50%+ margin.
+          <h1 className="text-[30px] sm:text-[44px] font-semibold tracking-[-0.03em] text-black leading-[1.03] mb-4 max-w-[900px]">
+            The AI engine behind your financials practice.
+          </h1>
+          <p className="text-[17px] sm:text-[21px] italic text-black/55 leading-[1.5] max-w-[780px]">
+            We automate financials implementations with AI. You keep the client, the brand, and make 50%+ margins.
           </p>
         </div>
 
@@ -635,34 +638,10 @@ export default function FinancialsFirstPage() {
           <div className="flex flex-col md:flex-row">
             <div className="md:flex-1 p-4 sm:p-6 md:border-r border-b md:border-b-0 border-black/[0.06] flex flex-col">
               {/* Value prop */}
-              <div className="border-2 border-black/[0.08] rounded-sm px-6 sm:px-8 py-5 sm:py-6 mb-5">
+              <div className="border-2 border-black/[0.08] rounded-sm px-6 sm:px-8 py-6 sm:py-8 mb-4">
                 <p className="text-[20px] sm:text-[24px] md:text-[28px] font-semibold text-black/90 leading-[1.35]">
                   Complete financials implementations with Source AI for a fixed price, in under 30 days
                 </p>
-                <p className="text-[15px] sm:text-[16px] text-black/50 mt-3 leading-[1.65]">
-                  Discovery through go-live in under 30 days. Source AI handles all technical delivery — you keep the client relationship.
-                </p>
-              </div>
-
-              {/* Partner pitch */}
-              <div className="bg-[#f7f7f5] border border-black/[0.08] rounded-sm px-6 sm:px-9 py-7 sm:py-9 mb-2">
-                <div className="text-[11px] font-mono uppercase tracking-[0.14em] text-black/30 mb-5">
-                  What You Can Tell Your Clients
-                </div>
-                <p className="text-[20px] sm:text-[25px] md:text-[27px] italic leading-[1.55] text-black/70 mb-7">
-                  &ldquo;We can get you off your system and fully live on NetSuite Financials in under{" "}
-                  <span className="not-italic font-semibold text-black">30 days</span> for{" "}
-                  <span className="not-italic font-semibold text-black">$9K</span>, no
-                  hourly billing, no scope creep, no surprises.&rdquo;
-                </p>
-                <div className="pt-5 border-t border-black/[0.08]">
-                  <div className="text-[16px] sm:text-[18px] font-semibold text-black/80 mb-1">
-                    No other provider offers this.
-                  </div>
-                  <div className="text-[14px] sm:text-[15px] text-black/40 mt-1 leading-[1.6]">
-                    Traditional financials-only implementations are not at this price or speed.
-                  </div>
-                </div>
               </div>
 
               {/* Logos — pushed to bottom */}

@@ -74,7 +74,7 @@ export async function middleware(request: NextRequest) {
     pathname.startsWith("/pricing") ||
     pathname.startsWith("/financials") ||
     pathname.startsWith("/fixed-fee") ||
-    pathname.startsWith("/salora-healthcheck") ||
+    pathname.startsWith("/healthcheck") ||
     pathname.startsWith("/get-quote") ||
     pathname.startsWith("/api/export") ||
     pathname.startsWith("/api/ping") ||

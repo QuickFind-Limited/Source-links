@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-const title = "ERP Implementations Under 30 Days for Less Than $10K";
+const title = "ERP Implementations Under 30 Days with AI for Less Than $10K";
 const description =
   "Fixed-fee ERP financials implementations — discovery through go-live in under 30 days for less than $10K. No hourly billing, no scope creep.";
 const url = "https://www.source.shop/financials";
