@@ -738,17 +738,28 @@ export default function OnePagerPage() {
 
           {/* Team photo strip */}
           <div className="px-5 sm:px-8 py-6 sm:py-7">
-            <div className="flex items-center -space-x-3">
-              {TEAM_PHOTOS.map(({ src, name }) => (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  key={name}
-                  src={src}
-                  alt={name}
-                  title={name}
-                  className="w-14 h-14 sm:w-16 sm:h-16 rounded-full object-cover ring-[3px] ring-white border border-black/[0.08] shadow-sm grayscale hover:grayscale-0 hover:scale-105 transition-all"
-                />
-              ))}
+            <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
+              <div className="flex items-center -space-x-3 shrink-0">
+                {TEAM_PHOTOS.map(({ src, name }) => (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    key={name}
+                    src={src}
+                    alt={name}
+                    title={name}
+                    className="w-14 h-14 sm:w-16 sm:h-16 rounded-full object-cover ring-[3px] ring-white border border-black/[0.08] shadow-sm grayscale hover:grayscale-0 hover:scale-105 transition-all"
+                  />
+                ))}
+              </div>
+              <div className="flex items-center gap-2.5 min-w-0">
+                <span className="inline-flex items-center gap-1.5 text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.16em] font-bold text-[#15803d] bg-[#16a34a]/[0.10] border border-[#16a34a]/25 px-2.5 py-1 rounded-full shrink-0">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#16a34a]" aria-hidden />
+                  Live
+                </span>
+                <p className="text-[14px] sm:text-[16px] text-black/70 font-medium tracking-tight leading-snug">
+                  Join the <span className="font-semibold text-black">20+ firms</span> already using Source.
+                </p>
+              </div>
             </div>
           </div>
 
