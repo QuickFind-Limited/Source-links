@@ -179,7 +179,7 @@ export default function OnePagerPage() {
           <p className="text-[22px] sm:text-[30px] font-semibold tracking-[-0.02em] text-black leading-[1.15] mb-3 max-w-[780px]">
             The go-to AI partner for ERP VARs &amp; Firms.
           </p>
-          <p className="text-[17px] sm:text-[21px] italic text-black/55 leading-[1.5] max-w-[780px]">
+          <p className="text-[20px] sm:text-[26px] italic text-black/65 leading-[1.5] max-w-[880px]">
             We automate ERP implementations with AI. You keep the client, the
             brand, and you make{" "}
             <span className="not-italic font-semibold text-black">50%+ margins.</span>
@@ -229,11 +229,11 @@ export default function OnePagerPage() {
                 <div className="text-[10px] font-mono uppercase tracking-[0.15em] text-black/35 mb-5">
                   What Partners Are Saying
                 </div>
-                <p className="text-[17px] sm:text-[19px] md:text-[20px] leading-[1.55] text-black/75 mb-7 tracking-[-0.005em]">
+                <p className="text-[20px] sm:text-[24px] md:text-[26px] italic leading-[1.5] text-black/80 mb-7 tracking-[-0.01em]">
                   &ldquo;Source handles the materials, the configuration, the full ERP
                   implementation end-to-end. We focus on the upsell, the client experience, the
                   relationship — and we&apos;re finally able to{" "}
-                  <span className="font-semibold text-black">
+                  <span className="not-italic font-semibold text-black">
                     scale our services firm with Source
                   </span>{" "}
                   without scaling headcount.&rdquo;
@@ -257,17 +257,14 @@ export default function OnePagerPage() {
                 Sub 21 Days
               </div>
               <div className="h-px bg-white/[0.22] mb-4" />
-              <div className="grid grid-cols-2 md:grid-cols-1 gap-2.5 md:gap-0 md:space-y-3">
-                {SOURCE_ENGINE_STEPS.map(({ label, Icon }, i) => (
-                  <div key={label} className="flex items-center gap-2.5">
-                    <span className="text-[10px] font-mono tracking-[0.08em] text-white/35 w-[18px] shrink-0">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
+              <div className="grid grid-cols-2 md:grid-cols-1 gap-3 md:gap-0 md:space-y-3.5">
+                {SOURCE_ENGINE_STEPS.map(({ label, Icon }) => (
+                  <div key={label} className="flex items-center gap-3">
                     <Icon
-                      className="w-3.5 h-3.5 text-white/55 shrink-0"
+                      className="w-4 h-4 text-white/65 shrink-0"
                       strokeWidth={1.75}
                     />
-                    <span className="text-[13px] sm:text-[14px] font-medium text-white/90">
+                    <span className="text-[14px] sm:text-[15px] font-medium text-white">
                       {label}
                     </span>
                   </div>
@@ -411,14 +408,11 @@ export default function OnePagerPage() {
                   Sub 21 Days · End-to-end
                 </div>
               </div>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-4 gap-y-2.5 sm:gap-y-3">
-                {SOURCE_ENGINE_STEPS.map(({ label, Icon }, i) => (
-                  <div key={label} className="flex items-center gap-2 min-w-0">
-                    <span className="text-[9px] font-mono text-white/35 w-[18px] shrink-0">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <Icon className="w-3.5 h-3.5 text-white/45 shrink-0" strokeWidth={1.75} />
-                    <span className="text-[11px] sm:text-[12px] font-medium text-white/90 truncate">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-5 gap-y-3 sm:gap-y-4">
+                {SOURCE_ENGINE_STEPS.map(({ label, Icon }) => (
+                  <div key={label} className="flex items-center gap-2.5 min-w-0">
+                    <Icon className="w-4 h-4 sm:w-[18px] sm:h-[18px] text-white/65 shrink-0" strokeWidth={1.75} />
+                    <span className="text-[13px] sm:text-[14.5px] font-medium text-white truncate">
                       {label}
                     </span>
                   </div>
@@ -476,18 +470,18 @@ export default function OnePagerPage() {
               ))}
             </div>
 
-            <div className="border border-black/[0.08] rounded-sm p-4 sm:p-6 bg-white">
-              <div className="text-[10px] font-mono uppercase tracking-[0.15em] text-black/35 mb-4">
+            <div className="border-2 border-black/[0.08] rounded-sm p-5 sm:p-7 bg-[#fafafa]">
+              <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.18em] text-black/55 font-bold mb-5">
                 What was delivered
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3.5">
                 {CASE_STUDY_DELIVERED.map((item) => (
-                  <div key={item} className="flex items-start gap-2.5">
+                  <div key={item} className="flex items-start gap-3">
                     <Check
-                      className="w-4 h-4 shrink-0 mt-0.5 text-[#16a34a]/80"
+                      className="w-5 h-5 shrink-0 mt-0.5 text-[#16a34a]"
                       strokeWidth={2.5}
                     />
-                    <span className="text-[14px] sm:text-[15px] text-black/75 leading-[1.55]">
+                    <span className="text-[15px] sm:text-[17px] text-black/85 leading-[1.5] font-medium">
                       {item}
                     </span>
                   </div>
@@ -511,10 +505,18 @@ export default function OnePagerPage() {
               />
             ))}
           </div>
-          <p className="text-[12px] sm:text-[13px] text-black/45 mt-5 leading-relaxed max-w-[820px]">
-            We routinely ingest messy sources — spreadsheets, CSV exports, legacy databases,
-            and ad-hoc files — not just clean API feeds.
-          </p>
+          <div className="mt-6 pt-5 border-t border-black/[0.06]">
+            <div className="text-[11px] font-mono uppercase tracking-[0.14em] text-black/45 font-bold mb-2.5">
+              Source ingests anything
+            </div>
+            <p className="text-[14px] sm:text-[16px] text-black/70 leading-[1.6] max-w-[920px]">
+              Not just clean API feeds — we handle messy{" "}
+              <span className="font-semibold text-black">spreadsheets, CSVs, Excel files,
+              Google Sheets, legacy databases, PDFs, JSON exports, custom in-house systems</span>{" "}
+              and ad-hoc files. Whatever data lives in the client&apos;s current setup, Source AI
+              maps, normalises, and migrates it.
+            </p>
+          </div>
         </div>
 
         {/* ── See it in action ────────────────────────────────────────────── */}
@@ -591,18 +593,18 @@ export default function OnePagerPage() {
               </div>
             </div>
 
-            {/* Soft overlay + play */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-b from-black/0 via-black/[0.18] to-black/45 transition-colors group-hover:via-black/[0.22] group-hover:to-black/55">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/95 flex items-center justify-center shadow-[0_10px_30px_-8px_rgba(0,0,0,0.45)] mb-4 group-hover:scale-105 transition-transform">
-                <div className="w-0 h-0 border-l-[16px] sm:border-l-[18px] border-l-black border-y-[11px] sm:border-y-[12px] border-y-transparent ml-1.5" />
+            {/* Strong overlay + play */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-b from-black/55 via-black/65 to-black/80 transition-colors group-hover:from-black/65 group-hover:via-black/75 group-hover:to-black/85">
+              <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-white flex items-center justify-center shadow-[0_18px_40px_-10px_rgba(0,0,0,0.6)] mb-5 group-hover:scale-105 transition-transform">
+                <div className="w-0 h-0 border-l-[20px] sm:border-l-[22px] border-l-black border-y-[13px] sm:border-y-[14px] border-y-transparent ml-1.5" />
               </div>
-              <div className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.18em] text-white/85 mb-2">
+              <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.20em] text-white/80 mb-3">
                 Book a call
               </div>
-              <div className="text-[18px] sm:text-[22px] font-semibold text-white text-center px-6 leading-tight max-w-[640px]">
+              <div className="text-[22px] sm:text-[28px] font-semibold text-white text-center px-6 leading-tight max-w-[720px]">
                 See a live ERP implementation by Source on call
               </div>
-              <div className="text-[12px] sm:text-[13px] text-white/70 mt-2">
+              <div className="text-[13px] sm:text-[14px] text-white/75 mt-3 text-center px-6">
                 Real QuickBooks → NetSuite · Real data · Real config
               </div>
             </div>
@@ -610,16 +612,17 @@ export default function OnePagerPage() {
         </div>
 
         {/* ── Pricing — Send SOW. Get AI Price. Charge Client. ─────────────── */}
-        <div className="bg-white border border-black/[0.08] p-4 sm:p-6 mb-6">
-          <div className="text-[10px] font-mono uppercase tracking-[0.15em] text-black/30 mb-2">
-            Pricing
+        <div className="bg-[#f5f5f3] border-2 border-black p-6 sm:p-10 mb-6 shadow-[0_24px_60px_-24px_rgba(0,0,0,0.25)]">
+          <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.18em] text-black font-bold mb-3">
+            Partner Pricing
           </div>
-          <div className="text-[22px] sm:text-[30px] font-semibold tracking-[-0.02em] text-black mb-2 leading-[1.1]">
+          <div className="text-[30px] sm:text-[44px] font-semibold tracking-[-0.025em] text-black mb-3 leading-[1.05]">
             Send SOW. Get AI Price. Charge Client.
           </div>
-          <div className="text-[13px] sm:text-[15px] text-black/45 leading-[1.65] mb-6 max-w-[720px]">
-            No quoting calls, no scoping workshops, no T&amp;M surprises. Three
-            steps from SOW to invoice.
+          <div className="text-[15px] sm:text-[18px] text-black/65 leading-[1.55] mb-8 max-w-[820px]">
+            No quoting calls, no scoping workshops, no T&amp;M surprises. Three steps from SOW
+            to invoice — <span className="font-semibold text-black">you mark up to whatever
+            your client will pay</span> and keep the margin.
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr_auto_1fr] gap-3 md:gap-0 items-stretch">
@@ -654,11 +657,11 @@ export default function OnePagerPage() {
           </div>
 
           {/* Example quote */}
-          <div className="border border-black/[0.08] mt-5 overflow-hidden">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 px-4 sm:px-5 py-3.5 bg-[#fafafa] border-b border-black/[0.08]">
-              <div className="flex flex-wrap items-center gap-2 sm:gap-3">
-                <span className="text-[10px] font-mono uppercase tracking-[0.12em] text-black/40 font-semibold">
-                  Example Quote
+          <div className="border-2 border-black/[0.10] mt-6 overflow-hidden bg-white shadow-sm">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 px-5 sm:px-6 py-4 bg-white border-b-2 border-dashed border-black/[0.18]">
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.18em] text-black font-bold">
+                  Example Only · Illustrative Quote
                 </span>
                 <span className="inline-flex items-center gap-1.5 text-[9px] font-mono uppercase tracking-[0.08em] font-bold text-[#15803d] bg-[#16a34a]/[0.08] border border-[#16a34a]/[0.25] px-2 py-1 rounded-full">
                   <span className="w-1 h-1 rounded-full bg-[#16a34a]" />
@@ -666,56 +669,56 @@ export default function OnePagerPage() {
                 </span>
               </div>
               <div className="text-[10px] font-mono text-black/35 tracking-tight">
-                Quote #Q-2026-0412 · QBO → NetSuite
+                Sample · QBO → NetSuite
               </div>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-black/[0.08]">
-              <div className="px-4 sm:px-6 py-5">
-                <div className="text-[10px] font-mono uppercase tracking-[0.12em] text-black/40 mb-2">
+              <div className="px-5 sm:px-7 py-6">
+                <div className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.14em] text-black/45 font-bold mb-2.5">
                   Source AI fee
                 </div>
-                <div className="text-[28px] sm:text-[32px] font-semibold tracking-tight text-black">
+                <div className="text-[32px] sm:text-[40px] font-bold tracking-tight text-black leading-none">
                   $9,500
                 </div>
-                <div className="text-[12px] text-black/45 mt-1">
+                <div className="text-[12px] sm:text-[13px] text-black/55 mt-2">
                   Fixed price · discovery → go-live
                 </div>
               </div>
-              <div className="px-4 sm:px-6 py-5">
-                <div className="text-[10px] font-mono uppercase tracking-[0.12em] text-black/40 mb-2">
-                  Your markup
+              <div className="px-5 sm:px-7 py-6 bg-[#f7faf7]">
+                <div className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.14em] text-black/45 font-bold mb-2.5">
+                  Your markup <span className="text-[#16a34a]">(you decide)</span>
                 </div>
-                <div className="text-[28px] sm:text-[32px] font-semibold tracking-tight text-black">
-                  $9,500
+                <div className="text-[32px] sm:text-[40px] font-bold tracking-tight text-black leading-none">
+                  +$9,500
                 </div>
-                <div className="text-[12px] font-semibold text-[#16a34a] mt-1">
-                  50% margin retained
+                <div className="text-[12px] sm:text-[13px] font-semibold text-[#16a34a] mt-2">
+                  Mark up to whatever your client will pay
                 </div>
               </div>
-              <div className="px-4 sm:px-6 py-5 bg-black text-white flex flex-col justify-center">
-                <div className="text-[10px] font-mono uppercase tracking-[0.12em] text-white/50 mb-2">
+              <div className="px-5 sm:px-7 py-6 bg-black text-white flex flex-col justify-center">
+                <div className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.14em] text-white/55 font-bold mb-2.5">
                   Client pays
                 </div>
-                <div className="text-[28px] sm:text-[32px] font-semibold tracking-tight">
+                <div className="text-[32px] sm:text-[40px] font-bold tracking-tight leading-none">
                   $19,000
                 </div>
-                <div className="text-[11px] sm:text-[12px] text-white/55 mt-1 leading-snug">
+                <div className="text-[12px] sm:text-[13px] text-white/65 mt-2 leading-snug">
                   93–95% below traditional ($150K–$250K)
                 </div>
               </div>
             </div>
-            <div className="px-4 sm:px-5 py-4 bg-[#fafafa] border-t border-black/[0.06]">
-              <div className="text-[10px] font-mono uppercase tracking-[0.12em] text-black/35 mb-3">
-                What&apos;s included
+            <div className="px-5 sm:px-6 py-5 bg-[#fafafa] border-t border-black/[0.08]">
+              <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.16em] text-black/55 font-bold mb-3.5">
+                What&apos;s included in the Source AI fee
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
                 {PRICING_WHATS_INCLUDED.map((item) => (
-                  <div key={item} className="flex items-start gap-2.5">
+                  <div key={item} className="flex items-start gap-3">
                     <Check
-                      className="w-4 h-4 shrink-0 mt-0.5 text-[#16a34a]/70"
+                      className="w-4 h-4 shrink-0 mt-0.5 text-[#16a34a]"
                       strokeWidth={2.5}
                     />
-                    <span className="text-[13px] sm:text-[14px] text-black/70 leading-snug">
+                    <span className="text-[14px] sm:text-[15px] text-black/80 leading-[1.5] font-medium">
                       {item}
                     </span>
                   </div>
@@ -724,22 +727,31 @@ export default function OnePagerPage() {
             </div>
           </div>
 
-          <div className="flex items-stretch bg-black text-white mt-5 rounded-sm overflow-hidden border border-black">
-            <div className="px-5 sm:px-7 py-5 border-r border-white/[0.12] flex flex-col items-center justify-center min-w-[120px] shrink-0">
-              <div className="text-[26px] sm:text-[32px] font-bold leading-none tracking-tight">FREE</div>
-              <div className="text-[9px] font-mono uppercase tracking-[0.18em] text-white/45 mt-2">Pilot</div>
+          {/* Start scoping CTA */}
+          <a
+            href="https://cal.com/source-ai/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-stretch bg-black text-white mt-6 overflow-hidden border-2 border-black hover:bg-[#0e0e0e] transition-colors"
+          >
+            <div className="px-5 sm:px-7 py-5 sm:py-6 border-r border-white/[0.14] flex flex-col items-center justify-center min-w-[130px] shrink-0">
+              <div className="text-[28px] sm:text-[36px] font-bold leading-none tracking-tight">FREE</div>
+              <div className="text-[10px] font-mono uppercase tracking-[0.18em] text-white/55 mt-2 font-bold">Pilot</div>
             </div>
-            <div className="flex-1 px-5 sm:px-7 py-5 flex flex-col justify-center min-w-0">
-              <div className="text-[15px] sm:text-[17px] font-semibold mb-1">
-                Your first pilot is on us.
+            <div className="flex-1 px-5 sm:px-7 py-5 sm:py-6 flex flex-col justify-center min-w-0">
+              <div className="text-[18px] sm:text-[22px] font-semibold mb-1.5">
+                Send us a SOW — start scoping with Source.
               </div>
-              <div className="text-[12px] sm:text-[13px] text-white/55 leading-[1.55]">
-                Send us your first SOW — Source AI will scope it, scan the client&apos;s systems, and ship a working
-                pilot. No cost, no commitment.
+              <div className="text-[13px] sm:text-[14.5px] text-white/65 leading-[1.55]">
+                Your first pilot is on us. Source AI scopes it, scans the client&apos;s systems,
+                and ships a working pilot. No cost, no commitment.
               </div>
             </div>
-          </div>
-          <p className="text-center text-[10px] font-mono uppercase tracking-[0.1em] text-black/35 mt-4 px-2">
+            <div className="hidden sm:flex items-center px-6 sm:px-8 border-l border-white/[0.14] text-[12px] font-mono uppercase tracking-[0.12em] font-bold whitespace-nowrap group-hover:text-white text-white/85">
+              Start Scoping →
+            </div>
+          </a>
+          <p className="text-center text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.14em] text-black/45 mt-4 px-2 font-bold">
             Fixed price, locked quote upfront — returned within 24 hours of SOW submission.
           </p>
         </div>
