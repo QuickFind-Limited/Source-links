@@ -722,38 +722,40 @@ export default function FinancialsFirstPage() {
             Example prices partners can quote to clients. Source AI cost is the platform fee invoiced to the partner.
           </div>
 
-          {/* Table */}
-          <div className="border border-black/[0.08] rounded-sm overflow-hidden mb-4">
-            <div className="grid grid-cols-3 bg-[#f5f5f3] border-b border-black/[0.08]">
-              <div className="px-4 sm:px-6 py-4 sm:py-5 text-[12px] sm:text-[13px] font-mono uppercase tracking-[0.10em] font-bold text-black/50">
-                Price (Quoted to Client)
+          {/* Table — horizontally scrolls on very narrow phones instead of crushing columns */}
+          <div className="border border-black/[0.08] rounded-sm overflow-hidden mb-4 overflow-x-auto">
+            <div className="min-w-[560px]">
+              <div className="grid grid-cols-3 bg-[#f5f5f3] border-b border-black/[0.08]">
+                <div className="px-4 sm:px-6 py-4 sm:py-5 text-[12px] sm:text-[13px] font-mono uppercase tracking-[0.10em] font-bold text-black/50">
+                  Price (Quoted to Client)
+                </div>
+                <div className="px-4 sm:px-6 py-4 sm:py-5 text-[12px] sm:text-[13px] font-mono uppercase tracking-[0.10em] font-bold text-black/50 border-l border-black/[0.06]">
+                  Source AI Cost
+                </div>
+                <div className="px-4 sm:px-6 py-4 sm:py-5 text-[12px] sm:text-[13px] font-mono uppercase tracking-[0.10em] font-bold text-black/50 border-l border-black/[0.06]">
+                  Example Margin
+                </div>
               </div>
-              <div className="px-4 sm:px-6 py-4 sm:py-5 text-[12px] sm:text-[13px] font-mono uppercase tracking-[0.10em] font-bold text-black/50 border-l border-black/[0.06]">
-                Source AI Cost
-              </div>
-              <div className="px-4 sm:px-6 py-4 sm:py-5 text-[12px] sm:text-[13px] font-mono uppercase tracking-[0.10em] font-bold text-black/50 border-l border-black/[0.06]">
-                Example Margin
-              </div>
+              {PRICING_TABLE.map((row, i) => (
+                <div
+                  key={i}
+                  className={`grid grid-cols-3 ${i % 2 === 0 ? "bg-white" : "bg-[#fafafa]"} ${
+                    i < PRICING_TABLE.length - 1 ? "border-b border-black/[0.06]" : ""
+                  }`}
+                >
+                  <div className="px-4 sm:px-5 py-3.5 text-[14px] sm:text-[16px] text-black/80 font-medium whitespace-nowrap">
+                    {row.client}
+                  </div>
+                  <div className="px-4 sm:px-5 py-3.5 text-[14px] sm:text-[16px] text-black/50 border-l border-black/[0.06] whitespace-nowrap">
+                    {row.source}
+                  </div>
+                  <div className="px-4 sm:px-5 py-3.5 text-[14px] sm:text-[16px] font-semibold border-l border-black/[0.06] whitespace-nowrap">
+                    <span className="text-black">{row.margin}</span>
+                    {row.pct && <span className="text-[#16a34a] ml-2">({row.pct})</span>}
+                  </div>
+                </div>
+              ))}
             </div>
-            {PRICING_TABLE.map((row, i) => (
-              <div
-                key={i}
-                className={`grid grid-cols-3 ${i % 2 === 0 ? "bg-white" : "bg-[#fafafa]"} ${
-                  i < PRICING_TABLE.length - 1 ? "border-b border-black/[0.06]" : ""
-                }`}
-              >
-                <div className="px-4 sm:px-5 py-3.5 text-[14px] sm:text-[16px] text-black/80 font-medium">
-                  {row.client}
-                </div>
-                <div className="px-4 sm:px-5 py-3.5 text-[14px] sm:text-[16px] text-black/50 border-l border-black/[0.06]">
-                  {row.source}
-                </div>
-                <div className="px-4 sm:px-5 py-3.5 text-[14px] sm:text-[16px] font-semibold border-l border-black/[0.06]">
-                  <span className="text-black">{row.margin}</span>
-                  {row.pct && <span className="text-[#16a34a] ml-2">({row.pct})</span>}
-                </div>
-              </div>
-            ))}
           </div>
 
           {/* Supported Industries */}
@@ -820,7 +822,7 @@ export default function FinancialsFirstPage() {
               </div>
 
               {/* Agent activity strip — illustrative snapshot of what AI agents produce per phase */}
-              <div className="mt-4 grid grid-cols-2 sm:grid-cols-5 gap-1.5">
+              <div className="mt-4 grid grid-cols-2 md:grid-cols-5 gap-1.5">
                 {[
                   {
                     phase: "Scope",
@@ -1062,7 +1064,7 @@ export default function FinancialsFirstPage() {
                   </div>
                 </div>
               </div>
-              <span className="inline-flex items-center gap-1.5 text-[12px] sm:text-[13px] font-mono uppercase tracking-[0.08em] text-white whitespace-nowrap shrink-0 bg-white/[0.12] group-hover:bg-white/[0.20] transition-colors px-3.5 py-2.5 rounded-sm font-bold">
+              <span className="hidden sm:inline-flex items-center gap-1.5 text-[12px] sm:text-[13px] font-mono uppercase tracking-[0.08em] text-white whitespace-nowrap shrink-0 bg-white/[0.12] group-hover:bg-white/[0.20] transition-colors px-3.5 py-2.5 rounded-sm font-bold">
                 Book a Call <ArrowRight className="w-4 h-4" strokeWidth={2} />
               </span>
             </a>
