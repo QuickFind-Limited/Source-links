@@ -557,7 +557,7 @@ export default function FinancialsFirstPage() {
           </span>
           <div className="flex items-center gap-3 sm:gap-4">
             <div className="text-[14px] sm:text-[22px] font-mono uppercase tracking-[0.06em] text-black/70 font-bold">
-              AI Financials Implementation
+              Go to AI partner for ERP VARs &amp; Firms
             </div>
           </div>
         </div>
