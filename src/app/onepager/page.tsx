@@ -664,27 +664,27 @@ export default function OnePagerPage() {
           <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr_auto_1fr] gap-3 md:gap-0 items-stretch">
             {PRICING_STEPS.map(({ n, title, body, Icon }, i) => (
               <React.Fragment key={n}>
-                <div className="border border-black/[0.08] bg-white p-5 sm:p-6 flex flex-col">
-                  <div className="flex items-start justify-between mb-5">
-                    <div className="w-9 h-9 bg-black flex items-center justify-center">
+                <div className="border-[1.5px] border-black/[0.14] bg-white p-6 sm:p-7 flex flex-col rounded-sm shadow-[0_1px_0_0_rgba(0,0,0,0.03)]">
+                  <div className="flex items-start justify-between mb-5 sm:mb-6">
+                    <div className="w-11 h-11 bg-black flex items-center justify-center rounded-sm">
                       <Icon
-                        className="w-4 h-4 text-white"
-                        strokeWidth={1.75}
+                        className="w-5 h-5 text-white"
+                        strokeWidth={2}
                       />
                     </div>
-                    <div className="text-[10px] font-mono tracking-[0.12em] text-black/30">
+                    <div className="text-[11px] sm:text-[12px] font-mono tracking-[0.18em] text-black/40 font-bold">
                       {n}
                     </div>
                   </div>
-                  <div className="text-[15px] sm:text-[17px] font-semibold text-black mb-2">
+                  <div className="text-[18px] sm:text-[22px] font-semibold text-black mb-2.5 tracking-[-0.005em] leading-tight">
                     {title}
                   </div>
-                  <div className="text-[13px] sm:text-[14px] text-black/50 leading-[1.6]">
+                  <div className="text-[14px] sm:text-[15px] text-black/60 leading-[1.65]">
                     {body}
                   </div>
                 </div>
                 {i < PRICING_STEPS.length - 1 && (
-                  <div className="hidden md:flex items-center justify-center px-3 text-black/25 text-[18px]">
+                  <div className="hidden md:flex items-center justify-center px-3 text-black/35 text-[22px] font-semibold">
                     →
                   </div>
                 )}
