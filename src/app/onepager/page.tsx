@@ -293,44 +293,45 @@ export default function OnePagerPage() {
         </div>
 
         {/* ── Before / After flow ─────────────────────────────────────────── */}
-        <div className="bg-white border border-black/[0.08] p-4 sm:p-6 mb-6">
-          <SectionLabel>How It Works — Before & After</SectionLabel>
+        <div className="bg-white border border-black/[0.08] p-5 sm:p-8 mb-6">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-1 h-5 bg-black shrink-0" />
+            <div className="text-[12px] sm:text-[13px] font-mono uppercase tracking-[0.18em] text-black font-bold">
+              How It Works — Before &amp; After
+            </div>
+            <div className="flex-1 h-px bg-black/[0.07]" />
+          </div>
 
           {/* Before */}
-          <div className="mb-5">
-            <div className="text-[10px] font-mono uppercase tracking-[0.12em] text-black/30 font-semibold mb-3">
+          <div className="mb-7">
+            <div className="text-[12px] sm:text-[13px] font-mono uppercase tracking-[0.14em] text-black/45 font-bold mb-4">
               Before
             </div>
-            <div className="flex flex-wrap items-center gap-2">
-              {/* End Client */}
-              <div className="flex items-center gap-1.5 px-3.5 py-2.5 border border-black/[0.10] text-[13px] font-medium text-black/65">
-                <Users className="w-3.5 h-3.5 text-black/40 shrink-0" strokeWidth={1.75} />
+            <div className="flex flex-wrap items-center gap-2.5">
+              <div className="flex items-center gap-2 px-4 py-3 border border-black/[0.12] text-[14px] sm:text-[15px] font-medium text-black/75">
+                <Users className="w-4 h-4 text-black/50 shrink-0" strokeWidth={1.75} />
                 End Client
               </div>
-              <span className="text-black/20 text-[14px]">→</span>
-              {/* Sales */}
-              <div className="flex items-center gap-1.5 px-3.5 py-2.5 border border-black/[0.10] text-[13px] font-medium text-black/65">
-                <Globe className="w-3.5 h-3.5 text-black/40 shrink-0" strokeWidth={1.75} />
+              <span className="text-black/30 text-[18px]">→</span>
+              <div className="flex items-center gap-2 px-4 py-3 border border-black/[0.12] text-[14px] sm:text-[15px] font-medium text-black/75">
+                <Globe className="w-4 h-4 text-black/50 shrink-0" strokeWidth={1.75} />
                 Sales
               </div>
-              <span className="text-black/20 text-[14px]">→</span>
-              {/* Solutions Architect — crossed */}
-              <div className="relative flex items-center gap-1.5 px-3.5 py-2.5 border border-black/[0.07] bg-black/[0.02] text-[13px] font-medium text-black/20 line-through decoration-red-400/50">
-                <Users className="w-3.5 h-3.5 shrink-0" strokeWidth={1.75} />
+              <span className="text-black/30 text-[18px]">→</span>
+              <div className="relative flex items-center gap-2 px-4 py-3 border border-black/[0.08] bg-black/[0.02] text-[14px] sm:text-[15px] font-medium text-black/30 line-through decoration-red-400/60">
+                <Users className="w-4 h-4 shrink-0" strokeWidth={1.75} />
                 Solutions Architect
-                <X className="absolute -top-1.5 -right-1.5 w-3 h-3 text-red-500/50 bg-white" strokeWidth={2.5} />
+                <X className="absolute -top-1.5 -right-1.5 w-3.5 h-3.5 text-red-500/70 bg-white" strokeWidth={2.5} />
               </div>
-              <span className="text-black/20 text-[14px]">→</span>
-              {/* Offshore Dev — crossed */}
-              <div className="relative flex items-center gap-1.5 px-3.5 py-2.5 border border-black/[0.07] bg-black/[0.02] text-[13px] font-medium text-black/20 line-through decoration-red-400/50">
-                <Database className="w-3.5 h-3.5 shrink-0" strokeWidth={1.75} />
+              <span className="text-black/30 text-[18px]">→</span>
+              <div className="relative flex items-center gap-2 px-4 py-3 border border-black/[0.08] bg-black/[0.02] text-[14px] sm:text-[15px] font-medium text-black/30 line-through decoration-red-400/60">
+                <Database className="w-4 h-4 shrink-0" strokeWidth={1.75} />
                 Offshore Dev Team
-                <X className="absolute -top-1.5 -right-1.5 w-3 h-3 text-red-500/50 bg-white" strokeWidth={2.5} />
+                <X className="absolute -top-1.5 -right-1.5 w-3.5 h-3.5 text-red-500/70 bg-white" strokeWidth={2.5} />
               </div>
-              <span className="text-black/20 text-[14px]">→</span>
-              {/* Done */}
-              <div className="flex items-center gap-1.5 px-3.5 py-2.5 border border-black/[0.10] text-[13px] font-medium text-black/65">
-                <Check className="w-3.5 h-3.5 text-black/40 shrink-0" strokeWidth={1.75} />
+              <span className="text-black/30 text-[18px]">→</span>
+              <div className="flex items-center gap-2 px-4 py-3 border border-black/[0.12] text-[14px] sm:text-[15px] font-medium text-black/75">
+                <Check className="w-4 h-4 text-black/50 shrink-0" strokeWidth={1.75} />
                 Done
               </div>
             </div>
@@ -338,89 +339,89 @@ export default function OnePagerPage() {
 
           {/* After — legacy → consultant → live system */}
           <div>
-            <div className="text-[10px] font-mono uppercase tracking-[0.12em] text-black/30 font-semibold mb-3">
+            <div className="text-[12px] sm:text-[13px] font-mono uppercase tracking-[0.14em] text-black/45 font-bold mb-4">
               After
             </div>
-            <div className="grid grid-cols-[1fr_24px_2fr_24px_1fr] items-stretch border border-black/[0.08] overflow-hidden bg-white">
+            <div className="grid grid-cols-[1fr_28px_2fr_28px_1fr] items-stretch border border-black/[0.10] overflow-hidden bg-white">
               {/* End Client */}
-              <div className="min-w-0 flex flex-col justify-center px-4 sm:px-6 py-5">
-                <div className="text-[9px] font-mono uppercase tracking-[0.10em] text-black/30 mb-1">
+              <div className="min-w-0 flex flex-col justify-center px-5 sm:px-7 py-7 sm:py-8">
+                <div className="text-[11px] font-mono uppercase tracking-[0.14em] text-black/45 font-bold mb-2">
                   End Client
                 </div>
-                <div className="text-[14px] sm:text-[15px] font-semibold text-black leading-tight">
+                <div className="text-[18px] sm:text-[20px] font-semibold text-black leading-tight">
                   Legacy System
                 </div>
               </div>
-              <div className="flex items-center justify-center text-black/25 text-[15px] border-l border-black/[0.08]">
+              <div className="flex items-center justify-center text-black/30 text-[20px] border-l border-black/[0.08]">
                 →
               </div>
 
               {/* Your Consultant — 2×2 grid */}
-              <div className="min-w-0 px-4 sm:px-6 py-5 border-l border-black/[0.08] flex flex-col justify-center">
-                <div className="text-[9px] font-mono uppercase tracking-[0.10em] text-black/30 mb-3">
+              <div className="min-w-0 px-5 sm:px-7 py-7 sm:py-8 border-l border-black/[0.08] flex flex-col justify-center">
+                <div className="text-[11px] font-mono uppercase tracking-[0.14em] text-black/45 font-bold mb-4">
                   Your Consultant
                 </div>
-                <div className="grid grid-cols-2 gap-x-6 gap-y-2.5">
+                <div className="grid grid-cols-2 gap-x-8 gap-y-3">
                   {CONSULTANT_AFTER_FLOW.map(({ label, Icon }) => (
-                    <div key={label} className="flex items-center gap-2 min-w-0">
-                      <Icon className="w-3.5 h-3.5 text-black/35 shrink-0" strokeWidth={1.75} />
-                      <span className="text-[12px] sm:text-[12.5px] text-black/55 leading-tight truncate">
+                    <div key={label} className="flex items-center gap-2.5 min-w-0">
+                      <Icon className="w-4 h-4 text-black/55 shrink-0" strokeWidth={1.75} />
+                      <span className="text-[14px] sm:text-[15px] text-black/75 leading-tight truncate font-medium">
                         {label}
                       </span>
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="flex items-center justify-center text-black/25 text-[15px] border-l border-black/[0.08]">
+              <div className="flex items-center justify-center text-black/30 text-[20px] border-l border-black/[0.08]">
                 →
               </div>
 
               {/* Live System */}
-              <div className="min-w-0 flex flex-col justify-center px-4 sm:px-6 py-5 border-l border-black/[0.08]">
-                <div className="text-[9px] font-mono uppercase tracking-[0.10em] text-emerald-700/90 mb-1 font-semibold">
+              <div className="min-w-0 flex flex-col justify-center px-5 sm:px-7 py-7 sm:py-8 border-l border-black/[0.08]">
+                <div className="text-[11px] font-mono uppercase tracking-[0.14em] text-emerald-700 mb-2 font-bold">
                   Live System
                 </div>
-                <div className="text-[14px] sm:text-[15px] font-semibold text-emerald-700 leading-tight">
+                <div className="text-[18px] sm:text-[20px] font-semibold text-emerald-700 leading-tight">
                   Target ERP
                 </div>
               </div>
             </div>
 
-            <div className="relative bg-[#fafafa] border-x border-b border-black/[0.08] flex flex-col items-center justify-center py-2.5">
-              <div className="text-[10px] font-mono uppercase tracking-[0.14em] text-black/35 font-semibold">
+            <div className="relative bg-[#fafafa] border-x border-b border-black/[0.10] flex flex-col items-center justify-center py-4">
+              <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.18em] text-black/55 font-bold">
                 Powered by
               </div>
-              <ChevronDown className="w-3.5 h-3.5 text-black/25 mt-0.5" strokeWidth={2.25} />
+              <ChevronDown className="w-4 h-4 text-black/35 mt-1" strokeWidth={2.25} />
             </div>
 
-            <div className="border border-t-0 border-black/[0.08] bg-black px-5 sm:px-7 py-5 sm:py-6">
-              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
+            <div className="border border-t-0 border-black/[0.10] bg-black px-6 sm:px-9 py-7 sm:py-8">
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-6">
                 <div>
-                  <div className="text-[9px] font-mono uppercase tracking-[0.12em] text-white/45 mb-1">
+                  <div className="text-[11px] font-mono uppercase tracking-[0.16em] text-white/55 mb-1.5 font-bold">
                     Powered by
                   </div>
-                  <div className="text-[15px] sm:text-[17px] font-mono uppercase tracking-[0.08em] text-white font-bold">
+                  <div className="text-[22px] sm:text-[26px] font-semibold tracking-tight text-white leading-tight">
                     Source AI Engine
                   </div>
                 </div>
-                <div className="inline-flex items-center gap-2 self-start text-[9px] font-mono uppercase tracking-[0.06em] bg-white text-black px-3 py-1.5 font-bold">
-                  <Clock className="w-3.5 h-3.5 text-black/70 shrink-0" strokeWidth={2} />
+                <div className="inline-flex items-center gap-2 self-start text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.08em] bg-white text-black px-4 py-2 font-bold">
+                  <Clock className="w-4 h-4 text-black/70 shrink-0" strokeWidth={2} />
                   Sub 21 Days · End-to-end
                 </div>
               </div>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-5 gap-y-3 sm:gap-y-4">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-4 sm:gap-y-5">
                 {SOURCE_ENGINE_STEPS.map(({ label, Icon }) => (
-                  <div key={label} className="flex items-center gap-2.5 min-w-0">
-                    <Icon className="w-4 h-4 sm:w-[18px] sm:h-[18px] text-white/65 shrink-0" strokeWidth={1.75} />
-                    <span className="text-[13px] sm:text-[14.5px] font-medium text-white truncate">
+                  <div key={label} className="flex items-center gap-3 min-w-0">
+                    <Icon className="w-5 h-5 text-white/75 shrink-0" strokeWidth={1.75} />
+                    <span className="text-[15px] sm:text-[17px] font-semibold text-white truncate">
                       {label}
                     </span>
                   </div>
                 ))}
               </div>
-              <div className="flex items-center gap-3 mt-5 pt-4 border-t border-white/[0.12]">
+              <div className="flex items-center gap-3 mt-7 pt-5 border-t border-white/[0.14]">
                 <div className="flex-1 h-px bg-white/[0.15]" />
-                <div className="text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.12em] text-white/40 whitespace-nowrap text-center">
+                <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.14em] text-white/55 whitespace-nowrap text-center font-bold">
                   85% AI-automated · ~12 hrs consultant review
                 </div>
                 <div className="flex-1 h-px bg-white/[0.15]" />
