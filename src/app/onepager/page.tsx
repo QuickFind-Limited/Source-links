@@ -613,29 +613,29 @@ export default function OnePagerPage() {
             </div>
 
             {/* App body */}
-            <div className="p-6 sm:p-10 lg:p-12 bg-white">
-              <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-8 lg:gap-12 items-start">
+            <div className="p-8 sm:p-14 lg:p-16 bg-white min-h-[360px] sm:min-h-[480px] lg:min-h-[560px]">
+              <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-10 lg:gap-16 items-start">
                 <div>
-                  <div className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.14em] text-black/40 mb-3">
+                  <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.16em] text-black/40 font-bold mb-4">
                     BRD v2 · Locked Quote
                   </div>
-                  <div className="text-[26px] sm:text-[34px] font-semibold tracking-tight text-black leading-tight mb-3">
+                  <div className="text-[30px] sm:text-[42px] font-semibold tracking-tight text-black leading-tight mb-4">
                     QuickBooks → NetSuite
                   </div>
-                  <div className="text-[40px] sm:text-[56px] font-bold tracking-[-0.03em] text-black leading-none mb-3">
+                  <div className="text-[48px] sm:text-[68px] lg:text-[76px] font-bold tracking-[-0.035em] text-black leading-[0.95] mb-4">
                     $7,000 – $11,500
                   </div>
-                  <p className="text-[13px] sm:text-[14px] text-black/55 leading-[1.6] max-w-[480px] mb-6">
+                  <p className="text-[14px] sm:text-[16px] text-black/55 leading-[1.6] max-w-[520px] mb-7">
                     Source AI implementation fee, fixed after sign-off. 93–95% below traditional
                     implementation ($150K–$250K).
                   </p>
-                  <div className="inline-flex items-center gap-2 border border-black/[0.12] bg-white px-3.5 py-2.5 text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.06em] text-black/65 rounded-sm">
-                    <Download className="w-3.5 h-3.5" strokeWidth={1.75} />
+                  <div className="inline-flex items-center gap-2 border border-black/[0.12] bg-white px-4 py-3 text-[12px] sm:text-[13px] font-mono uppercase tracking-[0.06em] text-black/65 rounded-sm">
+                    <Download className="w-4 h-4" strokeWidth={1.75} />
                     Download SOW + cost breakdown
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-2 gap-3.5">
                   {[
                     ["Edition", "OneWorld"],
                     ["Modules live", "24"],
@@ -644,12 +644,12 @@ export default function OnePagerPage() {
                   ].map(([k, v]) => (
                     <div
                       key={k}
-                      className="border border-black/[0.08] rounded-sm bg-white px-4 py-3.5"
+                      className="border border-black/[0.08] rounded-sm bg-white px-5 py-5"
                     >
-                      <div className="text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.12em] text-black/35 mb-1.5">
+                      <div className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.14em] text-black/40 font-bold mb-2">
                         {k}
                       </div>
-                      <div className="text-[18px] sm:text-[22px] font-semibold tracking-tight text-black leading-none">
+                      <div className="text-[22px] sm:text-[28px] font-bold tracking-tight text-black leading-none">
                         {v}
                       </div>
                     </div>
@@ -660,16 +660,16 @@ export default function OnePagerPage() {
 
             {/* Strong overlay + play */}
             <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-b from-black/55 via-black/65 to-black/80 transition-colors group-hover:from-black/65 group-hover:via-black/75 group-hover:to-black/85">
-              <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-white flex items-center justify-center shadow-[0_18px_40px_-10px_rgba(0,0,0,0.6)] mb-5 group-hover:scale-105 transition-transform">
-                <div className="w-0 h-0 border-l-[20px] sm:border-l-[22px] border-l-black border-y-[13px] sm:border-y-[14px] border-y-transparent ml-1.5" />
+              <div className="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-full bg-white flex items-center justify-center shadow-[0_22px_50px_-10px_rgba(0,0,0,0.65)] mb-6 group-hover:scale-105 transition-transform">
+                <div className="w-0 h-0 border-l-[24px] sm:border-l-[28px] lg:border-l-[32px] border-l-black border-y-[16px] sm:border-y-[18px] lg:border-y-[20px] border-y-transparent ml-2" />
               </div>
-              <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.20em] text-white/80 mb-3">
+              <div className="text-[12px] sm:text-[13px] font-mono uppercase tracking-[0.22em] text-white/85 mb-4 font-bold">
                 Book a call
               </div>
-              <div className="text-[22px] sm:text-[28px] font-semibold text-white text-center px-6 leading-tight max-w-[720px]">
+              <div className="text-[26px] sm:text-[34px] lg:text-[38px] font-semibold text-white text-center px-6 leading-tight max-w-[820px] tracking-tight">
                 See a live ERP implementation by Source on call
               </div>
-              <div className="text-[13px] sm:text-[14px] text-white/75 mt-3 text-center px-6">
+              <div className="text-[14px] sm:text-[16px] text-white/75 mt-4 text-center px-6">
                 Real QuickBooks → NetSuite · Real data · Real config
               </div>
             </div>
