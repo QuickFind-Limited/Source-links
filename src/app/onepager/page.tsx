@@ -828,6 +828,15 @@ export default function OnePagerPage() {
         </div>
 
         {/* ── CTA ─────────────────────────────────────────────────────────── */}
+        <div className="flex items-center justify-center gap-3 mb-4">
+          <span className="inline-flex items-center gap-1.5 text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.16em] font-bold text-[#15803d] bg-[#16a34a]/[0.10] border border-[#16a34a]/25 px-2.5 py-1 rounded-full">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#16a34a] animate-pulse" aria-hidden />
+            Live
+          </span>
+          <p className="text-[14px] sm:text-[16px] text-black/70 font-medium tracking-tight">
+            Join the <span className="font-semibold text-black">20+ firms</span> already using Source today.
+          </p>
+        </div>
         <a
           href="https://cal.com/source-ai/30min"
           target="_blank"
