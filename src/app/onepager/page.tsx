@@ -450,18 +450,22 @@ export default function OnePagerPage() {
           </div>
 
           <div className="p-5 sm:p-7">
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-0 border border-black/[0.08] overflow-hidden mb-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-0 border border-black/[0.08] overflow-hidden mb-6">
               {CASE_STUDY_STATS.map(({ value, label }, i) => (
                 <div
                   key={label}
                   className={`px-3 py-4 text-center bg-white ${
-                    i > 0 ? "border-l border-black/[0.08]" : ""
+                    i > 0 && i % 2 === 1 ? "border-l border-black/[0.08]" : ""
+                  } ${
+                    i >= 2 ? "border-t md:border-t-0 border-black/[0.08]" : ""
+                  } ${
+                    i % 4 !== 0 ? "md:border-l md:border-black/[0.08]" : ""
                   }`}
                 >
-                  <div className="text-[24px] sm:text-[30px] font-bold tracking-tight text-black leading-none mb-1.5">
+                  <div className="text-[22px] sm:text-[28px] md:text-[30px] font-bold tracking-tight text-black leading-none mb-1.5">
                     {value}
                   </div>
-                  <div className="text-[10px] font-mono uppercase tracking-[0.10em] text-black/40 font-medium">
+                  <div className="text-[10px] font-mono uppercase tracking-[0.10em] text-black/40 font-medium leading-snug">
                     {label}
                   </div>
                 </div>
