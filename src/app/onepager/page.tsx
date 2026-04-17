@@ -154,6 +154,9 @@ export default function OnePagerPage() {
           <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.12em] text-black/35 mb-2">
             Partner One-Pager
           </div>
+          <p className="text-[22px] sm:text-[30px] font-semibold tracking-[-0.02em] text-black leading-[1.15] mb-3 max-w-[780px]">
+            The go-to AI partner for ERP VARs &amp; Firms.
+          </p>
           <p className="text-[17px] sm:text-[21px] italic text-black/55 leading-[1.5] max-w-[780px]">
             We automate ERP implementations with AI. You keep the client, the
             brand, and you make{" "}
@@ -249,40 +252,49 @@ export default function OnePagerPage() {
             </div>
 
             {/* Black right sidebar */}
-            <div className="md:w-[300px] shrink-0 bg-black p-5 sm:p-6">
-              <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.08em] text-white font-bold mb-1">
+            <div className="md:w-[320px] shrink-0 bg-black p-5 sm:p-6">
+              <div className="text-[13px] sm:text-[14px] font-mono uppercase tracking-[0.10em] text-white font-bold mb-1.5">
                 Source AI Engine
               </div>
-              <div className="text-[10px] font-mono uppercase tracking-[0.08em] text-white/40 mb-3">
-                Sub 21 Days
+              <div className="flex items-center gap-2 mb-4">
+                <div className="text-[10px] font-mono uppercase tracking-[0.10em] text-white/60">
+                  {SOURCE_ENGINE_STEPS.length} Automated Steps
+                </div>
+                <span className="w-1 h-1 rounded-full bg-white/25 shrink-0" />
+                <div className="text-[10px] font-mono uppercase tracking-[0.10em] text-white/60">
+                  Sub 21 Days
+                </div>
               </div>
-              <div className="h-px bg-white/[0.15] mb-4" />
+              <div className="h-px bg-white/[0.22] mb-4" />
               <div className="grid grid-cols-2 md:grid-cols-1 gap-2.5 md:gap-0 md:space-y-3">
-                {SOURCE_ENGINE_STEPS.map(({ label, Icon }) => (
+                {SOURCE_ENGINE_STEPS.map(({ label, Icon }, i) => (
                   <div key={label} className="flex items-center gap-2.5">
+                    <span className="text-[10px] font-mono tracking-[0.08em] text-white/35 w-[18px] shrink-0">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
                     <Icon
-                      className="w-3.5 h-3.5 text-white/30 shrink-0"
+                      className="w-3.5 h-3.5 text-white/55 shrink-0"
                       strokeWidth={1.75}
                     />
-                    <span className="text-[13px] sm:text-[14px] font-medium text-white/80">
+                    <span className="text-[13px] sm:text-[14px] font-medium text-white/90">
                       {label}
                     </span>
                   </div>
                 ))}
               </div>
 
-              <div className="h-px bg-white/[0.10] mt-5 mb-4" />
-              <div className="text-[10px] font-mono uppercase tracking-[0.10em] text-white/40 font-bold mb-3">
+              <div className="h-px bg-white/[0.18] mt-6 mb-4" />
+              <div className="text-[10px] font-mono uppercase tracking-[0.12em] text-white/60 font-bold mb-3">
                 Your Consultant Handles
               </div>
               <div className="space-y-2.5">
                 {CONSULTANT_HANDLES.map(({ label, Icon }) => (
                   <div key={label} className="flex items-center gap-2.5">
                     <Icon
-                      className="w-3.5 h-3.5 text-white/25 shrink-0"
+                      className="w-3.5 h-3.5 text-white/50 shrink-0"
                       strokeWidth={1.75}
                     />
-                    <span className="text-[13px] sm:text-[14px] font-medium text-white/55">
+                    <span className="text-[13px] sm:text-[14px] font-medium text-white/75">
                       {label}
                     </span>
                   </div>
@@ -438,6 +450,21 @@ export default function OnePagerPage() {
             Full migration including 380+ accounts, 4,200+ SKUs, and integrations with
             Shopify, Stripe, and HubSpot. Fixed price. No scope creep. No surprises.
           </p>
+
+          {/* How it played out — narrative pull-quote */}
+          <div className="bg-[#fafafa] border-l-2 border-black/[0.20] px-5 sm:px-6 py-4 sm:py-5 mb-5">
+            <div className="text-[10px] font-mono uppercase tracking-[0.15em] text-black/30 mb-2 font-semibold">
+              How it played out
+            </div>
+            <p className="text-[15px] sm:text-[17px] italic text-black/65 leading-[1.6]">
+              The partner walked in with a QuickBooks instance and walked out 13
+              days later with a fully configured NetSuite — 4,200 SKUs mapped,
+              Shopify, Stripe and HubSpot integrations live, client trained.
+              Source handled the scan, the BRD, the data migration, and the
+              config. The partner owned the relationship and the sign-offs.
+              Fixed price, zero overruns.
+            </p>
+          </div>
 
           {/* Stat boxes */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5">
