@@ -540,30 +540,6 @@ function TermsTabs() {
   );
 }
 
-function OtherIndustries() {
-  return (
-    <div className="mt-10">
-      <a
-        href="/fixed-fee-implementations"
-        className="w-full flex items-center gap-6 sm:gap-8 px-8 sm:px-10 py-8 sm:py-10 bg-white border-2 border-black/[0.08] hover:border-black/[0.20] transition-colors group text-left"
-      >
-        <div className="flex-1">
-          <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.14em] text-black/30 mb-2">
-            Need more than financials?
-          </div>
-          <div className="text-[24px] sm:text-[30px] font-medium tracking-tight text-black/85 group-hover:text-black transition-colors mb-2 leading-[1.2]">
-            Get a fixed price for any implementation
-          </div>
-          <div className="text-[15px] sm:text-[17px] text-black/45 leading-[1.65] max-w-[700px]">
-            Inventory, order management, e-commerce, manufacturing, and more — every project scoped individually and priced as a fixed fee. Share your requirements and receive a full proposal within 24 hours.
-          </div>
-        </div>
-        <span className="text-[13px] sm:text-[14px] font-mono uppercase tracking-[0.08em] text-black/25 group-hover:text-black/60 shrink-0 transition-colors font-bold">View →</span>
-      </a>
-    </div>
-  );
-}
-
 // ─── Page ────────────────────────────────────────────────────────────────────
 
 export default function FinancialsFirstPage() {
@@ -776,12 +752,6 @@ export default function FinancialsFirstPage() {
             ))}
           </div>
 
-          <div className="bg-white border-2 border-black/[0.08] rounded-sm px-5 sm:px-7 py-5 sm:py-6 mt-4">
-            <p className="text-[16px] sm:text-[18px] text-black/65 leading-[1.65] font-[450]">
-              You can charge your client anywhere from <span className="font-semibold text-black">$7,500</span> to <span className="font-semibold text-black">$25,000</span> knowing you&apos;ll keep a <span className="font-semibold text-[#16a34a]">50% margin</span> on every deal, guaranteed. Higher volume partners can negotiate improved margins directly with Source.
-            </p>
-          </div>
-
           {/* Supported Industries */}
           <div id="industries" className="mt-6 pt-6 border-t border-black/[0.06]">
             <div className="text-[18px] sm:text-[22px] font-medium tracking-tight text-black mb-1">
@@ -897,34 +867,55 @@ export default function FinancialsFirstPage() {
             </div>
           </div>
 
+          {/* Per-project CTA + visual (sits with exclusions / terms) */}
+          <div className="border-t border-black/[0.06] bg-[#f5f5f3] p-4 sm:p-6">
+            <div className="flex flex-col lg:flex-row gap-5 lg:gap-8 items-stretch">
+              <a
+                href="https://cal.com/source-ai/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 flex items-center gap-4 px-5 sm:px-7 py-5 sm:py-6 bg-white border-2 border-black/[0.08] hover:border-black/[0.16] transition-colors group text-left rounded-sm min-w-0"
+              >
+                <div className="flex-1 min-w-0">
+                  <div className="text-[11px] font-mono uppercase tracking-[0.12em] text-black/30 mb-1.5">
+                    More complex implementation?
+                  </div>
+                  <div className="text-[20px] sm:text-[24px] font-medium tracking-tight text-black/80 group-hover:text-black mb-1">
+                    Get a fixed price for any implementation
+                  </div>
+                  <div className="text-[14px] sm:text-[15px] text-black/45 leading-[1.6]">
+                    Per-project pricing for industries with operational components — inventory, order management,
+                    e-commerce, manufacturing, and more. Book a 30-minute call and we&apos;ll scope your project within
+                    24 hours.
+                  </div>
+                </div>
+                <div className="flex flex-col items-end gap-2 shrink-0">
+                  <Calendar className="w-4 h-4 text-black/30" strokeWidth={1.75} />
+                  <span className="text-[12px] font-mono uppercase tracking-[0.08em] text-black/30 group-hover:text-black/60 transition-colors whitespace-nowrap">
+                    Book a Call →
+                  </span>
+                </div>
+              </a>
+              <div className="lg:w-[340px] shrink-0 flex flex-col rounded-sm border border-black/[0.08] bg-white overflow-hidden">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/financials/opengraph-image"
+                  alt="Per-project and financials fixed-fee positioning"
+                  width={340}
+                  height={178}
+                  className="w-full h-auto object-cover object-top aspect-[1200/630]"
+                />
+                <a
+                  href="/fixed-fee-implementations"
+                  className="text-center text-[11px] font-mono uppercase tracking-[0.08em] text-black/40 hover:text-black/70 py-2.5 px-3 border-t border-black/[0.06] bg-[#fafafa] transition-colors"
+                >
+                  View full per-project scope →
+                </a>
+              </div>
+            </div>
+          </div>
+
           <TermsTabs />
-        </div>
-
-
-        {/* ── Get a Fixed Price CTA ────────────────────────────────────── */}
-        <div className="mt-8">
-          <a
-            href="https://cal.com/source-ai/30min"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full flex items-center gap-4 px-6 sm:px-8 py-6 sm:py-7 bg-white border-2 border-black/[0.08] hover:border-black/[0.20] transition-colors group text-left"
-          >
-            <div className="flex-1">
-              <div className="text-[11px] font-mono uppercase tracking-[0.12em] text-black/30 mb-1.5">
-                More complex implementation?
-              </div>
-              <div className="text-[20px] sm:text-[24px] font-medium tracking-tight text-black/80 group-hover:text-black mb-1">
-                Get a fixed price for any implementation
-              </div>
-              <div className="text-[14px] sm:text-[15px] text-black/45 leading-[1.6]">
-                Per-project pricing for industries with operational components — inventory, order management, e-commerce, manufacturing, and more. Book a 30-minute call and we&apos;ll scope your project within 24 hours.
-              </div>
-            </div>
-            <div className="flex items-center gap-2 shrink-0">
-              <Calendar className="w-4 h-4 text-black/30" strokeWidth={1.75} />
-              <span className="text-[12px] font-mono uppercase tracking-[0.08em] text-black/30 group-hover:text-black/60 transition-colors">Book a Call →</span>
-            </div>
-          </a>
         </div>
 
         {/* ── Confidentiality notice ──────────────────────────────────────── */}
