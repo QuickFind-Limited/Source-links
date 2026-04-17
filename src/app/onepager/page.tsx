@@ -646,9 +646,9 @@ export default function OnePagerPage() {
               </div>
             </div>
 
-            {/* Overlay — uniform shade so the full mockup reads through as a tinted backdrop; compact foreground panel */}
-            <div className="absolute inset-0 flex items-center justify-center bg-black/35 transition-colors group-hover:bg-black/45">
-              <div className="flex flex-col items-center text-center px-5 sm:px-6 py-4 sm:py-5 rounded-md bg-black/45 backdrop-blur-[2px] border border-white/15 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.5)] max-w-[440px] mx-4">
+            {/* Overlay — heavy shade so the mockup reads only as a dimmed backdrop behind the foreground panel */}
+            <div className="absolute inset-0 flex items-center justify-center bg-black/70 backdrop-blur-[1px] transition-colors group-hover:bg-black/75">
+              <div className="flex flex-col items-center text-center px-5 sm:px-6 py-4 sm:py-5 rounded-md bg-black/70 backdrop-blur-[3px] border border-white/15 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.5)] max-w-[440px] mx-4">
                 <div className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white shadow-[0_10px_24px_-6px_rgba(0,0,0,0.4)] mb-2.5 group-hover:scale-105 transition-transform">
                   <div className="w-0 h-0 border-l-[12px] sm:border-l-[14px] border-l-black border-y-[8px] sm:border-y-[9px] border-y-transparent ml-1" />
                 </div>
