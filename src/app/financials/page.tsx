@@ -47,6 +47,10 @@ import {
   GraduationCap,
   Warehouse,
   Tractor,
+  Upload,
+  Sparkles,
+  Rocket,
+  ArrowRight,
 } from "lucide-react";
 import type { ElementType } from "react";
 
@@ -867,52 +871,82 @@ export default function FinancialsFirstPage() {
             </div>
           </div>
 
-          {/* Per-project CTA + visual (sits with exclusions / terms) */}
+          {/* Per-project flow + CTA (sits with exclusions / terms) */}
           <div className="border-t border-black/[0.06] bg-[#f5f5f3] p-4 sm:p-6">
-            <div className="flex flex-col lg:flex-row gap-5 lg:gap-8 items-stretch">
-              <a
-                href="https://cal.com/source-ai/30min"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 flex items-center gap-4 px-5 sm:px-7 py-5 sm:py-6 bg-white border-2 border-black/[0.08] hover:border-black/[0.16] transition-colors group text-left rounded-sm min-w-0"
-              >
-                <div className="flex-1 min-w-0">
-                  <div className="text-[11px] font-mono uppercase tracking-[0.12em] text-black/30 mb-1.5">
-                    More complex implementation?
-                  </div>
-                  <div className="text-[20px] sm:text-[24px] font-medium tracking-tight text-black/80 group-hover:text-black mb-1">
-                    Get a fixed price for any implementation
-                  </div>
-                  <div className="text-[14px] sm:text-[15px] text-black/45 leading-[1.6]">
-                    Per-project pricing for industries with operational components — inventory, order management,
-                    e-commerce, manufacturing, and more. Book a 30-minute call and we&apos;ll scope your project within
-                    24 hours.
-                  </div>
-                </div>
-                <div className="flex flex-col items-end gap-2 shrink-0">
-                  <Calendar className="w-4 h-4 text-black/30" strokeWidth={1.75} />
-                  <span className="text-[12px] font-mono uppercase tracking-[0.08em] text-black/30 group-hover:text-black/60 transition-colors whitespace-nowrap">
-                    Book a Call →
-                  </span>
-                </div>
-              </a>
-              <div className="lg:w-[340px] shrink-0 flex flex-col rounded-sm border border-black/[0.08] bg-white overflow-hidden">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/financials/opengraph-image"
-                  alt="Per-project and financials fixed-fee positioning"
-                  width={340}
-                  height={178}
-                  className="w-full h-auto object-cover object-top aspect-[1200/630]"
-                />
-                <a
-                  href="/fixed-fee-implementations"
-                  className="text-center text-[11px] font-mono uppercase tracking-[0.08em] text-black/40 hover:text-black/70 py-2.5 px-3 border-t border-black/[0.06] bg-[#fafafa] transition-colors"
-                >
-                  View full per-project scope →
-                </a>
-              </div>
+            <div className="text-[10px] font-mono uppercase tracking-[0.14em] text-black/40 font-bold mb-1.5">
+              More complex implementation?
             </div>
+            <div className="text-[18px] sm:text-[22px] font-medium tracking-tight text-black/85 mb-4 sm:mb-5 leading-[1.3]">
+              Send your SOW. Get an AI price. We deliver.
+            </div>
+
+            {/* 3-step flow */}
+            <div className="flex flex-col sm:flex-row items-stretch gap-2 sm:gap-1.5 mb-4 sm:mb-5">
+              {[
+                {
+                  Icon: Upload,
+                  step: "01",
+                  title: "Send SOW",
+                  body: "Share your client's SOW, transcript, or scope notes.",
+                },
+                {
+                  Icon: Sparkles,
+                  step: "02",
+                  title: "Get AI Price",
+                  body: "We return a complete fixed-fee proposal within 24 hours.",
+                },
+                {
+                  Icon: Rocket,
+                  step: "03",
+                  title: "Deliver with AI",
+                  body: "Source AI runs the implementation end-to-end. You keep the client.",
+                },
+              ].map(({ Icon, step, title, body }, i, arr) => (
+                <React.Fragment key={step}>
+                  <div className="flex-1 bg-white border border-black/[0.08] rounded-sm px-4 sm:px-5 py-4 sm:py-5">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-[10px] font-mono font-bold tracking-[0.10em] text-black/35">{step}</span>
+                      <div className="flex-1 h-px bg-black/[0.06]" />
+                      <Icon className="w-4 h-4 text-black/45" strokeWidth={1.75} />
+                    </div>
+                    <div className="text-[15px] sm:text-[16px] font-semibold text-black/85 mb-1 leading-tight">
+                      {title}
+                    </div>
+                    <div className="text-[12.5px] sm:text-[13px] text-black/50 leading-[1.55]">
+                      {body}
+                    </div>
+                  </div>
+                  {i < arr.length - 1 && (
+                    <div className="hidden sm:flex items-center justify-center shrink-0 px-0.5">
+                      <ArrowRight className="w-4 h-4 text-black/25" strokeWidth={1.75} />
+                    </div>
+                  )}
+                </React.Fragment>
+              ))}
+            </div>
+
+            {/* Primary CTA: book a call */}
+            <a
+              href="https://cal.com/source-ai/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full flex items-center justify-between gap-4 px-5 sm:px-7 py-4 sm:py-5 bg-black hover:bg-black/85 transition-colors group text-left rounded-sm"
+            >
+              <div className="flex items-center gap-3 min-w-0">
+                <Calendar className="w-4 h-4 text-white/70 shrink-0" strokeWidth={1.75} />
+                <div className="min-w-0">
+                  <div className="text-[15px] sm:text-[17px] font-semibold text-white leading-tight">
+                    Book a 30-minute call to scope your project
+                  </div>
+                  <div className="text-[12px] sm:text-[13px] text-white/60 leading-[1.5] mt-0.5">
+                    Inventory, order management, e-commerce, manufacturing &amp; more — fixed-fee proposal in 24 hours.
+                  </div>
+                </div>
+              </div>
+              <span className="text-[12px] font-mono uppercase tracking-[0.08em] text-white/85 group-hover:text-white whitespace-nowrap shrink-0">
+                Book a Call →
+              </span>
+            </a>
           </div>
 
           <TermsTabs />
