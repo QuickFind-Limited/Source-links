@@ -126,13 +126,13 @@ const TEAM_PHOTOS = [
 ];
 
 const ERP_LOGOS = [
-  { src: "/onepager/logos/netsuite.svg", alt: "NetSuite", h: "h-6" },
-  { src: "/onepager/logos/d365.svg", alt: "Dynamics 365", h: "h-9" },
-  { src: "/onepager/logos/sap.svg", alt: "SAP", h: "h-7" },
-  { src: "/onepager/logos/quickbooks.svg", alt: "QuickBooks", h: "h-10" },
-  { src: "/onepager/logos/xero.svg", alt: "Xero", h: "h-8" },
-  { src: "/logos/sage.svg", alt: "Sage", h: "h-8" },
-  { src: "/onepager/logos/acumatica.svg", alt: "Acumatica", h: "h-7" },
+  { src: "/onepager/logos/netsuite.svg", alt: "NetSuite", h: "h-9" },
+  { src: "/onepager/logos/d365.svg", alt: "Dynamics 365", h: "h-12" },
+  { src: "/onepager/logos/sap.svg", alt: "SAP", h: "h-10" },
+  { src: "/onepager/logos/quickbooks.svg", alt: "QuickBooks", h: "h-14" },
+  { src: "/onepager/logos/xero.svg", alt: "Xero", h: "h-11" },
+  { src: "/logos/sage.svg", alt: "Sage", h: "h-11" },
+  { src: "/onepager/logos/acumatica.svg", alt: "Acumatica", h: "h-10" },
 ];
 
 // ─── Sub-components ──────────────────────────────────────────────────────────
@@ -495,14 +495,14 @@ export default function OnePagerPage() {
           <div className="text-[12px] sm:text-[13px] font-mono uppercase tracking-[0.14em] text-black/45 font-bold mb-4">
             Target ERPs we implement
           </div>
-          <div className="flex flex-wrap items-center justify-center sm:justify-between gap-x-8 gap-y-5 px-1 sm:px-2">
+          <div className="flex flex-wrap items-center justify-center sm:justify-between gap-x-10 gap-y-6 px-1 sm:px-2 py-2">
             {ERP_LOGOS.map(({ src, alt, h }) => (
               // eslint-disable-next-line @next/next/no-img-element
               <img
                 key={alt}
                 src={src}
                 alt={alt}
-                className={`${h} w-auto max-h-10 object-contain grayscale opacity-[0.72] hover:opacity-100 transition-opacity`}
+                className={`${h} w-auto max-h-14 object-contain grayscale opacity-[0.72] hover:opacity-100 transition-opacity`}
               />
             ))}
           </div>
