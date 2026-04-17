@@ -547,32 +547,6 @@ export default function OnePagerPage() {
               ))}
             </div>
 
-            {/* What Source does with it */}
-            <div className="mt-5 pt-5 border-t border-black/[0.06] grid grid-cols-1 sm:grid-cols-3 gap-3">
-              {[
-                {
-                  title: "Parse & normalise",
-                  body: "Extract fields across messy formats, unify schemas and reconcile duplicates.",
-                },
-                {
-                  title: "Map to target ERP",
-                  body: "AI-generated mappings for CoA, entities, tax codes, customers, vendors, SKUs.",
-                },
-                {
-                  title: "Validate & cut over",
-                  body: "Trial balance tie-outs, AR/AP reconciliation, then production cutover with rollback.",
-                },
-              ].map(({ title, body }) => (
-                <div key={title} className="border border-black/[0.08] bg-white p-4 rounded-sm">
-                  <div className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.14em] text-black/45 font-bold mb-1.5">
-                    {title}
-                  </div>
-                  <div className="text-[13px] sm:text-[14px] text-black/70 leading-[1.55]">
-                    {body}
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
 
