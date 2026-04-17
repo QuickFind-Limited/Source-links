@@ -179,10 +179,10 @@ export default function OnePagerPage() {
           <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.16em] text-black/40 font-bold mb-3">
             Partner One-Pager
           </div>
-          <h1 className="text-[34px] sm:text-[52px] md:text-[64px] font-bold tracking-[-0.035em] text-black leading-[1.02] mb-5 max-w-[980px]">
+          <h1 className="text-[30px] sm:text-[42px] md:text-[52px] font-bold tracking-[-0.03em] text-black leading-[1.05] mb-5 max-w-[940px]">
             The go-to AI partner for <br className="hidden sm:block" />ERP VARs &amp; Firms.
           </h1>
-          <p className="text-[17px] sm:text-[22px] md:text-[24px] italic text-black/65 leading-[1.45] max-w-[880px]">
+          <p className="text-[19px] sm:text-[24px] md:text-[28px] italic text-black/70 leading-[1.45] max-w-[940px]">
             We automate ERP implementations with AI. You keep the client, the
             brand, and you make{" "}
             <span className="not-italic font-semibold text-black">50%+ margins.</span>
@@ -663,14 +663,17 @@ export default function OnePagerPage() {
               <div className="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-full bg-white flex items-center justify-center shadow-[0_22px_50px_-10px_rgba(0,0,0,0.65)] mb-6 group-hover:scale-105 transition-transform">
                 <div className="w-0 h-0 border-l-[24px] sm:border-l-[28px] lg:border-l-[32px] border-l-black border-y-[16px] sm:border-y-[18px] lg:border-y-[20px] border-y-transparent ml-2" />
               </div>
-              <div className="text-[12px] sm:text-[13px] font-mono uppercase tracking-[0.22em] text-white/85 mb-4 font-bold">
+              <div className="text-[13px] sm:text-[14px] font-mono uppercase tracking-[0.24em] text-white/90 mb-5 font-bold">
                 Book a call
               </div>
-              <div className="text-[26px] sm:text-[34px] lg:text-[38px] font-semibold text-white text-center px-6 leading-tight max-w-[820px] tracking-tight">
+              <div className="text-[30px] sm:text-[40px] lg:text-[46px] font-semibold text-white text-center px-6 leading-[1.1] max-w-[880px] tracking-tight">
                 See a live ERP implementation by Source on call
               </div>
-              <div className="text-[14px] sm:text-[16px] text-white/75 mt-4 text-center px-6">
+              <div className="text-[16px] sm:text-[18px] text-white/80 mt-5 text-center px-6 max-w-[720px]">
                 Real QuickBooks → NetSuite · Real data · Real config
+              </div>
+              <div className="mt-6 inline-flex items-center gap-2 border border-white/30 bg-white/10 backdrop-blur-sm px-5 py-2.5 rounded-full text-[12px] sm:text-[13px] font-mono uppercase tracking-[0.14em] text-white font-bold">
+                Book a 30-min slot →
               </div>
             </div>
           </a>
@@ -737,7 +740,7 @@ export default function OnePagerPage() {
                 Sample · QBO → NetSuite
               </div>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-black/[0.08]">
+            <div className="grid grid-cols-1 sm:grid-cols-[1fr_24px_1fr_24px_1fr] items-stretch">
               <div className="px-5 sm:px-7 py-6">
                 <div className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.14em] text-black/45 font-bold mb-2.5">
                   Source AI fee
@@ -749,18 +752,38 @@ export default function OnePagerPage() {
                   Fixed price · discovery → go-live
                 </div>
               </div>
-              <div className="px-5 sm:px-7 py-6 bg-[#f7faf7]">
-                <div className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.14em] text-black/45 font-bold mb-2.5">
-                  Your markup <span className="text-[#16a34a]">(you decide)</span>
+
+              <div className="hidden sm:flex items-center justify-center text-black/30 text-[22px] font-light border-l border-black/[0.08]">
+                +
+              </div>
+
+              <div className="px-5 sm:px-7 py-6 bg-[#f7faf7] border-t sm:border-t-0 sm:border-l border-black/[0.08] relative">
+                <div className="flex items-start justify-between gap-2 mb-2.5">
+                  <div className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.14em] text-black/45 font-bold">
+                    Your markup
+                  </div>
+                  <span className="inline-flex items-center gap-1 text-[9px] font-mono uppercase tracking-[0.08em] font-bold text-[#15803d] bg-white border border-[#16a34a]/30 px-1.5 py-0.5 rounded-full whitespace-nowrap">
+                    You decide
+                  </span>
                 </div>
                 <div className="text-[32px] sm:text-[40px] font-bold tracking-tight text-black leading-none">
                   +$9,500
                 </div>
-                <div className="text-[12px] sm:text-[13px] font-semibold text-[#16a34a] mt-2">
-                  Mark up to whatever your client will pay
+                <div className="flex items-center gap-2 mt-2 flex-wrap">
+                  <span className="text-[11px] font-mono uppercase tracking-[0.1em] text-[#15803d] bg-[#16a34a]/[0.12] border border-[#16a34a]/30 px-2 py-0.5 rounded-full font-bold">
+                    50% margin
+                  </span>
+                  <span className="text-[12px] sm:text-[13px] text-black/55">
+                    of final price
+                  </span>
                 </div>
               </div>
-              <div className="px-5 sm:px-7 py-6 bg-black text-white flex flex-col justify-center">
+
+              <div className="hidden sm:flex items-center justify-center text-black/30 text-[22px] font-light border-l border-black/[0.08]">
+                =
+              </div>
+
+              <div className="px-5 sm:px-7 py-6 bg-black text-white flex flex-col justify-center border-t sm:border-t-0 sm:border-l border-black/[0.08]">
                 <div className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.14em] text-white/55 font-bold mb-2.5">
                   Client pays
                 </div>
@@ -770,6 +793,45 @@ export default function OnePagerPage() {
                 <div className="text-[12px] sm:text-[13px] text-white/65 mt-2 leading-snug">
                   93–95% below traditional ($150K–$250K)
                 </div>
+              </div>
+            </div>
+
+            {/* Markup scale — illustrative */}
+            <div className="px-5 sm:px-6 py-4 bg-white border-t border-black/[0.08]">
+              <div className="flex items-center justify-between gap-3 mb-2">
+                <div className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.14em] text-black/45 font-bold">
+                  Markup scale · illustrative
+                </div>
+                <div className="text-[11px] sm:text-[12px] text-black/50 font-mono">
+                  Mark up to whatever your client will pay
+                </div>
+              </div>
+              <div className="grid grid-cols-4 gap-2 sm:gap-3">
+                {[
+                  { client: "$14K", margin: "32%" },
+                  { client: "$17K", margin: "44%" },
+                  { client: "$19K", margin: "50%", active: true },
+                  { client: "$24K", margin: "60%" },
+                ].map(({ client, margin, active }) => (
+                  <div
+                    key={client}
+                    className={`px-2 sm:px-3 py-3 rounded-sm border text-center ${
+                      active
+                        ? "bg-black text-white border-black"
+                        : "bg-[#fafafa] text-black border-black/[0.08]"
+                    }`}
+                  >
+                    <div className={`text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.12em] font-bold mb-1 ${active ? "text-white/55" : "text-black/45"}`}>
+                      Client
+                    </div>
+                    <div className="text-[16px] sm:text-[20px] font-bold tracking-tight leading-none mb-1.5">
+                      {client}
+                    </div>
+                    <div className={`text-[10px] sm:text-[11px] font-mono font-bold tracking-tight ${active ? "text-[#4ade80]" : "text-[#16a34a]"}`}>
+                      {margin} margin
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
             <div className="px-5 sm:px-6 py-5 bg-[#fafafa] border-t border-black/[0.08]">
@@ -822,9 +884,12 @@ export default function OnePagerPage() {
         </div>
 
         {/* ── Credibility ───────────────────────────────────────────────────── */}
-        <div className="bg-white border border-black/[0.08] px-4 sm:px-6 py-5 sm:py-6 mb-6">
-          <div className="flex flex-col lg:flex-row lg:items-center gap-5 lg:gap-7">
-            <div className="flex items-center -space-x-2 shrink-0">
+        <div className="bg-white border border-black/[0.08] px-5 sm:px-8 py-7 sm:py-9 mb-6">
+          <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.18em] text-black/45 font-bold mb-5">
+            Built by the Source team
+          </div>
+          <div className="flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-10">
+            <div className="flex items-center -space-x-3 shrink-0">
               {TEAM_PHOTOS.map(({ src, name }) => (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img
@@ -832,32 +897,29 @@ export default function OnePagerPage() {
                   src={src}
                   alt={name}
                   title={name}
-                  className="w-10 h-10 sm:w-11 sm:h-11 rounded-full object-cover ring-2 ring-white border border-black/[0.06] grayscale hover:grayscale-0 transition-[filter]"
+                  className="w-14 h-14 sm:w-16 sm:h-16 rounded-full object-cover ring-[3px] ring-white border border-black/[0.08] shadow-sm grayscale hover:grayscale-0 hover:scale-105 transition-all"
                 />
               ))}
             </div>
-            <div className="h-px lg:h-auto lg:w-px lg:min-h-[44px] bg-black/[0.08] lg:shrink-0" />
-            <div className="flex flex-col sm:flex-row sm:items-center flex-wrap gap-x-5 gap-y-2 text-[12.5px] sm:text-[13.5px] text-black/55">
-              <div className="flex items-center gap-2">
-                <Users className="w-3.5 h-3.5 text-black/30 shrink-0" strokeWidth={1.75} />
+            <div className="h-px lg:h-auto lg:w-px lg:min-h-[60px] bg-black/[0.08] lg:shrink-0" />
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3.5 text-[15px] sm:text-[16px] text-black/75 flex-1">
+              <div className="flex items-center gap-3">
+                <Users className="w-5 h-5 text-black/40 shrink-0" strokeWidth={1.75} />
                 <span>
                   Built by <span className="font-semibold text-black">Source</span> — San Francisco
                 </span>
               </div>
-              <span className="hidden sm:inline w-1 h-1 rounded-full bg-black/20" />
-              <div className="flex items-center gap-2">
-                <FileText className="w-3.5 h-3.5 text-black/30 shrink-0" strokeWidth={1.75} />
-                <span>Featured in Forbes</span>
+              <div className="flex items-center gap-3">
+                <FileText className="w-5 h-5 text-black/40 shrink-0" strokeWidth={1.75} />
+                <span>Featured in <span className="font-semibold text-black">Forbes</span></span>
               </div>
-              <span className="hidden sm:inline w-1 h-1 rounded-full bg-black/20" />
-              <div className="flex items-center gap-2">
-                <DollarSign className="w-3.5 h-3.5 text-black/30 shrink-0" strokeWidth={1.75} />
-                <span>$2M+ in venture funding</span>
+              <div className="flex items-center gap-3">
+                <DollarSign className="w-5 h-5 text-black/40 shrink-0" strokeWidth={1.75} />
+                <span><span className="font-semibold text-black">$2M+</span> in venture funding</span>
               </div>
-              <span className="hidden sm:inline w-1 h-1 rounded-full bg-black/20" />
-              <div className="flex items-center gap-2">
-                <Globe className="w-3.5 h-3.5 text-black/30 shrink-0" strokeWidth={1.75} />
-                <span>SF investors &amp; Stripe alumni</span>
+              <div className="flex items-center gap-3">
+                <Globe className="w-5 h-5 text-black/40 shrink-0" strokeWidth={1.75} />
+                <span><span className="font-semibold text-black">SF investors</span> &amp; <span className="font-semibold text-black">Stripe alumni</span></span>
               </div>
             </div>
           </div>
@@ -870,19 +932,19 @@ export default function OnePagerPage() {
           rel="noopener noreferrer"
           className="block bg-black text-white text-center px-8 py-8 sm:py-10 mb-6 hover:bg-black/85 transition-colors"
         >
-          <div className="flex items-center justify-center gap-3 mb-2">
+          <div className="flex items-center justify-center gap-3 mb-3">
             <Calendar
-              className="w-5 h-5 text-white/50"
+              className="w-6 h-6 text-white/60"
               strokeWidth={1.75}
             />
-            <span className="text-[18px] sm:text-[22px] font-semibold tracking-tight">
-              Book a Partnership Call →
+            <span className="text-[22px] sm:text-[30px] font-semibold tracking-tight">
+              Book a call to partner with Source →
             </span>
           </div>
-          <div className="text-[12px] sm:text-[13px] text-white/40 tracking-tight">
+          <div className="text-[14px] sm:text-[16px] text-white/55 tracking-tight">
             See a live demo · Discuss your first migration · Get pilot pricing
           </div>
-          <div className="text-[11px] font-mono uppercase tracking-[0.10em] text-white/25 mt-3">
+          <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.12em] text-white/30 mt-4">
             cal.com/source-ai/30min
           </div>
         </a>
