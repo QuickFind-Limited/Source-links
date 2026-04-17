@@ -582,44 +582,63 @@ export default function OnePagerPage() {
               </span>
             </div>
 
-            {/* App body */}
-            <div className="p-8 sm:p-14 lg:p-16 bg-white min-h-[360px] sm:min-h-[480px] lg:min-h-[560px]">
-              <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-10 lg:gap-16 items-start">
+            {/* App body — scaled down so more of the real mockup details read behind the overlay */}
+            <div className="p-5 sm:p-8 lg:p-10 bg-white min-h-[360px] sm:min-h-[440px] lg:min-h-[500px]">
+              <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-6 lg:gap-10 items-start">
                 <div>
-                  <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.16em] text-black/40 font-bold mb-4">
+                  <div className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.16em] text-black/40 font-bold mb-3">
                     BRD v2 · Locked Quote
                   </div>
-                  <div className="text-[30px] sm:text-[42px] font-semibold tracking-tight text-black leading-tight mb-4">
+                  <div className="text-[20px] sm:text-[26px] font-semibold tracking-tight text-black leading-tight mb-2.5">
                     QuickBooks → NetSuite
                   </div>
-                  <div className="text-[48px] sm:text-[68px] lg:text-[76px] font-bold tracking-[-0.035em] text-black leading-[0.95] mb-4">
+                  <div className="text-[30px] sm:text-[42px] lg:text-[48px] font-bold tracking-[-0.03em] text-black leading-[0.98] mb-3">
                     $7,000 – $11,500
                   </div>
-                  <p className="text-[14px] sm:text-[16px] text-black/55 leading-[1.6] max-w-[520px] mb-7">
+                  <p className="text-[12px] sm:text-[13.5px] text-black/55 leading-[1.55] max-w-[440px] mb-4">
                     Source AI implementation fee, fixed after sign-off. 93–95% below traditional
                     implementation ($150K–$250K).
                   </p>
-                  <div className="inline-flex items-center gap-2 border border-black/[0.12] bg-white px-4 py-3 text-[12px] sm:text-[13px] font-mono uppercase tracking-[0.06em] text-black/65 rounded-sm">
-                    <Download className="w-4 h-4" strokeWidth={1.75} />
+                  <div className="inline-flex items-center gap-2 border border-black/[0.12] bg-white px-3 py-2 text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.08em] text-black/65 rounded-sm mb-5">
+                    <Download className="w-3.5 h-3.5" strokeWidth={1.75} />
                     Download SOW + cost breakdown
+                  </div>
+
+                  {/* Extra rows of "real" content so background feels dense behind the overlay */}
+                  <div className="space-y-1.5 border-t border-black/[0.06] pt-3.5 max-w-[460px]">
+                    {[
+                      ["Chart of accounts", "380 GL accounts mapped"],
+                      ["Subsidiaries", "3 entities · multi-book"],
+                      ["Historical data", "10 yrs · 318K records"],
+                      ["Integrations", "Shopify · Stripe · HubSpot"],
+                      ["Status", "Go-live — day 13"],
+                    ].map(([k, v]) => (
+                      <div key={k} className="flex items-baseline justify-between gap-3 text-[11px] sm:text-[12px]">
+                        <span className="font-mono uppercase tracking-[0.1em] text-black/40 shrink-0">{k}</span>
+                        <span className="flex-1 border-b border-dotted border-black/15 mx-2 translate-y-[-2px]" />
+                        <span className="text-black/75 font-medium text-right">{v}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-3.5">
+                <div className="grid grid-cols-2 gap-2 sm:gap-2.5">
                   {[
                     ["Edition", "OneWorld"],
                     ["Modules live", "24"],
                     ["Records migrated", "318K"],
                     ["Timeline", "13 days"],
+                    ["AI automation", "85%"],
+                    ["Consultant hrs", "~12"],
                   ].map(([k, v]) => (
                     <div
                       key={k}
-                      className="border border-black/[0.08] rounded-sm bg-white px-5 py-5"
+                      className="border border-black/[0.08] rounded-sm bg-white px-3.5 py-3"
                     >
-                      <div className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.14em] text-black/40 font-bold mb-2">
+                      <div className="text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.14em] text-black/40 font-bold mb-1.5">
                         {k}
                       </div>
-                      <div className="text-[22px] sm:text-[28px] font-bold tracking-tight text-black leading-none">
+                      <div className="text-[16px] sm:text-[20px] font-bold tracking-tight text-black leading-none">
                         {v}
                       </div>
                     </div>
@@ -628,22 +647,22 @@ export default function OnePagerPage() {
               </div>
             </div>
 
-            {/* Overlay — lets the mockup read through, centered panel with compact play + CTA */}
-            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-b from-black/20 via-black/35 to-black/55 transition-colors group-hover:from-black/30 group-hover:via-black/45 group-hover:to-black/60">
-              <div className="flex flex-col items-center text-center px-5 sm:px-7 py-5 sm:py-6 rounded-md bg-black/55 backdrop-blur-sm border border-white/15 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.5)] max-w-[520px] mx-4">
-                <div className="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white shadow-[0_10px_24px_-6px_rgba(0,0,0,0.4)] mb-3.5 group-hover:scale-105 transition-transform">
-                  <div className="w-0 h-0 border-l-[14px] sm:border-l-[16px] border-l-black border-y-[9px] sm:border-y-[10px] border-y-transparent ml-1" />
+            {/* Overlay — uniform shade so the full mockup reads through as a tinted backdrop; compact foreground panel */}
+            <div className="absolute inset-0 flex items-center justify-center bg-black/35 transition-colors group-hover:bg-black/45">
+              <div className="flex flex-col items-center text-center px-5 sm:px-6 py-4 sm:py-5 rounded-md bg-black/45 backdrop-blur-[2px] border border-white/15 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.5)] max-w-[440px] mx-4">
+                <div className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white shadow-[0_10px_24px_-6px_rgba(0,0,0,0.4)] mb-2.5 group-hover:scale-105 transition-transform">
+                  <div className="w-0 h-0 border-l-[12px] sm:border-l-[14px] border-l-black border-y-[8px] sm:border-y-[9px] border-y-transparent ml-1" />
                 </div>
-                <div className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.24em] text-white/70 mb-2 font-bold">
+                <div className="text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.24em] text-white/70 mb-1.5 font-bold">
                   Live demo · 30 min
                 </div>
-                <div className="text-[17px] sm:text-[20px] font-semibold text-white leading-[1.25] tracking-tight">
+                <div className="text-[15px] sm:text-[18px] font-semibold text-white leading-[1.25] tracking-tight">
                   See a live ERP implementation by Source
                 </div>
-                <div className="text-[12.5px] sm:text-[13.5px] text-white/70 mt-1.5 leading-snug">
+                <div className="text-[11.5px] sm:text-[12.5px] text-white/70 mt-1 leading-snug">
                   Real QuickBooks → NetSuite · Real data · Real config
                 </div>
-                <div className="mt-4 inline-flex items-center gap-1.5 bg-white text-black px-4 py-2 rounded-full text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.14em] font-bold group-hover:bg-white/90 transition-colors">
+                <div className="mt-3 inline-flex items-center gap-1.5 bg-white text-black px-3.5 py-1.5 rounded-full text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.14em] font-bold group-hover:bg-white/90 transition-colors">
                   Book a 30-min slot →
                 </div>
               </div>
