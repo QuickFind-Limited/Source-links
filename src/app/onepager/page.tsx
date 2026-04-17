@@ -130,9 +130,8 @@ const ERP_LOGOS = [
   { src: "/onepager/logos/d365.svg", alt: "Dynamics 365", h: "h-12" },
   { src: "/onepager/logos/sap.svg", alt: "SAP", h: "h-10" },
   { src: "/onepager/logos/quickbooks.svg", alt: "QuickBooks", h: "h-14" },
-  { src: "/onepager/logos/xero.svg", alt: "Xero", h: "h-11" },
-  { src: "/logos/sage.svg", alt: "Sage", h: "h-11" },
   { src: "/onepager/logos/acumatica.svg", alt: "Acumatica", h: "h-10" },
+  { src: "/logos/sage.svg", alt: "Sage", h: "h-11" },
 ];
 
 // ─── Sub-components ──────────────────────────────────────────────────────────
