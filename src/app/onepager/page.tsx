@@ -65,31 +65,31 @@ const CONSULTANT_HANDLES = [
 
 const CASE_STUDY_STATS = [
   { value: "13", label: "Days to Go-Live" },
-  { value: "$11K", label: "Source Cost" },
+  { value: "$6K", label: "Source Cost" },
   { value: "50%+", label: "Partner Margin" },
   { value: "~12h", label: "Consultant Time" },
 ];
 
 const CASE_STUDY_HIGHLIGHTS = [
-  "380+ accounts migrated",
-  "4,200+ SKUs migrated",
-  "Shopify + Stripe + HubSpot integrations",
-  "Fixed-price engagement",
-  "White-label — client never saw Source",
-  "No scope creep, no overruns",
+  "Chart of Accounts migration",
+  "Historical transactions (3 yrs)",
+  "Product catalog & inventory (4,200 SKUs)",
+  "NetSuite configuration & sandbox",
+  "Shopify + Stripe + HubSpot connectors",
+  "UAT, cutover & go-live support",
 ];
 
 const PRICING_STEPS = [
   {
     n: "01",
     title: "You send the SOW",
-    body: "Drop in the client's scope, transcripts, requirements, or existing SOW — however detailed or rough.",
+    body: "Drop in the client's scope, requirements, or existing SOW — however detailed or rough.",
     Icon: FileText,
   },
   {
     n: "02",
-    title: "We scope & price",
-    body: "Source AI reads the scope, runs a system scan, and sends back a fixed price within 24 hours.",
+    title: "Our AI scans & quotes",
+    body: "Source AI reads the SOW, runs a read-only scan of the client's live systems, and returns a fixed price within 24 hours — no scoping calls, no T&M guesswork.",
     Icon: Scan,
   },
   {
@@ -98,6 +98,15 @@ const PRICING_STEPS = [
     body: "You mark up, invoice your client directly, and keep the margin. Source is your back-office engine.",
     Icon: DollarSign,
   },
+];
+
+const PRICING_WHATS_INCLUDED = [
+  "Chart of Accounts migration",
+  "Historical transactions (3 yrs)",
+  "Product catalog & inventory (4,200 SKUs)",
+  "NetSuite configuration & sandbox",
+  "Shopify + Stripe + HubSpot connectors",
+  "UAT, cutover & go-live support",
 ];
 
 const WHITE_LABEL_POINTS = [
@@ -113,7 +122,7 @@ const ERP_LOGOS = [
   { src: "/onepager/logos/d365.svg", alt: "Dynamics 365", h: "h-9" },
   { src: "/onepager/logos/quickbooks.svg", alt: "QuickBooks", h: "h-10" },
   { src: "/onepager/logos/xero.svg", alt: "Xero", h: "h-8" },
-  { src: "/onepager/logos/sage.png", alt: "Sage", h: "h-8" },
+  { src: "/logos/sage.svg", alt: "Sage", h: "h-8" },
   { src: "/onepager/logos/acumatica.svg", alt: "Acumatica", h: "h-7" },
   { src: "/onepager/logos/myob.svg", alt: "MYOB", h: "h-7" },
 ];
@@ -186,26 +195,6 @@ export default function OnePagerPage() {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* ── Supported Systems (moved up — trust-signal row) ────────────── */}
-        <div className="bg-white border border-black/[0.08] px-4 sm:px-6 py-3 sm:py-4 mb-6">
-          <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
-            <div className="text-[10px] font-mono uppercase tracking-[0.15em] text-black/30 whitespace-nowrap shrink-0">
-              Supported Systems
-            </div>
-            <div className="flex flex-wrap items-center justify-evenly flex-1 gap-x-6 gap-y-3 sm:gap-x-8">
-              {ERP_LOGOS.map(({ src, alt, h }) => (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  key={alt}
-                  src={src}
-                  alt={alt}
-                  className={`${h} w-auto object-contain grayscale opacity-80`}
-                />
-              ))}
-            </div>
-          </div>
         </div>
 
         {/* ── Main two-panel ──────────────────────────────────────────────── */}
@@ -301,6 +290,29 @@ export default function OnePagerPage() {
                 ))}
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* ── Partner testimonial ─────────────────────────────────────────── */}
+        <div className="bg-[#f5f5f3] border border-black/[0.08] px-6 sm:px-10 py-8 sm:py-10 mb-6">
+          <div className="text-[10px] font-mono uppercase tracking-[0.15em] text-black/35 mb-5">
+            What Partners Are Saying
+          </div>
+          <p className="text-[22px] sm:text-[30px] italic leading-[1.4] text-black/80 mb-7 tracking-[-0.01em] font-serif">
+            Source handles the materials, the configuration, the full ERP implementation
+            end-to-end. We focus on the upsell, the client experience, the relationship — and
+            we&apos;re finally able to{" "}
+            <span className="not-italic font-sans font-semibold text-black">
+              scale our services firm with Source
+            </span>{" "}
+            without scaling headcount.
+          </p>
+          <div className="h-px bg-black/[0.08] mb-4" />
+          <div className="text-[15px] sm:text-[16px] font-semibold text-black">
+            COO, California Services Firm
+          </div>
+          <div className="text-[13px] sm:text-[14px] text-black/45 mt-1 leading-[1.55]">
+            Source partner since 2025 · 50%+ contribution margin on every engagement
           </div>
         </div>
 
@@ -446,9 +458,9 @@ export default function OnePagerPage() {
 
           {/* Description */}
           <p className="text-[14px] sm:text-[15px] text-black/50 leading-[1.7] mb-5">
-            Mid-market retailer with ~120 employees and $33M in annual transactions.
-            Full migration including 380+ accounts, 4,200+ SKUs, and integrations with
-            Shopify, Stripe, and HubSpot. Fixed price. No scope creep. No surprises.
+            Mid-market retailer · ~120 employees · $33M annual transactions. Full migration
+            including 380+ GL accounts, 4,200+ SKUs, and Shopify, Stripe, and HubSpot
+            integrations. Fixed price. No scope creep. No surprises.
           </p>
 
           {/* How it played out — narrative pull-quote */}
@@ -483,16 +495,19 @@ export default function OnePagerPage() {
             ))}
           </div>
 
-          {/* Highlights checklist */}
-          <div className="border-t border-black/[0.06] pt-4">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          {/* What was delivered */}
+          <div className="border-t border-black/[0.06] pt-5">
+            <div className="text-[10px] font-mono uppercase tracking-[0.15em] text-black/35 mb-4">
+              What was delivered
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
               {CASE_STUDY_HIGHLIGHTS.map((item) => (
                 <div key={item} className="flex items-start gap-2.5">
                   <Check
                     className="w-4 h-4 shrink-0 mt-0.5 text-[#16a34a]/70"
                     strokeWidth={2.5}
                   />
-                  <span className="text-[13px] sm:text-[14px] text-black/65 leading-snug">
+                  <span className="text-[14px] sm:text-[15px] text-black/75 leading-[1.55]">
                     {item}
                   </span>
                 </div>
@@ -501,13 +516,37 @@ export default function OnePagerPage() {
           </div>
         </div>
 
-        {/* ── Partner Economics — Send SOW. Get Price. Charge Client. ───────── */}
+        {/* ── Supported Systems (below case study) ─────────────────────── */}
+        <div className="bg-white border border-black/[0.08] px-4 sm:px-6 py-4 sm:py-5 mb-6">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8">
+            <div className="text-[10px] font-mono uppercase tracking-[0.15em] text-black/30 whitespace-nowrap shrink-0">
+              Supported Systems
+            </div>
+            <div className="flex flex-wrap items-center justify-center sm:justify-between flex-1 gap-x-8 gap-y-4">
+              {ERP_LOGOS.map(({ src, alt, h }) => (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  key={alt}
+                  src={src}
+                  alt={alt}
+                  className={`${h} w-auto max-h-10 object-contain opacity-90 hover:opacity-100 transition-opacity`}
+                />
+              ))}
+            </div>
+          </div>
+          <p className="text-[12px] sm:text-[13px] text-black/45 mt-4 leading-relaxed max-w-[820px]">
+            We routinely ingest messy sources — spreadsheets, CSV exports, legacy databases,
+            and ad-hoc files — not just clean API feeds.
+          </p>
+        </div>
+
+        {/* ── Pricing — Send SOW. Get AI Price. Charge Client. ─────────────── */}
         <div className="bg-white border border-black/[0.08] p-4 sm:p-6 mb-6">
           <div className="text-[10px] font-mono uppercase tracking-[0.15em] text-black/30 mb-2">
-            Partner Economics
+            Pricing
           </div>
           <div className="text-[22px] sm:text-[30px] font-semibold tracking-[-0.02em] text-black mb-2 leading-[1.1]">
-            Send SOW. Get Price. Charge Client.
+            Send SOW. Get AI Price. Charge Client.
           </div>
           <div className="text-[13px] sm:text-[15px] text-black/45 leading-[1.65] mb-6 max-w-[720px]">
             No quoting calls, no scoping workshops, no T&amp;M surprises. Three
@@ -532,7 +571,7 @@ export default function OnePagerPage() {
                   <div className="text-[15px] sm:text-[17px] font-semibold text-black mb-2">
                     {title}
                   </div>
-                  <div className="text-[13px] text-black/50 leading-[1.6]">
+                  <div className="text-[13px] sm:text-[14px] text-black/50 leading-[1.6]">
                     {body}
                   </div>
                 </div>
@@ -545,23 +584,73 @@ export default function OnePagerPage() {
             ))}
           </div>
 
-          {/* FREE first migration callout */}
-          <div className="flex items-stretch bg-black text-white mt-5">
-            <div className="px-6 py-5 border-r border-white/[0.10] flex flex-col items-center justify-center min-w-[140px]">
-              <div className="text-[28px] sm:text-[34px] font-semibold leading-none tracking-[-0.02em]">
-                FREE
+          {/* Example quote */}
+          <div className="border border-black/[0.08] mt-5 overflow-hidden">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 px-4 sm:px-5 py-3.5 bg-[#fafafa] border-b border-black/[0.08]">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+                <span className="text-[10px] font-mono uppercase tracking-[0.12em] text-black/40 font-semibold">
+                  Example quote
+                </span>
+                <span className="inline-flex items-center gap-1.5 text-[9px] font-mono uppercase tracking-[0.08em] font-bold text-[#15803d] bg-[#16a34a]/[0.08] border border-[#16a34a]/[0.25] px-2 py-1 rounded-full">
+                  <span className="w-1 h-1 rounded-full bg-[#16a34a]" />
+                  Returned in 24h
+                </span>
               </div>
-              <div className="text-[9px] font-mono uppercase tracking-[0.15em] text-white/40 mt-2">
-                First Migration
+              <div className="text-[10px] font-mono text-black/35 tracking-tight">
+                Quote #Q-2026-0412 · QBO → NetSuite
               </div>
             </div>
-            <div className="flex-1 px-5 sm:px-6 py-5 flex flex-col justify-center">
-              <div className="text-[15px] sm:text-[17px] font-semibold mb-1">
-                Your first migration is free.
+            <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-black/[0.08]">
+              <div className="px-4 sm:px-6 py-5">
+                <div className="text-[10px] font-mono uppercase tracking-[0.12em] text-black/40 mb-2">
+                  Source AI fee
+                </div>
+                <div className="text-[28px] sm:text-[32px] font-semibold tracking-tight text-black">
+                  $9,500
+                </div>
+                <div className="text-[12px] text-black/45 mt-1">
+                  Fixed price · discovery → go-live
+                </div>
               </div>
-              <div className="text-[13px] text-white/55 leading-[1.55]">
-                Send us your first SOW — we&apos;ll scope, price, and deliver it
-                on us. No cost, no commitment.
+              <div className="px-4 sm:px-6 py-5">
+                <div className="text-[10px] font-mono uppercase tracking-[0.12em] text-black/40 mb-2">
+                  Your markup
+                </div>
+                <div className="text-[28px] sm:text-[32px] font-semibold tracking-tight text-black">
+                  $9,500
+                </div>
+                <div className="text-[12px] font-semibold text-[#16a34a] mt-1">
+                  50% margin retained
+                </div>
+              </div>
+              <div className="px-4 sm:px-6 py-5 bg-black text-white flex flex-col justify-center">
+                <div className="text-[10px] font-mono uppercase tracking-[0.12em] text-white/50 mb-2">
+                  Client pays
+                </div>
+                <div className="text-[28px] sm:text-[32px] font-semibold tracking-tight">
+                  $19,000
+                </div>
+                <div className="text-[11px] sm:text-[12px] text-white/55 mt-1 leading-snug">
+                  93–95% below traditional ($150K–$250K)
+                </div>
+              </div>
+            </div>
+            <div className="px-4 sm:px-5 py-4 bg-[#fafafa] border-t border-black/[0.06]">
+              <div className="text-[10px] font-mono uppercase tracking-[0.12em] text-black/35 mb-3">
+                What&apos;s included
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
+                {PRICING_WHATS_INCLUDED.map((item) => (
+                  <div key={item} className="flex items-start gap-2.5">
+                    <Check
+                      className="w-4 h-4 shrink-0 mt-0.5 text-[#16a34a]/70"
+                      strokeWidth={2.5}
+                    />
+                    <span className="text-[13px] sm:text-[14px] text-black/70 leading-snug">
+                      {item}
+                    </span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
