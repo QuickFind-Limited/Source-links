@@ -9,6 +9,9 @@ import {
   Settings,
   Database,
   FileText,
+  FileSpreadsheet,
+  FileJson,
+  HardDrive,
   Link,
   Workflow,
   Shield,
@@ -495,8 +498,11 @@ export default function OnePagerPage() {
         </div>
 
         {/* ── Supported Systems ───────────────────────────────────────────── */}
-        <div className="bg-white border border-black/[0.08] px-4 sm:px-6 py-4 sm:py-5 mb-6">
+        <div className="bg-white border border-black/[0.08] px-4 sm:px-6 py-5 sm:py-6 mb-6">
           <SectionLabel>Supported Systems</SectionLabel>
+          <div className="text-[12px] sm:text-[13px] font-mono uppercase tracking-[0.14em] text-black/45 font-bold mb-4">
+            Target ERPs we implement
+          </div>
           <div className="flex flex-wrap items-center justify-center sm:justify-between gap-x-8 gap-y-5 px-1 sm:px-2">
             {ERP_LOGOS.map(({ src, alt, h }) => (
               // eslint-disable-next-line @next/next/no-img-element
@@ -508,17 +514,73 @@ export default function OnePagerPage() {
               />
             ))}
           </div>
-          <div className="mt-6 pt-5 border-t border-black/[0.06]">
-            <div className="text-[11px] font-mono uppercase tracking-[0.14em] text-black/45 font-bold mb-2.5">
-              Source ingests anything
+
+          {/* Source ingests anything */}
+          <div className="mt-7 pt-6 border-t border-black/[0.08]">
+            <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-4">
+              <div className="text-[12px] sm:text-[13px] font-mono uppercase tracking-[0.14em] text-black font-bold">
+                Source ingests anything
+              </div>
+              <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.10em] text-black/40">
+                Any format · any system · any state
+              </div>
             </div>
-            <p className="text-[14px] sm:text-[16px] text-black/70 leading-[1.6] max-w-[920px]">
-              Not just clean API feeds — we handle messy{" "}
-              <span className="font-semibold text-black">spreadsheets, CSVs, Excel files,
-              Google Sheets, legacy databases, PDFs, JSON exports, custom in-house systems</span>{" "}
-              and ad-hoc files. Whatever data lives in the client&apos;s current setup, Source AI
-              maps, normalises, and migrates it.
+            <p className="text-[14px] sm:text-[16px] text-black/70 leading-[1.6] mb-5 max-w-[920px]">
+              Not just clean API feeds — we handle whatever data lives in the client&apos;s
+              current setup. Source AI parses, maps, normalises and migrates it, preserving
+              historical integrity along the way.
             </p>
+
+            {/* Input formats grid */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2.5">
+              {[
+                { label: "Spreadsheets & CSVs", Icon: FileSpreadsheet },
+                { label: "Excel · Google Sheets", Icon: FileSpreadsheet },
+                { label: "Legacy SQL databases", Icon: Database },
+                { label: "PDFs · Scanned forms", Icon: FileText },
+                { label: "JSON · XML exports", Icon: FileJson },
+                { label: "Custom in-house systems", Icon: HardDrive },
+                { label: "REST / SOAP APIs", Icon: Link },
+                { label: "Ad-hoc email attachments", Icon: FileText },
+              ].map(({ label, Icon }) => (
+                <div
+                  key={label}
+                  className="flex items-center gap-2.5 border border-black/[0.08] bg-[#fafafa] px-3 py-2.5 rounded-sm"
+                >
+                  <Icon className="w-4 h-4 text-black/45 shrink-0" strokeWidth={1.75} />
+                  <span className="text-[12.5px] sm:text-[13px] font-medium text-black/75 truncate">
+                    {label}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            {/* What Source does with it */}
+            <div className="mt-5 pt-5 border-t border-black/[0.06] grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {[
+                {
+                  title: "Parse & normalise",
+                  body: "Extract fields across messy formats, unify schemas and reconcile duplicates.",
+                },
+                {
+                  title: "Map to target ERP",
+                  body: "AI-generated mappings for CoA, entities, tax codes, customers, vendors, SKUs.",
+                },
+                {
+                  title: "Validate & cut over",
+                  body: "Trial balance tie-outs, AR/AP reconciliation, then production cutover with rollback.",
+                },
+              ].map(({ title, body }) => (
+                <div key={title} className="border border-black/[0.08] bg-white p-4 rounded-sm">
+                  <div className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.14em] text-black/45 font-bold mb-1.5">
+                    {title}
+                  </div>
+                  <div className="text-[13px] sm:text-[14px] text-black/70 leading-[1.55]">
+                    {body}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
