@@ -583,11 +583,14 @@ export default function FinancialsFirstPage() {
         </div>
 
         {/* Subtitle */}
-        <div className="mb-6">
+        <div className="mb-7">
           <div className="text-[13px] sm:text-[14px] font-mono uppercase tracking-[0.08em] text-black/40 mb-1">
             Partner Pricing, Scope & Terms of Engagement
           </div>
-          <p className="text-[17px] sm:text-[20px] italic text-black/55 leading-[1.5]">
+          <h1 className="text-[30px] sm:text-[44px] font-semibold tracking-[-0.03em] text-black leading-[1.03] mb-4 max-w-[920px]">
+            ERP financials implementations in 30 days, for under $10K with AI.
+          </h1>
+          <p className="text-[17px] sm:text-[21px] italic text-black/55 leading-[1.5] max-w-[780px]">
             Scale your finance-heavy implementations with AI and make 50%+ margin.
           </p>
         </div>
