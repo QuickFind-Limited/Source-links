@@ -354,37 +354,46 @@ export default function OnePagerPage() {
               After
             </div>
             <div className="flex items-stretch border border-black/[0.08] overflow-hidden bg-white">
-              <div className="flex flex-col justify-center px-4 py-4 border-r border-black/[0.08] shrink-0 min-w-[100px] sm:min-w-[110px]">
+              {/* End Client */}
+              <div className="flex-1 min-w-0 flex flex-col justify-center px-4 sm:px-6 py-5">
                 <div className="text-[9px] font-mono uppercase tracking-[0.10em] text-black/30 mb-1">
                   End Client
                 </div>
-                <div className="text-[13px] sm:text-[14px] font-semibold text-black leading-tight">
-                  Legacy<br />System
+                <div className="text-[14px] sm:text-[15px] font-semibold text-black leading-tight">
+                  Legacy System
                 </div>
               </div>
-              <div className="flex items-center justify-center px-2 text-black/20 text-[15px] shrink-0">
+              <div className="flex items-center justify-center px-3 text-black/20 text-[15px] shrink-0 border-l border-black/[0.08]">
                 →
               </div>
-              <div className="flex flex-col justify-center px-4 py-4 border-r border-black/[0.08] shrink-0 w-[148px] sm:w-[168px]">
-                <div className="text-[9px] font-mono uppercase tracking-[0.10em] text-black/30 mb-2">
+
+              {/* Your Consultant — 2×2 grid */}
+              <div className="flex-[1.6] min-w-0 px-4 sm:px-6 py-5 border-l border-black/[0.08] flex flex-col justify-center">
+                <div className="text-[9px] font-mono uppercase tracking-[0.10em] text-black/30 mb-3">
                   Your Consultant
                 </div>
-                {CONSULTANT_AFTER_FLOW.map(({ label, Icon }) => (
-                  <div key={label} className="flex items-center gap-1.5 mb-1.5 last:mb-0">
-                    <Icon className="w-3 h-3 text-black/30 shrink-0" strokeWidth={1.75} />
-                    <span className="text-[11px] text-black/50 leading-tight">{label}</span>
-                  </div>
-                ))}
+                <div className="grid grid-cols-2 gap-x-5 gap-y-2.5">
+                  {CONSULTANT_AFTER_FLOW.map(({ label, Icon }) => (
+                    <div key={label} className="flex items-center gap-2 min-w-0">
+                      <Icon className="w-3.5 h-3.5 text-black/35 shrink-0" strokeWidth={1.75} />
+                      <span className="text-[11.5px] sm:text-[12px] text-black/55 leading-tight truncate">
+                        {label}
+                      </span>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <div className="flex items-center justify-center px-2 text-black/20 text-[15px] shrink-0">
+              <div className="flex items-center justify-center px-3 text-black/20 text-[15px] shrink-0 border-l border-black/[0.08]">
                 →
               </div>
-              <div className="flex flex-col justify-center px-4 py-4 shrink-0 min-w-[100px] sm:min-w-[110px]">
-                <div className="text-[9px] font-mono uppercase tracking-[0.10em] text-emerald-700/90 mb-1">
+
+              {/* Live System */}
+              <div className="flex-1 min-w-0 flex flex-col justify-center px-4 sm:px-6 py-5 border-l border-black/[0.08]">
+                <div className="text-[9px] font-mono uppercase tracking-[0.10em] text-emerald-700/90 mb-1 font-semibold">
                   Live System
                 </div>
-                <div className="text-[13px] sm:text-[14px] font-semibold text-emerald-700 leading-tight">
-                  Target<br />ERP
+                <div className="text-[14px] sm:text-[15px] font-semibold text-emerald-700 leading-tight">
+                  Target ERP
                 </div>
               </div>
             </div>
