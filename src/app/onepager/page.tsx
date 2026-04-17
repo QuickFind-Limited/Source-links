@@ -24,7 +24,6 @@ import {
   Scan,
   DollarSign,
   ChevronDown,
-  Download,
   MapPin,
 } from "lucide-react";
 
@@ -581,67 +580,141 @@ export default function OnePagerPage() {
               </span>
             </div>
 
-            {/* App body — scaled down so more of the real mockup details read behind the overlay */}
-            <div className="p-5 sm:p-8 lg:p-10 bg-white min-h-[360px] sm:min-h-[440px] lg:min-h-[500px]">
-              <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-6 lg:gap-10 items-start">
-                <div>
-                  <div className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.16em] text-black/40 font-bold mb-3">
-                    BRD v2 · Locked Quote
+            {/* App body — product-style dashboard, no oversized marketing type */}
+            <div className="bg-white min-h-[360px] sm:min-h-[440px] lg:min-h-[500px]">
+              {/* Product sub-nav / tabs */}
+              <div className="flex items-center gap-5 px-5 sm:px-6 pt-4 border-b border-black/[0.06] text-[11px] font-mono uppercase tracking-[0.1em] text-black/45">
+                {["Overview", "BRD", "Migration", "Config", "Sign-off"].map((t, i) => (
+                  <span
+                    key={t}
+                    className={`pb-3 border-b-2 ${
+                      i === 0
+                        ? "border-black text-black font-bold"
+                        : "border-transparent"
+                    }`}
+                  >
+                    {t}
+                  </span>
+                ))}
+                <span className="ml-auto hidden sm:inline-flex items-center gap-1.5 pb-3 text-emerald-600">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                  Connected
+                </span>
+              </div>
+
+              {/* Page header */}
+              <div className="px-5 sm:px-6 py-4 flex items-start justify-between gap-4 border-b border-black/[0.04]">
+                <div className="min-w-0">
+                  <div className="text-[10px] font-mono uppercase tracking-[0.14em] text-black/35 font-bold mb-1">
+                    Implementation · #IMP-2471
                   </div>
-                  <div className="text-[20px] sm:text-[26px] font-semibold tracking-tight text-black leading-tight mb-2.5">
+                  <div className="text-[16px] sm:text-[18px] font-semibold text-black tracking-tight truncate">
                     QuickBooks → NetSuite
                   </div>
-                  <div className="text-[30px] sm:text-[42px] lg:text-[48px] font-bold tracking-[-0.03em] text-black leading-[0.98] mb-3">
-                    $7,000 – $11,500
-                  </div>
-                  <p className="text-[12px] sm:text-[13.5px] text-black/55 leading-[1.55] max-w-[440px] mb-4">
-                    Source AI implementation fee, fixed after sign-off. 93–95% below traditional
-                    implementation ($150K–$250K).
-                  </p>
-                  <div className="inline-flex items-center gap-2 border border-black/[0.12] bg-white px-3 py-2 text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.08em] text-black/65 rounded-sm mb-5">
-                    <Download className="w-3.5 h-3.5" strokeWidth={1.75} />
-                    Download SOW + cost breakdown
-                  </div>
+                </div>
+                <span className="inline-flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-[0.08em] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-sm shrink-0">
+                  BRD v2 · Locked
+                </span>
+              </div>
 
-                  {/* Extra rows of "real" content so background feels dense behind the overlay */}
-                  <div className="space-y-1.5 border-t border-black/[0.06] pt-3.5 max-w-[460px]">
+              {/* KPI strip */}
+              <div className="grid grid-cols-4 border-b border-black/[0.04]">
+                {[
+                  ["Fixed fee", "$7K–$11.5K"],
+                  ["Timeline", "13 days"],
+                  ["Records", "318K"],
+                  ["AI auto", "85%"],
+                ].map(([k, v], i) => (
+                  <div
+                    key={k}
+                    className={`px-4 sm:px-5 py-3 ${
+                      i > 0 ? "border-l border-black/[0.04]" : ""
+                    }`}
+                  >
+                    <div className="text-[9px] font-mono uppercase tracking-[0.14em] text-black/40 font-bold mb-1">
+                      {k}
+                    </div>
+                    <div className="text-[14px] sm:text-[15px] font-semibold text-black tabular-nums">
+                      {v}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Body — left detail list + right phase progress */}
+              <div className="grid grid-cols-1 lg:grid-cols-[1.25fr_1fr]">
+                <div className="p-5 sm:p-6 lg:border-r border-black/[0.06]">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="text-[10px] font-mono uppercase tracking-[0.14em] text-black/40 font-bold">
+                      Scope summary
+                    </div>
+                    <span className="text-[10px] font-mono text-black/35">
+                      Updated 2m ago
+                    </span>
+                  </div>
+                  <div className="border border-black/[0.06] rounded-sm divide-y divide-black/[0.05]">
                     {[
-                      ["Chart of accounts", "380 GL accounts mapped"],
-                      ["Subsidiaries", "3 entities · multi-book"],
+                      ["Edition", "NetSuite OneWorld · US East"],
+                      ["Subsidiaries", "3 · multi-book"],
+                      ["Chart of accounts", "380 GL accounts"],
                       ["Historical data", "10 yrs · 318K records"],
                       ["Integrations", "Shopify · Stripe · HubSpot"],
-                      ["Status", "Go-live — day 13"],
+                      ["Close cadence", "Monthly · day +4"],
                     ].map(([k, v]) => (
-                      <div key={k} className="flex items-baseline justify-between gap-3 text-[11px] sm:text-[12px]">
-                        <span className="font-mono uppercase tracking-[0.1em] text-black/40 shrink-0">{k}</span>
-                        <span className="flex-1 border-b border-dotted border-black/15 mx-2 translate-y-[-2px]" />
-                        <span className="text-black/75 font-medium text-right">{v}</span>
+                      <div
+                        key={k}
+                        className="flex items-baseline justify-between gap-3 px-3 py-2 text-[11.5px] sm:text-[12px]"
+                      >
+                        <span className="font-mono uppercase tracking-[0.08em] text-black/40 shrink-0">
+                          {k}
+                        </span>
+                        <span className="text-black/80 font-medium text-right truncate">
+                          {v}
+                        </span>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-2 sm:gap-2.5">
-                  {[
-                    ["Edition", "OneWorld"],
-                    ["Modules live", "24"],
-                    ["Records migrated", "318K"],
-                    ["Timeline", "13 days"],
-                    ["AI automation", "85%"],
-                    ["Consultant hrs", "~12"],
-                  ].map(([k, v]) => (
-                    <div
-                      key={k}
-                      className="border border-black/[0.08] rounded-sm bg-white px-3.5 py-3"
-                    >
-                      <div className="text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.14em] text-black/40 font-bold mb-1.5">
-                        {k}
-                      </div>
-                      <div className="text-[16px] sm:text-[20px] font-bold tracking-tight text-black leading-none">
-                        {v}
-                      </div>
+                <div className="p-5 sm:p-6">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="text-[10px] font-mono uppercase tracking-[0.14em] text-black/40 font-bold">
+                      Phase progress
                     </div>
-                  ))}
+                    <span className="text-[10px] font-mono text-black/35">
+                      Day 13 / 21
+                    </span>
+                  </div>
+                  <div className="space-y-2.5">
+                    {[
+                      { name: "Discovery", pct: 100, status: "Done" },
+                      { name: "Scan & map", pct: 100, status: "Done" },
+                      { name: "Configuration", pct: 92, status: "Running" },
+                      { name: "Migration", pct: 78, status: "Running" },
+                      { name: "Sign-off", pct: 14, status: "Pending" },
+                    ].map(({ name, pct, status }) => (
+                      <div key={name}>
+                        <div className="flex items-center justify-between text-[11px] mb-1">
+                          <span className="text-black/70 font-medium">{name}</span>
+                          <span className="font-mono text-black/45 tabular-nums">
+                            {pct}% · {status}
+                          </span>
+                        </div>
+                        <div className="h-1.5 rounded-full bg-black/[0.06] overflow-hidden">
+                          <div
+                            className={`h-full rounded-full ${
+                              pct === 100
+                                ? "bg-emerald-500"
+                                : pct > 50
+                                ? "bg-black"
+                                : "bg-black/40"
+                            }`}
+                            style={{ width: `${pct}%` }}
+                          />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
