@@ -937,7 +937,7 @@ export default function FinancialsFirstPage() {
           </div>
         </div>
 
-        {/* ── Exclusions + Terms & Conditions ─────────────────────────────── */}
+        {/* ── Exclusions ───────────────────────────────────────────────────── */}
         <div className="bg-white border border-black/[0.08] mb-6 overflow-hidden">
           <div className="p-4 sm:p-6">
             <div className="text-[16px] sm:text-[22px] font-medium tracking-tight text-black mb-1">
@@ -956,43 +956,41 @@ export default function FinancialsFirstPage() {
               ))}
             </div>
           </div>
-
-          <TermsTabs />
         </div>
 
         {/* ── More complex implementation? — standalone CTA section ─────────── */}
         <section
           aria-labelledby="more-complex-heading"
-          className="bg-white border border-black/[0.08] border-t-[3px] border-t-black mb-6"
+          className="bg-white border border-black/[0.08] border-t-[4px] border-t-black mb-6 shadow-[0_1px_0_0_rgba(0,0,0,0.04)]"
         >
           {/* Header bar */}
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 px-5 sm:px-7 py-3.5 bg-[#f8f8f6] border-b border-black/[0.06]">
-            <div className="flex items-center gap-2.5">
-              <span className="inline-flex items-center justify-center w-6 h-6 rounded-sm bg-black text-white">
-                <Sparkles className="w-3.5 h-3.5" strokeWidth={2} />
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 px-6 sm:px-10 py-5 sm:py-6 bg-[#f8f8f6] border-b border-black/[0.06]">
+            <div className="flex items-center gap-3">
+              <span className="inline-flex items-center justify-center w-9 h-9 rounded-sm bg-black text-white">
+                <Sparkles className="w-4 h-4" strokeWidth={2} />
               </span>
-              <span className="text-[13px] sm:text-[15px] font-mono uppercase tracking-[0.14em] text-black font-bold">
+              <span className="text-[15px] sm:text-[18px] font-mono uppercase tracking-[0.14em] text-black font-bold">
                 More complex implementation?
               </span>
             </div>
-            <span className="text-[11px] font-mono uppercase tracking-[0.10em] text-black/45 font-semibold">
+            <span className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.12em] text-black/50 font-semibold">
               Fixed-fee · 24h proposal · White-label
             </span>
           </div>
 
-          <div className="px-5 sm:px-7 py-5 sm:py-7">
+          <div className="px-6 sm:px-10 py-7 sm:py-10">
             <h2
               id="more-complex-heading"
-              className="text-[24px] sm:text-[32px] font-semibold tracking-[-0.015em] text-black mb-1.5 leading-[1.15]"
+              className="text-[28px] sm:text-[40px] font-semibold tracking-[-0.02em] text-black mb-2 sm:mb-3 leading-[1.1]"
             >
               Send your SOW. Get an AI price. We deliver.
             </h2>
-            <p className="text-[14px] sm:text-[16px] text-black/55 leading-[1.55] mb-5 sm:mb-6 max-w-[780px]">
+            <p className="text-[15px] sm:text-[18px] text-black/60 leading-[1.55] mb-7 sm:mb-9 max-w-[820px]">
               For industries with operational components — inventory, order management, e-commerce, manufacturing — every project is scoped individually and priced as a fixed fee.
             </p>
 
             {/* 3-step flow */}
-            <div className="flex flex-col sm:flex-row items-stretch gap-2 sm:gap-0 mb-5 sm:mb-6">
+            <div className="flex flex-col sm:flex-row items-stretch gap-2.5 sm:gap-0 mb-7 sm:mb-9">
               {[
                 {
                   Icon: Upload,
@@ -1014,27 +1012,27 @@ export default function FinancialsFirstPage() {
                 },
               ].map(({ Icon, step, title, body }, i, arr) => (
                 <React.Fragment key={step}>
-                  <div className="flex-1 bg-white border border-black/[0.08] rounded-sm px-4 sm:px-5 py-4 sm:py-5">
-                    <div className="flex items-center gap-2.5 mb-2.5">
-                      <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-black text-white text-[11px] font-mono font-bold tracking-[0.04em] shrink-0">
+                  <div className="flex-1 bg-white border border-black/[0.08] rounded-sm px-5 sm:px-6 py-5 sm:py-7">
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-black text-white text-[12px] font-mono font-bold tracking-[0.04em] shrink-0">
                         {step}
                       </span>
                       <div className="flex-1 h-px bg-black/[0.08]" />
-                      <Icon className="w-4 h-4 text-black/50" strokeWidth={1.75} />
+                      <Icon className="w-[18px] h-[18px] text-black/55" strokeWidth={1.75} />
                     </div>
-                    <div className="text-[16px] sm:text-[17px] font-semibold text-black mb-1 leading-tight">
+                    <div className="text-[18px] sm:text-[20px] font-semibold text-black mb-1.5 leading-tight tracking-[-0.005em]">
                       {title}
                     </div>
-                    <div className="text-[13px] sm:text-[13.5px] text-black/55 leading-[1.55]">
+                    <div className="text-[14px] sm:text-[15px] text-black/55 leading-[1.6]">
                       {body}
                     </div>
                   </div>
                   {i < arr.length - 1 && (
                     <div
-                      className="hidden sm:flex items-center justify-center shrink-0 w-8"
+                      className="hidden sm:flex items-center justify-center shrink-0 w-10"
                       aria-hidden
                     >
-                      <ArrowRight className="w-4 h-4 text-black/30" strokeWidth={2} />
+                      <ArrowRight className="w-5 h-5 text-black/30" strokeWidth={2} />
                     </div>
                   )}
                 </React.Fragment>
@@ -1046,30 +1044,35 @@ export default function FinancialsFirstPage() {
               href="https://cal.com/source-ai/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full flex items-center justify-between gap-4 px-5 sm:px-7 py-5 sm:py-6 bg-black hover:bg-black/85 transition-colors group text-left rounded-sm shadow-[0_1px_0_0_rgba(0,0,0,0.08)]"
+              className="w-full flex items-center justify-between gap-4 px-6 sm:px-8 py-6 sm:py-8 bg-black hover:bg-black/85 transition-colors group text-left rounded-sm shadow-[0_1px_0_0_rgba(0,0,0,0.08)]"
             >
-              <div className="flex items-center gap-3.5 min-w-0">
-                <span className="inline-flex items-center justify-center w-9 h-9 rounded-sm bg-white/10 shrink-0">
-                  <Calendar className="w-4 h-4 text-white" strokeWidth={2} />
+              <div className="flex items-center gap-4 min-w-0">
+                <span className="inline-flex items-center justify-center w-11 h-11 rounded-sm bg-white/10 shrink-0">
+                  <Calendar className="w-[18px] h-[18px] text-white" strokeWidth={2} />
                 </span>
                 <div className="min-w-0">
-                  <div className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.12em] text-white/50 font-bold mb-0.5">
+                  <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.14em] text-white/55 font-bold mb-1">
                     Next step
                   </div>
-                  <div className="text-[17px] sm:text-[19px] font-semibold text-white leading-tight">
+                  <div className="text-[19px] sm:text-[24px] font-semibold text-white leading-tight tracking-[-0.01em]">
                     Book a 30-minute call to scope your project
                   </div>
-                  <div className="text-[12.5px] sm:text-[13.5px] text-white/65 leading-[1.5] mt-0.5">
+                  <div className="text-[13px] sm:text-[15px] text-white/65 leading-[1.5] mt-1">
                     Inventory, order management, e-commerce, manufacturing &amp; more — fixed-fee proposal within 24 hours.
                   </div>
                 </div>
               </div>
-              <span className="inline-flex items-center gap-1.5 text-[12px] font-mono uppercase tracking-[0.08em] text-white whitespace-nowrap shrink-0 bg-white/[0.12] group-hover:bg-white/[0.18] transition-colors px-3 py-2 rounded-sm">
-                Book a Call <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
+              <span className="inline-flex items-center gap-1.5 text-[12px] sm:text-[13px] font-mono uppercase tracking-[0.08em] text-white whitespace-nowrap shrink-0 bg-white/[0.12] group-hover:bg-white/[0.20] transition-colors px-3.5 py-2.5 rounded-sm font-bold">
+                Book a Call <ArrowRight className="w-4 h-4" strokeWidth={2} />
               </span>
             </a>
           </div>
         </section>
+
+        {/* ── Terms & Conditions ──────────────────────────────────────────── */}
+        <div className="bg-white border border-black/[0.08] mb-6 overflow-hidden">
+          <TermsTabs />
+        </div>
 
         {/* ── Confidentiality notice ──────────────────────────────────────── */}
         <div className="mt-6 bg-[#f8f8f6] border border-black/[0.06] rounded-sm px-4 sm:px-5 py-3.5">
