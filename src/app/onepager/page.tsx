@@ -119,12 +119,15 @@ const PRICING_WHATS_INCLUDED = [
   "UAT, cutover & go-live support",
 ];
 
-const WHITE_LABEL_POINTS = [
-  "Delivered 100% under your consultancy's brand",
-  "No Source branding visible to your end client",
-  "Your methodology, your client relationship",
-  "Source operates as a silent delivery engine",
-  "You present the outputs as your own work product",
+const TEAM_PHOTOS = [
+  { src: "/team/liam.jpg", name: "Liam Fuller" },
+  { src: "/team/yoan.jpg", name: "Yoan Yomba" },
+  { src: "/team/shane.jpg", name: "Shane Duffy" },
+  { src: "/team/brian.jpg", name: "Brian Fabian Crain" },
+  { src: "/team/jiri.jpg", name: "Jiri Kobelka" },
+  { src: "/team/bryan.jpg", name: "Bryan Doreian" },
+  { src: "/team/sean.jpg", name: "Sean Gillespie" },
+  { src: "/team/hugo.jpg", name: "Hugo" },
 ];
 
 const ERP_LOGOS = [
@@ -743,83 +746,41 @@ export default function OnePagerPage() {
 
         {/* ── Credibility ───────────────────────────────────────────────────── */}
         <div className="bg-white border border-black/[0.08] px-4 sm:px-6 py-5 sm:py-6 mb-6">
-          <div className="flex flex-col lg:flex-row lg:items-center gap-6">
-            <div className="flex items-center gap-2 shrink-0">
-              {["LF", "SK", "AM", "JR", "TC", "MN", "EV"].map((ini) => (
-                <div
-                  key={ini}
-                  className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-gradient-to-br from-black/15 to-black/5 border border-black/[0.08] flex items-center justify-center text-[10px] font-mono font-bold text-black/45"
-                >
-                  {ini}
-                </div>
+          <div className="flex flex-col lg:flex-row lg:items-center gap-5 lg:gap-7">
+            <div className="flex items-center -space-x-2 shrink-0">
+              {TEAM_PHOTOS.map(({ src, name }) => (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  key={name}
+                  src={src}
+                  alt={name}
+                  title={name}
+                  className="w-10 h-10 sm:w-11 sm:h-11 rounded-full object-cover ring-2 ring-white border border-black/[0.06] grayscale hover:grayscale-0 transition-[filter]"
+                />
               ))}
             </div>
             <div className="h-px lg:h-auto lg:w-px lg:min-h-[44px] bg-black/[0.08] lg:shrink-0" />
-            <div className="flex flex-col sm:flex-row flex-wrap gap-x-6 gap-y-2 text-[12px] sm:text-[13px] text-black/50">
+            <div className="flex flex-col sm:flex-row sm:items-center flex-wrap gap-x-5 gap-y-2 text-[12.5px] sm:text-[13.5px] text-black/55">
               <div className="flex items-center gap-2">
-                <FileText className="w-3.5 h-3.5 text-black/30 shrink-0" strokeWidth={1.75} />
+                <Users className="w-3.5 h-3.5 text-black/30 shrink-0" strokeWidth={1.75} />
                 <span>
-                  Built by <span className="font-semibold text-black/75">Source</span> — San Francisco
+                  Built by <span className="font-semibold text-black">Source</span> — San Francisco
                 </span>
               </div>
+              <span className="hidden sm:inline w-1 h-1 rounded-full bg-black/20" />
               <div className="flex items-center gap-2">
                 <FileText className="w-3.5 h-3.5 text-black/30 shrink-0" strokeWidth={1.75} />
                 <span>Featured in Forbes</span>
               </div>
+              <span className="hidden sm:inline w-1 h-1 rounded-full bg-black/20" />
               <div className="flex items-center gap-2">
                 <DollarSign className="w-3.5 h-3.5 text-black/30 shrink-0" strokeWidth={1.75} />
                 <span>$2M+ in venture funding</span>
               </div>
+              <span className="hidden sm:inline w-1 h-1 rounded-full bg-black/20" />
               <div className="flex items-center gap-2">
-                <Users className="w-3.5 h-3.5 text-black/30 shrink-0" strokeWidth={1.75} />
+                <Globe className="w-3.5 h-3.5 text-black/30 shrink-0" strokeWidth={1.75} />
                 <span>SF investors &amp; Stripe alumni</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* ── White-Label ──────────────────────────────────────────────────── */}
-        <div className="bg-white border border-black/[0.08] p-4 sm:p-6 mb-6">
-          <div className="flex flex-col sm:flex-row gap-6 sm:gap-10">
-            <div className="sm:flex-1">
-              <div className="text-[19px] sm:text-[22px] font-medium tracking-tight text-black mb-1.5">
-                Fully White-Label
-              </div>
-              <div className="text-[13px] sm:text-[14px] text-black/45 leading-[1.65] mb-4">
-                Your brand on every deliverable. Your client never knows Source exists.
-              </div>
-              <div className="space-y-2.5">
-                {WHITE_LABEL_POINTS.map((point) => (
-                  <div key={point} className="flex items-start gap-2.5">
-                    <Check
-                      className="w-4 h-4 shrink-0 mt-0.5 text-[#16a34a]/70"
-                      strokeWidth={2.5}
-                    />
-                    <span className="text-[13px] sm:text-[14px] text-black/65 leading-snug">
-                      {point}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="sm:w-[260px] shrink-0 bg-[#f5f5f3] border border-black/[0.07] p-5 flex flex-col justify-center">
-              <div className="text-[10px] font-mono uppercase tracking-[0.12em] text-black/30 mb-3">
-                What your client sees
-              </div>
-              <div className="space-y-2">
-                {[
-                  "Your company name on all reports",
-                  "Your logo on deliverables",
-                  "Your email domain throughout",
-                  "Your project management style",
-                ].map((item) => (
-                  <div key={item} className="flex items-start gap-2">
-                    <span className="mt-[7px] w-1 h-1 bg-black/30 rounded-full shrink-0" />
-                    <span className="text-[12px] sm:text-[13px] text-black/55 leading-snug">
-                      {item}
-                    </span>
-                  </div>
-                ))}
               </div>
             </div>
           </div>
