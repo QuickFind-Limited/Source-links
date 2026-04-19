@@ -113,6 +113,8 @@ const PRICING_STEPS: Array<{
     title: "Our AI prices it",
     body: "A read-only scan of the client's live systems, returned as a locked fixed price within 24 hours.",
     Icon: Scan,
+    chipsLabel: "What comes back",
+    chips: ["Locked price", "24h SLA", "Scope map"],
   },
   {
     n: "03",
@@ -610,14 +612,8 @@ export default function OnePagerPage() {
 
         {/* ── See the Source platform live — hero card paired with Pricing below ── */}
         <div className="bg-white border-2 border-black p-6 sm:p-10 mb-6 shadow-[0_24px_60px_-24px_rgba(0,0,0,0.25)]">
-          <div className="flex flex-wrap items-center gap-3 mb-3">
-            <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.18em] text-black font-bold">
-              Platform Demo
-            </div>
-            <span className="inline-flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-[0.14em] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-sm">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" />
-              Live · 30 min
-            </span>
+          <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.18em] text-black font-bold mb-3">
+            Platform Demo
           </div>
           <div className="text-[30px] sm:text-[44px] font-semibold tracking-[-0.025em] text-black mb-3 leading-[1.05] max-w-[940px]">
             See the Source platform run a live ERP implementation.
