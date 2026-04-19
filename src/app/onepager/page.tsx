@@ -106,12 +106,12 @@ const PRICING_STEPS: Array<{
     body: "Drop in whatever you have. Source AI parses it all.",
     Icon: FileText,
     chipsLabel: "Accepted inputs",
-    chips: ["Requirements", "SOW", "Transcript", "Email"],
+    chips: ["Requirements", "SOW", "Transcript"],
   },
   {
     n: "02",
     title: "Our AI prices it",
-    body: "Source AI runs a read-only scan of the client's live systems — chart of accounts, AP/AR, subsidiaries, integrations, historical volume — then maps the scope, weighs complexity, and returns a locked fixed price within 24 hours. No scoping calls, no T&M guesswork, no surprise overruns.",
+    body: "A read-only scan of the client's live systems, returned as a locked fixed price within 24 hours.",
     Icon: Scan,
   },
   {
