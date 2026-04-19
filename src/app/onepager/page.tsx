@@ -505,22 +505,22 @@ export default function OnePagerPage() {
                   </div>
                 </div>
                 <div className="hidden md:block w-px bg-white/[0.14]" />
-                <div className="flex flex-col justify-center gap-3">
+                <div className="flex flex-col justify-center gap-4">
                   <div>
-                    <div className="text-[10px] font-mono uppercase tracking-[0.14em] text-white/85 font-bold mb-1">
+                    <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.14em] text-white/85 font-bold mb-1.5">
                       Source AI delivered
                     </div>
-                    <div className="text-[12.5px] sm:text-[13.5px] text-white/80 leading-[1.5]">
+                    <div className="text-[14.5px] sm:text-[16px] text-white/85 leading-[1.55]">
                       System scan · business logic mapping · material generation · data migration ·
                       ETL · NetSuite configuration · testing & QA · validation
                     </div>
                   </div>
                   <div className="h-px bg-white/[0.10]" />
                   <div>
-                    <div className="text-[10px] font-mono uppercase tracking-[0.14em] text-white/55 font-bold mb-1">
+                    <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.14em] text-white/55 font-bold mb-1.5">
                       Consultant · ~12h total
                     </div>
-                    <div className="text-[12.5px] sm:text-[13.5px] text-white/60 leading-[1.5]">
+                    <div className="text-[14.5px] sm:text-[16px] text-white/65 leading-[1.55]">
                       Client relationship · context handoff · reviewing AI outputs · sign-off
                     </div>
                   </div>
