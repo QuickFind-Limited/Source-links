@@ -54,7 +54,7 @@ const SOURCE_ENGINE_STEPS = [
   { label: "AI Scan", Icon: Search },
   { label: "Business logic", Icon: Layers },
   { label: "Mapping", Icon: Workflow },
-  { label: "BRD generation", Icon: FileText },
+  { label: "Material generation", Icon: FileText },
   { label: "Config & ETL", Icon: Settings },
   { label: "Testing & QA", Icon: Shield },
   { label: "Validation", Icon: Check },
@@ -225,7 +225,7 @@ export default function OnePagerPage() {
                 <p className="text-[18px] sm:text-[22px] md:text-[25px] font-semibold text-black/90 leading-[1.35]">
                   Source is an AI engine that automates{" "}
                   <span className="text-black">85% of ERP implementation delivery</span>{" "}
-                  — scanning, BRD generation, data migration, configuration, testing.
+                  — scanning, material generation, data migration, configuration, testing.
                 </p>
               </div>
 
@@ -511,7 +511,7 @@ export default function OnePagerPage() {
                       Source AI delivered
                     </div>
                     <div className="text-[12.5px] sm:text-[13.5px] text-white/80 leading-[1.5]">
-                      System scan · business logic mapping · BRD generation · data migration ·
+                      System scan · business logic mapping · material generation · data migration ·
                       ETL · NetSuite configuration · testing & QA · validation
                     </div>
                   </div>
@@ -625,7 +625,7 @@ export default function OnePagerPage() {
           <p className="text-[14px] sm:text-[15px] text-black/60 leading-[1.65] mb-5 max-w-[880px]">
             The dashboard below is the real Source product — the same console you and your client log into during every implementation.
             Hop on a 30-min call and we&apos;ll walk you through it on a real QuickBooks → NetSuite migration: scan the legacy system,
-            generate the BRD, migrate the data, configure NetSuite, all under 21 days.
+            generate the materials, migrate the data, configure NetSuite, all under 21 days.
           </p>
           <a
             href="https://cal.com/source-ai/30min"
