@@ -620,12 +620,12 @@ export default function OnePagerPage() {
             </span>
           </div>
           <div className="text-[30px] sm:text-[44px] font-semibold tracking-[-0.025em] text-black mb-3 leading-[1.05] max-w-[940px]">
-            See the actual Source platform run a live ERP implementation.
+            See the Source platform run a live ERP implementation.
           </div>
           <p className="text-[15px] sm:text-[18px] text-black/65 leading-[1.55] mb-8 max-w-[880px]">
-            The dashboard below is the <span className="font-semibold text-black">real Source product</span> —
+            The dashboard below is the <span className="font-semibold text-black">Source platform</span> —
             the same console you and your client log into during every implementation.
-            Hop on a 30-min call and we&apos;ll walk you through it on a real QuickBooks → NetSuite migration:
+            Hop on a 30-min call and we&apos;ll walk you through a live QuickBooks → NetSuite migration:
             scan the legacy system, generate the materials, migrate the data, configure NetSuite, all under 21 days.
           </p>
           <a
