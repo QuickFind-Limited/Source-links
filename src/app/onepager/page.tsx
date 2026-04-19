@@ -97,26 +97,32 @@ const PRICING_STEPS: Array<{
   title: string;
   body: string;
   Icon: React.ComponentType<{ className?: string; strokeWidth?: number }>;
-  inputs?: string[];
+  chipsLabel: string;
+  chips: string[];
 }> = [
   {
     n: "01",
     title: "You send requirements",
     body: "Drop in whatever you have. Source AI parses it all.",
     Icon: FileText,
-    inputs: ["Requirements", "SOW", "Transcript", "Email"],
+    chipsLabel: "Accepted inputs",
+    chips: ["Requirements", "SOW", "Transcript", "Email"],
   },
   {
     n: "02",
     title: "Our AI scans & quotes",
-    body: "Source AI reads what you sent, runs a read-only scan of the client's live systems, and returns a fixed price within 24 hours — no scoping calls, no T&M guesswork.",
+    body: "A read-only scan of the client's live systems, returned as a fixed price within 24 hours.",
     Icon: Scan,
+    chipsLabel: "What we scan",
+    chips: ["GL", "AP / AR", "Subsidiaries", "Integrations"],
   },
   {
     n: "03",
     title: "You charge the client",
-    body: "You mark up, invoice your client directly, and keep the margin. Source is your back-office engine.",
+    body: "Mark up to whatever your client will pay. Source is your white-label back office.",
     Icon: DollarSign,
+    chipsLabel: "What you keep",
+    chips: ["Client", "Brand", "50%+ margin"],
   },
 ];
 
@@ -487,16 +493,16 @@ export default function OnePagerPage() {
                 Where the work happened
               </div>
               <div className="grid grid-cols-1 md:grid-cols-[auto_1px_1fr] gap-x-6 gap-y-4 items-stretch">
-                {/* Compact 85% headline */}
-                <div className="flex md:flex-col items-baseline md:items-start gap-x-3 md:gap-x-0">
-                  <div className="text-[34px] sm:text-[38px] md:text-[42px] font-bold tracking-[-0.02em] leading-none text-white">
+                {/* 85% headline — sized to fill the left column without overpowering */}
+                <div className="flex md:flex-col items-baseline md:items-start gap-x-4 md:gap-x-0 md:min-w-[150px]">
+                  <div className="text-[44px] sm:text-[52px] md:text-[60px] font-bold tracking-[-0.025em] leading-none text-white">
                     85%
                   </div>
                   <div className="flex flex-col">
-                    <div className="text-[10px] font-mono uppercase tracking-[0.14em] text-white/70 font-bold md:mt-2">
+                    <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.14em] text-white/75 font-bold md:mt-3">
                       AI-Automated
                     </div>
-                    <div className="text-[11px] text-white/45 mt-0.5 leading-snug">
+                    <div className="text-[12px] text-white/50 mt-0.5 leading-snug">
                       end-to-end · zero handoffs
                     </div>
                   </div>
@@ -791,9 +797,6 @@ export default function OnePagerPage() {
                 <div className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white shadow-[0_10px_24px_-6px_rgba(0,0,0,0.4)] mb-2.5 group-hover:scale-105 transition-transform">
                   <div className="w-0 h-0 border-l-[12px] sm:border-l-[14px] border-l-black border-y-[8px] sm:border-y-[9px] border-y-transparent ml-1" />
                 </div>
-                <div className="text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.24em] text-[#34d399] mb-1.5 font-bold">
-                  Source Platform Demo · 30 min
-                </div>
                 <div className="text-[15px] sm:text-[18px] font-semibold text-white leading-[1.25] tracking-tight">
                   See the Source platform run a live migration
                 </div>
@@ -823,7 +826,7 @@ export default function OnePagerPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr_auto_1fr] gap-3 md:gap-0 items-stretch">
-            {PRICING_STEPS.map(({ n, title, body, Icon, inputs }, i) => (
+            {PRICING_STEPS.map(({ n, title, body, Icon, chipsLabel, chips }, i) => (
               <React.Fragment key={n}>
                 <div className="border-[1.5px] border-black/[0.14] bg-white p-6 sm:p-7 flex flex-col rounded-sm shadow-[0_1px_0_0_rgba(0,0,0,0.03)]">
                   <div className="flex items-start justify-between mb-5 sm:mb-6">
@@ -843,23 +846,21 @@ export default function OnePagerPage() {
                   <div className="text-[14px] sm:text-[15px] text-black/60 leading-[1.65]">
                     {body}
                   </div>
-                  {inputs && inputs.length > 0 && (
-                    <div className="mt-auto pt-4">
-                      <div className="text-[9.5px] font-mono uppercase tracking-[0.16em] text-black/40 font-bold mb-2">
-                        Accepted inputs
-                      </div>
-                      <div className="flex flex-wrap gap-1">
-                        {inputs.map((input) => (
-                          <span
-                            key={input}
-                            className="inline-flex items-center border border-black/[0.12] bg-[#fafafa] text-black/75 text-[10px] font-medium px-1.5 py-0.5 rounded-sm whitespace-nowrap"
-                          >
-                            {input}
-                          </span>
-                        ))}
-                      </div>
+                  <div className="mt-auto pt-4">
+                    <div className="text-[9.5px] font-mono uppercase tracking-[0.16em] text-black/40 font-bold mb-2">
+                      {chipsLabel}
                     </div>
-                  )}
+                    <div className="flex flex-wrap gap-1">
+                      {chips.map((chip) => (
+                        <span
+                          key={chip}
+                          className="inline-flex items-center border border-black/[0.12] bg-[#fafafa] text-black/75 text-[10px] font-medium px-1.5 py-0.5 rounded-sm whitespace-nowrap"
+                        >
+                          {chip}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
                 {i < PRICING_STEPS.length - 1 && (
                   <div className="hidden md:flex items-center justify-center px-3 text-black/35 text-[22px] font-semibold">
