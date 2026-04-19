@@ -874,81 +874,93 @@ export default function FinancialsFirstPage() {
           </div>
         </div>
 
-        {/* ── More complex implementation? — standalone CTA section ─────────── */}
+        {/* ── Partner Pricing — Send Requirements. Get AI Price. ─────────── */}
         <section
-          aria-labelledby="more-complex-heading"
-          className="bg-white border border-black/[0.08] border-t-[4px] border-t-black mb-6 shadow-[0_1px_0_0_rgba(0,0,0,0.04)]"
+          aria-labelledby="partner-pricing-heading"
+          className="bg-white border-2 border-black mb-6 shadow-[0_24px_60px_-24px_rgba(0,0,0,0.25)]"
         >
-          {/* Header bar */}
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 px-6 sm:px-10 py-5 sm:py-6 bg-[#f8f8f6] border-b border-black/[0.06]">
-            <div className="flex items-center gap-3">
-              <span className="inline-flex items-center justify-center w-9 h-9 rounded-sm bg-black text-white">
-                <Sparkles className="w-4 h-4" strokeWidth={2} />
-              </span>
-              <span className="text-[15px] sm:text-[18px] font-mono uppercase tracking-[0.14em] text-black font-bold">
-                More complex implementation?
-              </span>
+          <div className="px-6 sm:px-10 py-8 sm:py-10">
+            <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.18em] text-black font-bold mb-3">
+              Partner Pricing
             </div>
-            <span className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.12em] text-black/50 font-semibold">
-              Fixed-fee · 24h proposal · White-label
-            </span>
-          </div>
-
-          <div className="px-6 sm:px-10 py-7 sm:py-10">
             <h2
-              id="more-complex-heading"
-              className="text-[28px] sm:text-[40px] font-semibold tracking-[-0.02em] text-black mb-2 sm:mb-3 leading-[1.1]"
+              id="partner-pricing-heading"
+              className="text-[28px] sm:text-[40px] md:text-[44px] font-semibold tracking-[-0.025em] text-black mb-4 leading-[1.05]"
             >
-              Send your SOW. Get an AI price. We deliver.
+              Send Requirements. Get AI Price. Charge Client.
             </h2>
-            <p className="text-[15px] sm:text-[18px] text-black/60 leading-[1.55] mb-7 sm:mb-9 max-w-[820px]">
-              For industries with operational components — inventory, order management, e-commerce, manufacturing — every project is scoped individually and priced as a fixed fee.
+            <p className="text-[15px] sm:text-[17px] text-black/65 leading-[1.55] mb-8 max-w-[880px]">
+              No quoting calls, no scoping workshops, no T&amp;M surprises. Three steps from
+              requirements to invoice —{" "}
+              <span className="font-semibold text-black">
+                you mark up to whatever your client will pay
+              </span>{" "}
+              and keep the margin.
             </p>
 
             {/* 3-step flow */}
-            <div className="flex flex-col sm:flex-row items-stretch gap-2.5 sm:gap-0 mb-7 sm:mb-9">
+            <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr_auto_1fr] gap-3 md:gap-0 items-stretch">
               {[
                 {
                   Icon: Upload,
                   step: "01",
-                  title: "Send SOW",
-                  body: "Share your client's SOW, transcript, or scope notes — any format.",
+                  title: "You send requirements",
+                  body: "Drop in whatever you have. Source AI parses it all.",
+                  inputs: ["Requirements", "SOW", "Transcript", "Email", "Notes"],
                 },
                 {
                   Icon: Sparkles,
                   step: "02",
-                  title: "Get AI Price",
-                  body: "We return a complete fixed-fee proposal within 24 hours.",
+                  title: "Our AI scans & quotes",
+                  body: "Source AI reads what you sent, runs a read-only scan of the client's live systems, and returns a fixed price within 24 hours — no scoping calls, no T&M guesswork.",
                 },
                 {
                   Icon: Rocket,
                   step: "03",
-                  title: "Deliver with AI",
-                  body: "Source AI runs the implementation end-to-end. You keep the client.",
+                  title: "You charge the client",
+                  body: "You mark up, invoice your client directly, and keep the margin. Source is your back-office engine.",
                 },
-              ].map(({ Icon, step, title, body }, i, arr) => (
+              ].map(({ Icon, step, title, body, inputs }, i, arr) => (
                 <React.Fragment key={step}>
-                  <div className="flex-1 bg-white border border-black/[0.08] rounded-sm px-5 sm:px-6 py-5 sm:py-7">
-                    <div className="flex items-center gap-3 mb-3">
-                      <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-black text-white text-[12px] font-mono font-bold tracking-[0.04em] shrink-0">
+                  <div className="bg-white border border-black/[0.08] rounded-sm p-5 sm:p-6 flex flex-col">
+                    <div className="flex items-start justify-between mb-5">
+                      <div className="w-10 h-10 bg-black flex items-center justify-center rounded-sm">
+                        <Icon className="w-4 h-4 text-white" strokeWidth={1.75} />
+                      </div>
+                      <div className="text-[10px] sm:text-[11px] font-mono tracking-[0.14em] text-black/35 font-bold">
                         {step}
-                      </span>
-                      <div className="flex-1 h-px bg-black/[0.08]" />
-                      <Icon className="w-[18px] h-[18px] text-black/55" strokeWidth={1.75} />
+                      </div>
                     </div>
-                    <div className="text-[18px] sm:text-[20px] font-semibold text-black mb-1.5 leading-tight tracking-[-0.005em]">
+                    <div className="text-[16px] sm:text-[18px] font-semibold text-black mb-2 leading-tight">
                       {title}
                     </div>
-                    <div className="text-[14px] sm:text-[15px] text-black/55 leading-[1.6]">
+                    <div className="text-[13px] sm:text-[14px] text-black/55 leading-[1.6]">
                       {body}
                     </div>
+                    {inputs && (
+                      <div className="mt-auto pt-5">
+                        <div className="text-[10px] font-mono uppercase tracking-[0.14em] text-black/45 font-bold mb-2.5">
+                          Accepted Inputs
+                        </div>
+                        <div className="flex flex-wrap gap-1.5">
+                          {inputs.map((label) => (
+                            <span
+                              key={label}
+                              className="inline-flex items-center text-[11px] sm:text-[12px] font-mono text-black/70 border border-black/[0.10] bg-[#fafafa] px-2 py-1 rounded-sm"
+                            >
+                              {label}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
                   {i < arr.length - 1 && (
                     <div
-                      className="hidden sm:flex items-center justify-center shrink-0 w-10"
+                      className="hidden md:flex items-center justify-center shrink-0 px-3 text-black/25 text-[18px]"
                       aria-hidden
                     >
-                      <ArrowRight className="w-5 h-5 text-black/30" strokeWidth={2} />
+                      →
                     </div>
                   )}
                 </React.Fragment>
@@ -960,26 +972,26 @@ export default function FinancialsFirstPage() {
               href="https://cal.com/source-ai/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full flex items-center justify-between gap-4 px-6 sm:px-8 py-6 sm:py-8 bg-black hover:bg-black/85 transition-colors group text-left rounded-sm shadow-[0_1px_0_0_rgba(0,0,0,0.08)]"
+              className="mt-7 w-full flex items-center justify-between gap-4 px-6 sm:px-8 py-6 sm:py-7 bg-black hover:bg-[#0e0e0e] transition-colors group text-left rounded-sm border-2 border-black"
             >
               <div className="flex items-center gap-4 min-w-0">
                 <span className="inline-flex items-center justify-center w-11 h-11 rounded-sm bg-white/10 shrink-0">
-                  <Calendar className="w-[18px] h-[18px] text-white" strokeWidth={2} />
+                  <Calendar className="w-5 h-5 text-white" strokeWidth={2} />
                 </span>
                 <div className="min-w-0">
-                  <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.14em] text-white/55 font-bold mb-1">
+                  <div className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.16em] text-white/55 font-bold mb-1">
                     Next step
                   </div>
-                  <div className="text-[19px] sm:text-[24px] font-semibold text-white leading-tight tracking-[-0.01em]">
-                    Book a 30-minute call to scope your project
+                  <div className="text-[18px] sm:text-[22px] font-semibold text-white leading-tight">
+                    Book a call to partner with Source
                   </div>
-                  <div className="text-[13px] sm:text-[15px] text-white/65 leading-[1.5] mt-1">
-                    Inventory, order management, e-commerce, manufacturing &amp; more — fixed-fee proposal within 24 hours.
+                  <div className="text-[13px] sm:text-[14.5px] text-white/65 leading-[1.5] mt-1">
+                    Send your first SOW or requirements — fixed-fee proposal returned within 24 hours.
                   </div>
                 </div>
               </div>
-              <span className="hidden sm:inline-flex items-center gap-1.5 text-[12px] sm:text-[13px] font-mono uppercase tracking-[0.08em] text-white whitespace-nowrap shrink-0 bg-white/[0.12] group-hover:bg-white/[0.20] transition-colors px-3.5 py-2.5 rounded-sm font-bold">
-                Book a Call <ArrowRight className="w-4 h-4" strokeWidth={2} />
+              <span className="hidden sm:inline-flex items-center gap-1.5 text-[12px] font-mono uppercase tracking-[0.10em] text-white whitespace-nowrap shrink-0 bg-white/[0.12] group-hover:bg-white/[0.20] transition-colors px-4 py-2.5 rounded-sm font-bold">
+                Book a Call <ArrowRight className="w-3.5 h-3.5" strokeWidth={2} />
               </span>
             </a>
           </div>
