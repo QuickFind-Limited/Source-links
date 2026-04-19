@@ -97,8 +97,8 @@ const PRICING_STEPS: Array<{
   title: string;
   body: string;
   Icon: React.ComponentType<{ className?: string; strokeWidth?: number }>;
-  chipsLabel: string;
-  chips: string[];
+  chipsLabel?: string;
+  chips?: string[];
 }> = [
   {
     n: "01",
@@ -110,11 +110,9 @@ const PRICING_STEPS: Array<{
   },
   {
     n: "02",
-    title: "Our AI scans & quotes",
-    body: "A read-only scan of the client's live systems, returned as a fixed price within 24 hours.",
+    title: "Our AI prices it",
+    body: "Source AI runs a read-only scan of the client's live systems — chart of accounts, AP/AR, subsidiaries, integrations, historical volume — then maps the scope, weighs complexity, and returns a locked fixed price within 24 hours. No scoping calls, no T&M guesswork, no surprise overruns.",
     Icon: Scan,
-    chipsLabel: "What we scan",
-    chips: ["GL", "AP / AR", "Subsidiaries", "Integrations"],
   },
   {
     n: "03",
@@ -843,21 +841,23 @@ export default function OnePagerPage() {
                   <div className="text-[14px] sm:text-[15px] text-black/60 leading-[1.65]">
                     {body}
                   </div>
-                  <div className="mt-auto pt-4">
-                    <div className="text-[9.5px] font-mono uppercase tracking-[0.16em] text-black/40 font-bold mb-2">
-                      {chipsLabel}
+                  {chips && chips.length > 0 && chipsLabel && (
+                    <div className="mt-auto pt-4">
+                      <div className="text-[9.5px] font-mono uppercase tracking-[0.16em] text-black/40 font-bold mb-2">
+                        {chipsLabel}
+                      </div>
+                      <div className="flex flex-wrap gap-1">
+                        {chips.map((chip) => (
+                          <span
+                            key={chip}
+                            className="inline-flex items-center border border-black/[0.12] bg-[#fafafa] text-black/75 text-[10px] font-medium px-1.5 py-0.5 rounded-sm whitespace-nowrap"
+                          >
+                            {chip}
+                          </span>
+                        ))}
+                      </div>
                     </div>
-                    <div className="flex flex-wrap gap-1">
-                      {chips.map((chip) => (
-                        <span
-                          key={chip}
-                          className="inline-flex items-center border border-black/[0.12] bg-[#fafafa] text-black/75 text-[10px] font-medium px-1.5 py-0.5 rounded-sm whitespace-nowrap"
-                        >
-                          {chip}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
+                  )}
                 </div>
                 {i < PRICING_STEPS.length - 1 && (
                   <div className="hidden md:flex items-center justify-center px-3 text-black/35 text-[22px] font-semibold">
