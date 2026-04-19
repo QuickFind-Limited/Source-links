@@ -77,10 +77,10 @@ const CONSULTANT_AFTER_FLOW = [
 ];
 
 const CASE_STUDY_STATS = [
-  { value: "13", label: "Days to Go-Live" },
-  { value: "$6K", label: "Source Cost" },
-  { value: "50%+", label: "Partner Margin" },
-  { value: "~12h", label: "Consultant Time" },
+  { value: "90%", label: "AI-Automated", sub: "~12h consultant review" },
+  { value: "13", label: "Days to Go-Live", sub: "vs 4–6 months traditional" },
+  { value: "$6K", label: "Source Cost", sub: "fixed fee · zero overruns" },
+  { value: "50%+", label: "Partner Margin", sub: "you mark up · keep upside" },
 ];
 
 const CASE_STUDY_DELIVERED = [
@@ -128,7 +128,6 @@ const ERP_LOGOS = [
   { src: "/onepager/logos/netsuite.svg", alt: "NetSuite", h: "h-9" },
   { src: "/onepager/logos/d365.svg", alt: "Dynamics 365", h: "h-12" },
   { src: "/onepager/logos/sap.svg", alt: "SAP", h: "h-10" },
-  { src: "/onepager/logos/quickbooks.svg", alt: "QuickBooks", h: "h-14" },
   { src: "/onepager/logos/acumatica.svg", alt: "Acumatica", h: "h-10" },
   { src: "/logos/sage.svg", alt: "Sage", h: "h-11" },
 ];
@@ -170,7 +169,7 @@ export default function OnePagerPage() {
             Partner One-Pager
           </div>
           <h1 className="text-[30px] sm:text-[42px] md:text-[52px] font-bold tracking-[-0.03em] text-black leading-[1.05] mb-5 max-w-[940px]">
-            The go-to AI partner for ERP <br className="hidden sm:block" />VARs &amp; Firms.
+            The go-to AI partner for ERP VARs <br className="hidden sm:block" />&amp; Firms.
           </h1>
           <p className="text-[19px] sm:text-[24px] md:text-[28px] italic text-black/70 leading-[1.45] max-w-[940px]">
             We automate ERP implementations with AI. You keep the client, the
@@ -222,7 +221,7 @@ export default function OnePagerPage() {
                 <div className="text-[10px] font-mono uppercase tracking-[0.15em] text-black/35 mb-5">
                   What Partners Are Saying
                 </div>
-                <p className="text-[20px] sm:text-[24px] md:text-[26px] italic leading-[1.5] text-black/80 mb-7 tracking-[-0.01em]">
+                <p className="text-[24px] sm:text-[28px] md:text-[32px] italic leading-[1.45] text-black/80 mb-7 tracking-[-0.015em]">
                   &ldquo;Source handles the materials, the configuration, the full ERP
                   implementation end-to-end. We focus on the upsell, the client experience, the
                   relationship — and we&apos;re finally able to{" "}
@@ -449,7 +448,7 @@ export default function OnePagerPage() {
 
           <div className="p-5 sm:p-7">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-0 border border-black/[0.08] overflow-hidden mb-6">
-              {CASE_STUDY_STATS.map(({ value, label }, i) => (
+              {CASE_STUDY_STATS.map(({ value, label, sub }, i) => (
                 <div
                   key={label}
                   className={`px-3 py-4 text-center bg-white ${
@@ -458,21 +457,62 @@ export default function OnePagerPage() {
                     i >= 2 ? "border-t md:border-t-0 border-black/[0.08]" : ""
                   } ${
                     i % 4 !== 0 ? "md:border-l md:border-black/[0.08]" : ""
+                  } ${
+                    i === 0 ? "bg-black text-white" : ""
                   }`}
                 >
-                  <div className="text-[22px] sm:text-[28px] md:text-[30px] font-bold tracking-tight text-black leading-none mb-1.5">
+                  <div
+                    className={`text-[22px] sm:text-[28px] md:text-[30px] font-bold tracking-tight leading-none mb-1.5 ${
+                      i === 0 ? "text-white" : "text-black"
+                    }`}
+                  >
                     {value}
                   </div>
-                  <div className="text-[10px] font-mono uppercase tracking-[0.10em] text-black/40 font-medium leading-snug">
+                  <div
+                    className={`text-[10px] font-mono uppercase tracking-[0.10em] font-medium leading-snug ${
+                      i === 0 ? "text-white/70" : "text-black/40"
+                    }`}
+                  >
                     {label}
                   </div>
+                  {sub && (
+                    <div
+                      className={`text-[10px] mt-1.5 leading-snug ${
+                        i === 0 ? "text-white/55" : "text-black/35"
+                      }`}
+                    >
+                      {sub}
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
 
+            {/* AI vs consultant work split */}
+            <div className="border border-black/[0.08] bg-black text-white px-4 sm:px-5 py-4 mb-6 rounded-sm">
+              <div className="text-[10px] font-mono uppercase tracking-[0.14em] text-white/45 font-bold mb-2">
+                Where the work happened
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-x-5 gap-y-2 items-baseline">
+                <div className="text-[12px] sm:text-[13px] font-mono uppercase tracking-[0.10em] text-[#34d399] font-bold whitespace-nowrap">
+                  Source AI · 90%
+                </div>
+                <div className="text-[13px] sm:text-[14px] text-white/85 leading-[1.55]">
+                  System scan · business logic mapping · BRD generation · data migration ·
+                  ETL · NetSuite configuration · testing & QA · validation
+                </div>
+                <div className="text-[12px] sm:text-[13px] font-mono uppercase tracking-[0.10em] text-white/55 font-bold whitespace-nowrap mt-2 md:mt-0">
+                  Consultant · ~12h
+                </div>
+                <div className="text-[13px] sm:text-[14px] text-white/70 leading-[1.55]">
+                  Client relationship · context handoff · reviewing AI outputs · sign-off
+                </div>
+              </div>
+            </div>
+
             <div className="border-2 border-black/[0.08] rounded-sm p-5 sm:p-7 bg-[#fafafa]">
               <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.18em] text-black/55 font-bold mb-5">
-                What was delivered
+                What was delivered <span className="text-black/35">— end-to-end by Source AI</span>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3.5">
                 {CASE_STUDY_DELIVERED.map((item) => (
