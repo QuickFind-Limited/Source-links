@@ -481,43 +481,43 @@ export default function OnePagerPage() {
               ))}
             </div>
 
-            {/* Hero AI breakdown — the dominant AI moment for the case study */}
-            <div className="bg-black text-white p-5 sm:p-7 mb-6 rounded-sm">
-              <div className="text-[10px] font-mono uppercase tracking-[0.16em] text-white/40 font-bold mb-4">
+            {/* AI vs consultant work split — compact monochrome strip */}
+            <div className="bg-black text-white px-4 sm:px-5 py-4 sm:py-5 mb-6 rounded-sm">
+              <div className="text-[10px] font-mono uppercase tracking-[0.16em] text-white/40 font-bold mb-3.5">
                 Where the work happened
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-[auto_1px_1fr] gap-x-7 gap-y-5 items-stretch">
-                {/* Big 90% headline */}
-                <div className="flex flex-col justify-center">
-                  <div className="text-[56px] sm:text-[68px] md:text-[76px] font-bold tracking-[-0.03em] leading-none text-[#34d399]">
-                    90%
+              <div className="grid grid-cols-1 md:grid-cols-[auto_1px_1fr] gap-x-6 gap-y-4 items-stretch">
+                {/* Compact 85% headline */}
+                <div className="flex md:flex-col items-baseline md:items-start gap-x-3 md:gap-x-0">
+                  <div className="text-[34px] sm:text-[38px] md:text-[42px] font-bold tracking-[-0.02em] leading-none text-white">
+                    85%
                   </div>
-                  <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.14em] text-[#34d399] font-bold mt-2">
-                    AI-Automated
-                  </div>
-                  <div className="text-[12px] sm:text-[13px] text-white/55 mt-1 leading-snug">
-                    end-to-end · zero handoffs
+                  <div className="flex flex-col">
+                    <div className="text-[10px] font-mono uppercase tracking-[0.14em] text-white/70 font-bold md:mt-2">
+                      AI-Automated
+                    </div>
+                    <div className="text-[11px] text-white/45 mt-0.5 leading-snug">
+                      end-to-end · zero handoffs
+                    </div>
                   </div>
                 </div>
-                {/* Vertical divider on md+, hidden on mobile */}
                 <div className="hidden md:block w-px bg-white/[0.14]" />
-                {/* AI vs consultant scope split */}
-                <div className="flex flex-col justify-center gap-4">
+                <div className="flex flex-col justify-center gap-3">
                   <div>
-                    <div className="text-[10px] font-mono uppercase tracking-[0.16em] text-white font-bold mb-1.5">
+                    <div className="text-[10px] font-mono uppercase tracking-[0.14em] text-white/85 font-bold mb-1">
                       Source AI delivered
                     </div>
-                    <div className="text-[13px] sm:text-[14.5px] text-white/85 leading-[1.55]">
+                    <div className="text-[12.5px] sm:text-[13.5px] text-white/80 leading-[1.5]">
                       System scan · business logic mapping · BRD generation · data migration ·
                       ETL · NetSuite configuration · testing & QA · validation
                     </div>
                   </div>
                   <div className="h-px bg-white/[0.10]" />
                   <div>
-                    <div className="text-[10px] font-mono uppercase tracking-[0.16em] text-white/55 font-bold mb-1.5">
+                    <div className="text-[10px] font-mono uppercase tracking-[0.14em] text-white/55 font-bold mb-1">
                       Consultant · ~12h total
                     </div>
-                    <div className="text-[13px] sm:text-[14.5px] text-white/65 leading-[1.55]">
+                    <div className="text-[12.5px] sm:text-[13.5px] text-white/60 leading-[1.5]">
                       Client relationship · context handoff · reviewing AI outputs · sign-off
                     </div>
                   </div>
