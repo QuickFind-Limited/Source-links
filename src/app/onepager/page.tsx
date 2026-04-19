@@ -106,7 +106,7 @@ const PRICING_STEPS: Array<{
     body: "Drop in whatever you have. Source AI parses it all.",
     Icon: FileText,
     chipsLabel: "Accepted inputs",
-    chips: ["Requirements", "SOW", "Transcript"],
+    chips: ["Requirement doc", "SOW", "Transcript"],
   },
   {
     n: "02",
