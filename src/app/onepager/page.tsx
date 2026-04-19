@@ -104,7 +104,7 @@ const PRICING_STEPS: Array<{
     title: "You send requirements",
     body: "Drop in whatever you have. Source AI parses it all.",
     Icon: FileText,
-    inputs: ["Requirements", "SOW", "Transcript", "Email", "Notes"],
+    inputs: ["Requirements", "SOW", "Transcript", "Email"],
   },
   {
     n: "02",
