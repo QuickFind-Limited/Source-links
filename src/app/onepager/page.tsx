@@ -102,15 +102,9 @@ const PRICING_STEPS: Array<{
   {
     n: "01",
     title: "You send requirements",
-    body: "Whatever you have — SOW, requirements doc, call transcript, even a Slack thread. Source AI parses it all.",
+    body: "Drop in whatever you have. Source AI parses it all.",
     Icon: FileText,
-    inputs: [
-      "Requirements Doc",
-      "SOW",
-      "Call Transcript",
-      "Email Thread",
-      "Notes",
-    ],
+    inputs: ["Requirements", "SOW", "Transcript", "Email", "Notes"],
   },
   {
     n: "02",
@@ -840,22 +834,18 @@ export default function OnePagerPage() {
                   </div>
                   {inputs && inputs.length > 0 && (
                     <div className="mt-auto pt-4">
-                      <div className="text-[9.5px] font-mono uppercase tracking-[0.16em] text-black/40 font-bold mb-2.5">
+                      <div className="text-[9.5px] font-mono uppercase tracking-[0.16em] text-black/40 font-bold mb-2">
                         Accepted inputs
                       </div>
-                      <div className="flex flex-wrap gap-1.5">
+                      <div className="flex flex-wrap gap-1">
                         {inputs.map((input) => (
                           <span
                             key={input}
-                            className="inline-flex items-center gap-1.5 border border-black/[0.12] bg-[#fafafa] text-black/75 text-[11px] font-medium px-2 py-1 rounded-sm"
+                            className="inline-flex items-center border border-black/[0.12] bg-[#fafafa] text-black/75 text-[10px] font-medium px-1.5 py-0.5 rounded-sm whitespace-nowrap"
                           >
-                            <FileText className="w-3 h-3 text-black/40" strokeWidth={1.75} />
                             {input}
                           </span>
                         ))}
-                      </div>
-                      <div className="text-[10.5px] text-black/45 mt-2.5 italic leading-snug">
-                        Any format · Source AI parses it all
                       </div>
                     </div>
                   )}
