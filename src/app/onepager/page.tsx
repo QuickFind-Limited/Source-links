@@ -221,7 +221,7 @@ export default function OnePagerPage() {
               {/* Bold value prop box */}
               <div className="border-2 border-black/[0.09] px-6 sm:px-8 py-5 sm:py-6 mb-5">
                 <p className="text-[18px] sm:text-[22px] md:text-[25px] font-semibold text-black/90 leading-[1.35]">
-                  Source is an AI engine that automates{" "}
+                  Source AI agents automate{" "}
                   <span className="text-black">85% of ERP implementation delivery</span>{" "}
                   — scanning, material generation, data migration, configuration, testing.
                 </p>
@@ -251,7 +251,7 @@ export default function OnePagerPage() {
             {/* Black right sidebar */}
             <div className="md:w-[320px] shrink-0 bg-black p-5 sm:p-6 md:rounded-r-sm">
               <div className="text-[13px] sm:text-[14px] font-mono uppercase tracking-[0.10em] text-white font-bold mb-1.5">
-                Source AI Engine
+                Source AI Agents
               </div>
               <div className="text-[10px] font-mono uppercase tracking-[0.12em] text-white/50 mb-4">
                 Sub 21 Days
@@ -403,7 +403,7 @@ export default function OnePagerPage() {
                     Powered by
                   </div>
                   <div className="text-[22px] sm:text-[26px] font-semibold tracking-tight text-white leading-tight">
-                    Source AI Engine
+                    Source AI Agents
                   </div>
                 </div>
                 <div className="inline-flex items-center gap-2 self-start text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.08em] bg-white text-black px-4 py-2 font-bold">
