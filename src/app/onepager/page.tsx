@@ -608,22 +608,25 @@ export default function OnePagerPage() {
           </div>
         </div>
 
-        {/* ── See it in action ────────────────────────────────────────────── */}
-        <div className="bg-white border border-black/[0.08] p-4 sm:p-6 mb-6">
-          <SectionLabel>See the Source platform live</SectionLabel>
-          <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-3">
-            <h3 className="text-[20px] sm:text-[26px] md:text-[28px] font-semibold tracking-[-0.015em] text-black leading-[1.2] max-w-[720px]">
-              Watch the actual Source platform run a live ERP implementation.
-            </h3>
-            <span className="inline-flex items-center gap-1.5 self-start text-[10px] font-mono uppercase tracking-[0.14em] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-sm shrink-0">
+        {/* ── See the Source platform live — hero card paired with Pricing below ── */}
+        <div className="bg-white border-2 border-black p-6 sm:p-10 mb-6 shadow-[0_24px_60px_-24px_rgba(0,0,0,0.25)]">
+          <div className="flex flex-wrap items-center gap-3 mb-3">
+            <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.18em] text-black font-bold">
+              Platform Demo
+            </div>
+            <span className="inline-flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-[0.14em] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-sm">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" />
-              Live Product Demo
+              Live · 30 min
             </span>
           </div>
-          <p className="text-[14px] sm:text-[15px] text-black/60 leading-[1.65] mb-5 max-w-[880px]">
-            The dashboard below is the real Source product — the same console you and your client log into during every implementation.
-            Hop on a 30-min call and we&apos;ll walk you through it on a real QuickBooks → NetSuite migration: scan the legacy system,
-            generate the materials, migrate the data, configure NetSuite, all under 21 days.
+          <div className="text-[30px] sm:text-[44px] font-semibold tracking-[-0.025em] text-black mb-3 leading-[1.05] max-w-[940px]">
+            See the actual Source platform run a live ERP implementation.
+          </div>
+          <p className="text-[15px] sm:text-[18px] text-black/65 leading-[1.55] mb-8 max-w-[880px]">
+            The dashboard below is the <span className="font-semibold text-black">real Source product</span> —
+            the same console you and your client log into during every implementation.
+            Hop on a 30-min call and we&apos;ll walk you through it on a real QuickBooks → NetSuite migration:
+            scan the legacy system, generate the materials, migrate the data, configure NetSuite, all under 21 days.
           </p>
           <a
             href="https://cal.com/source-ai/30min"
