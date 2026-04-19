@@ -609,10 +609,20 @@ export default function OnePagerPage() {
 
         {/* ── See it in action ────────────────────────────────────────────── */}
         <div className="bg-white border border-black/[0.08] p-4 sm:p-6 mb-6">
-          <SectionLabel>See it in action</SectionLabel>
-          <p className="text-[14px] sm:text-[15px] text-black/55 leading-[1.65] mb-5 max-w-[880px]">
-            Don&apos;t believe us? Hop on a call and watch a live QuickBooks → NetSuite migration. See how Source scans
-            the legacy system, generates the BRD, migrates data, and configures NetSuite — all in under 21 days.
+          <SectionLabel>See the Source platform live</SectionLabel>
+          <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-3">
+            <h3 className="text-[20px] sm:text-[26px] md:text-[28px] font-semibold tracking-[-0.015em] text-black leading-[1.2] max-w-[720px]">
+              Watch the actual Source platform run a live ERP implementation.
+            </h3>
+            <span className="inline-flex items-center gap-1.5 self-start text-[10px] font-mono uppercase tracking-[0.14em] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-sm shrink-0">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" />
+              Live Product Demo
+            </span>
+          </div>
+          <p className="text-[14px] sm:text-[15px] text-black/60 leading-[1.65] mb-5 max-w-[880px]">
+            The dashboard below is the real Source product — the same console you and your client log into during every implementation.
+            Hop on a 30-min call and we&apos;ll walk you through it on a real QuickBooks → NetSuite migration: scan the legacy system,
+            generate the BRD, migrate the data, configure NetSuite, all under 21 days.
           </p>
           <a
             href="https://cal.com/source-ai/30min"
@@ -628,10 +638,11 @@ export default function OnePagerPage() {
                 <span className="w-2.5 h-2.5 rounded-full bg-[#28c840]" />
               </div>
               <div className="flex-1 mx-3 px-3 py-1 rounded-sm bg-white border border-black/[0.06] text-[10px] sm:text-[11px] font-mono text-black/40 truncate">
-                source.shop / live-implementation · QBO → NetSuite
+                app.source.shop / implementations · QBO → NetSuite
               </div>
-              <span className="hidden sm:inline text-[10px] font-mono uppercase tracking-[0.12em] text-emerald-700/80 font-bold">
-                Live
+              <span className="hidden sm:inline-flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-[0.12em] text-emerald-700/90 font-bold">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                Source Platform · Live
               </span>
             </div>
 
@@ -780,17 +791,17 @@ export default function OnePagerPage() {
                 <div className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white shadow-[0_10px_24px_-6px_rgba(0,0,0,0.4)] mb-2.5 group-hover:scale-105 transition-transform">
                   <div className="w-0 h-0 border-l-[12px] sm:border-l-[14px] border-l-black border-y-[8px] sm:border-y-[9px] border-y-transparent ml-1" />
                 </div>
-                <div className="text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.24em] text-white/70 mb-1.5 font-bold">
-                  Live demo · 30 min
+                <div className="text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.24em] text-[#34d399] mb-1.5 font-bold">
+                  Source Platform Demo · 30 min
                 </div>
                 <div className="text-[15px] sm:text-[18px] font-semibold text-white leading-[1.25] tracking-tight">
-                  See a live ERP implementation by Source
+                  See the Source platform run a live migration
                 </div>
                 <div className="text-[11.5px] sm:text-[12.5px] text-white/70 mt-1 leading-snug">
-                  Real QuickBooks → NetSuite · Real data · Real config
+                  Real product · real QuickBooks → NetSuite · real data · real config
                 </div>
                 <div className="mt-3 inline-flex items-center gap-1.5 bg-white text-black px-3.5 py-1.5 rounded-full text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.14em] font-bold group-hover:bg-white/90 transition-colors">
-                  Book a 30-min slot →
+                  Book the platform demo →
                 </div>
               </div>
             </div>
