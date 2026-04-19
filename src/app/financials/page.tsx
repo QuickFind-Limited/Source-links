@@ -879,6 +879,26 @@ export default function FinancialsFirstPage() {
           aria-labelledby="partner-pricing-heading"
           className="bg-white border-2 border-black mb-6 shadow-[0_24px_60px_-24px_rgba(0,0,0,0.25)]"
         >
+          {/* "More complex implementation?" header bar */}
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 px-6 sm:px-10 py-5 sm:py-6 bg-[#f8f8f6] border-b border-black/[0.10]">
+            <div className="flex items-center gap-3">
+              <span className="inline-flex items-center justify-center w-9 h-9 rounded-sm bg-black text-white shrink-0">
+                <Sparkles className="w-4 h-4" strokeWidth={2} />
+              </span>
+              <div className="min-w-0">
+                <div className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.16em] text-black/45 font-bold mb-0.5">
+                  Beyond financials
+                </div>
+                <span className="text-[15px] sm:text-[18px] font-semibold tracking-[-0.005em] text-black">
+                  Have a more complex implementation? We&apos;ll price that out too.
+                </span>
+              </div>
+            </div>
+            <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.14em] text-black/55 font-bold whitespace-nowrap shrink-0">
+              Fixed-fee · 24h proposal · White-label
+            </span>
+          </div>
+
           <div className="px-6 sm:px-10 py-8 sm:py-10">
             <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.18em] text-black font-bold mb-3">
               Partner Pricing
