@@ -231,9 +231,6 @@ export default function OnePagerPage() {
 
               {/* What partners are saying */}
               <div className="bg-[#f5f5f3] border border-black/[0.08] px-6 sm:px-8 py-7 sm:py-8 flex-1">
-                <div className="text-[10px] font-mono uppercase tracking-[0.15em] text-black/35 mb-5">
-                  What Partners Are Saying
-                </div>
                 <p className="text-[24px] sm:text-[28px] md:text-[32px] italic leading-[1.45] text-black/80 mb-7 tracking-[-0.015em]">
                   &ldquo;Source handles the materials, the configuration, the full ERP
                   implementation end-to-end. We focus on the upsell, the client experience, the
