@@ -799,7 +799,7 @@ export default function OnePagerPage() {
                   See the Source platform run a live migration
                 </div>
                 <div className="text-[11.5px] sm:text-[12.5px] text-white/70 mt-1 leading-snug">
-                  Real product · real QuickBooks → NetSuite · real data · real config
+                  Live QuickBooks → NetSuite · client data · NetSuite config
                 </div>
                 <div className="mt-3 inline-flex items-center gap-1.5 bg-white text-black px-3.5 py-1.5 rounded-full text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.14em] font-bold group-hover:bg-white/90 transition-colors">
                   Book the platform demo →
