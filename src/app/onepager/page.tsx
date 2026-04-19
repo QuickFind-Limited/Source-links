@@ -92,17 +92,30 @@ const CASE_STUDY_DELIVERED = [
   "White-label, fixed price, zero scope creep",
 ];
 
-const PRICING_STEPS = [
+const PRICING_STEPS: Array<{
+  n: string;
+  title: string;
+  body: string;
+  Icon: React.ComponentType<{ className?: string; strokeWidth?: number }>;
+  inputs?: string[];
+}> = [
   {
     n: "01",
-    title: "You send the SOW",
-    body: "Drop in the client's scope, requirements, or existing SOW — however detailed or rough.",
+    title: "You send requirements",
+    body: "Whatever you have — SOW, requirements doc, call transcript, even a Slack thread. Source AI parses it all.",
     Icon: FileText,
+    inputs: [
+      "Requirements Doc",
+      "SOW",
+      "Call Transcript",
+      "Email Thread",
+      "Notes",
+    ],
   },
   {
     n: "02",
     title: "Our AI scans & quotes",
-    body: "Source AI reads the SOW, runs a read-only scan of the client's live systems, and returns a fixed price within 24 hours — no scoping calls, no T&M guesswork.",
+    body: "Source AI reads what you sent, runs a read-only scan of the client's live systems, and returns a fixed price within 24 hours — no scoping calls, no T&M guesswork.",
     Icon: Scan,
   },
   {
@@ -782,22 +795,22 @@ export default function OnePagerPage() {
           </a>
         </div>
 
-        {/* ── Pricing — Send SOW. Get AI Price. Charge Client. ─────────────── */}
+        {/* ── Pricing — Send Requirements. Get AI Price. Charge Client. ────── */}
         <div className="bg-[#f5f5f3] border-2 border-black p-6 sm:p-10 mb-6 shadow-[0_24px_60px_-24px_rgba(0,0,0,0.25)]">
           <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.18em] text-black font-bold mb-3">
             Partner Pricing
           </div>
           <div className="text-[30px] sm:text-[44px] font-semibold tracking-[-0.025em] text-black mb-3 leading-[1.05]">
-            Send SOW. Get AI Price. Charge Client.
+            Send Requirements. Get AI Price. Charge Client.
           </div>
           <div className="text-[15px] sm:text-[18px] text-black/65 leading-[1.55] mb-8 max-w-[820px]">
-            No quoting calls, no scoping workshops, no T&amp;M surprises. Three steps from SOW
-            to invoice — <span className="font-semibold text-black">you mark up to whatever
-            your client will pay</span> and keep the margin.
+            No quoting calls, no scoping workshops, no T&amp;M surprises. Three steps from
+            requirements to invoice — <span className="font-semibold text-black">you mark up
+            to whatever your client will pay</span> and keep the margin.
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr_auto_1fr] gap-3 md:gap-0 items-stretch">
-            {PRICING_STEPS.map(({ n, title, body, Icon }, i) => (
+            {PRICING_STEPS.map(({ n, title, body, Icon, inputs }, i) => (
               <React.Fragment key={n}>
                 <div className="border-[1.5px] border-black/[0.14] bg-white p-6 sm:p-7 flex flex-col rounded-sm shadow-[0_1px_0_0_rgba(0,0,0,0.03)]">
                   <div className="flex items-start justify-between mb-5 sm:mb-6">
@@ -817,6 +830,27 @@ export default function OnePagerPage() {
                   <div className="text-[14px] sm:text-[15px] text-black/60 leading-[1.65]">
                     {body}
                   </div>
+                  {inputs && inputs.length > 0 && (
+                    <div className="mt-auto pt-4">
+                      <div className="text-[9.5px] font-mono uppercase tracking-[0.16em] text-black/40 font-bold mb-2.5">
+                        Accepted inputs
+                      </div>
+                      <div className="flex flex-wrap gap-1.5">
+                        {inputs.map((input) => (
+                          <span
+                            key={input}
+                            className="inline-flex items-center gap-1.5 border border-black/[0.12] bg-[#fafafa] text-black/75 text-[11px] font-medium px-2 py-1 rounded-sm"
+                          >
+                            <FileText className="w-3 h-3 text-black/40" strokeWidth={1.75} />
+                            {input}
+                          </span>
+                        ))}
+                      </div>
+                      <div className="text-[10.5px] text-black/45 mt-2.5 italic leading-snug">
+                        Any format · Source AI parses it all
+                      </div>
+                    </div>
+                  )}
                 </div>
                 {i < PRICING_STEPS.length - 1 && (
                   <div className="hidden md:flex items-center justify-center px-3 text-black/35 text-[22px] font-semibold">
