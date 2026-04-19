@@ -176,7 +176,7 @@ export default function OnePagerPage() {
             Partner One-Pager
           </div>
           <h1 className="text-[30px] sm:text-[42px] md:text-[52px] font-bold tracking-[-0.03em] text-black leading-[1.05] mb-5 max-w-[940px]">
-            The go-to AI partner for ERP VARs <br className="hidden sm:block" />&amp; Firms.
+            The go-to AI partner for ERP VARs <br className="hidden sm:block" />and Firms.
           </h1>
           <p className="text-[19px] sm:text-[24px] md:text-[28px] italic text-black/70 leading-[1.45] max-w-[940px]">
             We automate ERP implementations with AI. You keep the client, the
