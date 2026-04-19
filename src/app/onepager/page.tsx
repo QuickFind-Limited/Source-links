@@ -77,10 +77,10 @@ const CONSULTANT_AFTER_FLOW = [
 ];
 
 const CASE_STUDY_STATS = [
-  { value: "90%", label: "AI-Automated", sub: "~12h consultant review" },
   { value: "13", label: "Days to Go-Live", sub: "vs 4–6 months traditional" },
   { value: "$6K", label: "Source Cost", sub: "fixed fee · zero overruns" },
   { value: "50%+", label: "Partner Margin", sub: "you mark up · keep upside" },
+  { value: "318K", label: "Records Migrated", sub: "10 yrs of historicals" },
 ];
 
 const CASE_STUDY_DELIVERED = [
@@ -470,30 +470,16 @@ export default function OnePagerPage() {
                     i >= 2 ? "border-t md:border-t-0 border-black/[0.08]" : ""
                   } ${
                     i % 4 !== 0 ? "md:border-l md:border-black/[0.08]" : ""
-                  } ${
-                    i === 0 ? "bg-black text-white" : ""
                   }`}
                 >
-                  <div
-                    className={`text-[22px] sm:text-[28px] md:text-[30px] font-bold tracking-tight leading-none mb-1.5 ${
-                      i === 0 ? "text-white" : "text-black"
-                    }`}
-                  >
+                  <div className="text-[22px] sm:text-[28px] md:text-[30px] font-bold tracking-tight text-black leading-none mb-1.5">
                     {value}
                   </div>
-                  <div
-                    className={`text-[10px] font-mono uppercase tracking-[0.10em] font-medium leading-snug ${
-                      i === 0 ? "text-white/70" : "text-black/40"
-                    }`}
-                  >
+                  <div className="text-[10px] font-mono uppercase tracking-[0.10em] text-black/45 font-medium leading-snug">
                     {label}
                   </div>
                   {sub && (
-                    <div
-                      className={`text-[10px] mt-1.5 leading-snug ${
-                        i === 0 ? "text-white/55" : "text-black/35"
-                      }`}
-                    >
+                    <div className="text-[10px] text-black/35 mt-1.5 leading-snug">
                       {sub}
                     </div>
                   )}
@@ -501,24 +487,46 @@ export default function OnePagerPage() {
               ))}
             </div>
 
-            {/* AI vs consultant work split */}
-            <div className="border border-black/[0.08] bg-black text-white px-4 sm:px-5 py-4 mb-6 rounded-sm">
-              <div className="text-[10px] font-mono uppercase tracking-[0.14em] text-white/45 font-bold mb-2">
+            {/* Hero AI breakdown — the dominant AI moment for the case study */}
+            <div className="bg-black text-white p-5 sm:p-7 mb-6 rounded-sm">
+              <div className="text-[10px] font-mono uppercase tracking-[0.16em] text-white/40 font-bold mb-4">
                 Where the work happened
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-x-5 gap-y-2 items-baseline">
-                <div className="text-[12px] sm:text-[13px] font-mono uppercase tracking-[0.10em] text-[#34d399] font-bold whitespace-nowrap">
-                  Source AI · 90%
+              <div className="grid grid-cols-1 md:grid-cols-[auto_1px_1fr] gap-x-7 gap-y-5 items-stretch">
+                {/* Big 90% headline */}
+                <div className="flex flex-col justify-center">
+                  <div className="text-[56px] sm:text-[68px] md:text-[76px] font-bold tracking-[-0.03em] leading-none text-[#34d399]">
+                    90%
+                  </div>
+                  <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.14em] text-[#34d399] font-bold mt-2">
+                    AI-Automated
+                  </div>
+                  <div className="text-[12px] sm:text-[13px] text-white/55 mt-1 leading-snug">
+                    end-to-end · zero handoffs
+                  </div>
                 </div>
-                <div className="text-[13px] sm:text-[14px] text-white/85 leading-[1.55]">
-                  System scan · business logic mapping · BRD generation · data migration ·
-                  ETL · NetSuite configuration · testing & QA · validation
-                </div>
-                <div className="text-[12px] sm:text-[13px] font-mono uppercase tracking-[0.10em] text-white/55 font-bold whitespace-nowrap mt-2 md:mt-0">
-                  Consultant · ~12h
-                </div>
-                <div className="text-[13px] sm:text-[14px] text-white/70 leading-[1.55]">
-                  Client relationship · context handoff · reviewing AI outputs · sign-off
+                {/* Vertical divider on md+, hidden on mobile */}
+                <div className="hidden md:block w-px bg-white/[0.14]" />
+                {/* AI vs consultant scope split */}
+                <div className="flex flex-col justify-center gap-4">
+                  <div>
+                    <div className="text-[10px] font-mono uppercase tracking-[0.16em] text-white font-bold mb-1.5">
+                      Source AI delivered
+                    </div>
+                    <div className="text-[13px] sm:text-[14.5px] text-white/85 leading-[1.55]">
+                      System scan · business logic mapping · BRD generation · data migration ·
+                      ETL · NetSuite configuration · testing & QA · validation
+                    </div>
+                  </div>
+                  <div className="h-px bg-white/[0.10]" />
+                  <div>
+                    <div className="text-[10px] font-mono uppercase tracking-[0.16em] text-white/55 font-bold mb-1.5">
+                      Consultant · ~12h total
+                    </div>
+                    <div className="text-[13px] sm:text-[14.5px] text-white/65 leading-[1.55]">
+                      Client relationship · context handoff · reviewing AI outputs · sign-off
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
