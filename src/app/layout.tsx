@@ -20,15 +20,15 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: 'Source — AI for Professional Services',
-  description: 'AI for the professional services industry.',
+  title: 'Source',
+  description: 'The go-to AI partner for ERP Vars and Firms',
   icons: {
     icon: '/favicon.svg',
     apple: '/apple-icon.png',
   },
   openGraph: {
     title: 'Source',
-    description: 'AI for the professional services industry.',
+    description: 'The go-to AI partner for ERP Vars and Firms',
     siteName: 'Source',
     images: [
       {
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Source',
-    description: 'AI for the professional services industry.',
+    description: 'The go-to AI partner for ERP Vars and Firms',
     images: ['/og-image.png'],
   },
 }
