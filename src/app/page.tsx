@@ -47,9 +47,15 @@ export default function HomePage() {
           </a>
         </div>
 
-        <p className="mt-16 md:mt-20 font-mono text-sm md:text-base tracking-widest text-black/45 uppercase text-center">
-          Join the 20+ firms using Source
-        </p>
+        <div className="mt-10 md:mt-12 flex justify-center px-6">
+          <span className="inline-flex items-center gap-2.5 px-4 py-2 border border-black/10 bg-white/70 backdrop-blur-sm font-mono text-[11px] md:text-[12px] tracking-[0.18em] md:tracking-widest text-black/75 uppercase whitespace-nowrap rounded-full">
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="absolute inline-flex h-full w-full rounded-full bg-black/50 opacity-75 animate-ping" />
+              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-black" />
+            </span>
+            Join the 20+ firms using Source
+          </span>
+        </div>
       </div>
 
       {/* LinkedIn icon — bottom right */}
