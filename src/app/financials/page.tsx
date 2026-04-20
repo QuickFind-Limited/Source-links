@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import NextLink from "next/link";
 import {
   Check,
   X,
@@ -554,10 +555,17 @@ export default function FinancialsFirstPage() {
           <span className="text-[32px] sm:text-[38px] font-display tracking-normal leading-tight text-black">
             Source
           </span>
-          <div className="flex items-center gap-3 sm:gap-4">
+          <div className="flex flex-wrap items-center gap-3 sm:gap-4">
             <div className="text-[14px] sm:text-[22px] font-mono uppercase tracking-[0.06em] text-black/70 font-bold">
-              Go to AI partner for ERP VARs &amp; Firms
+              Go-to AI partner for ERP VARs &amp; Firms
             </div>
+            <NextLink
+              href="/onepager"
+              className="inline-flex items-center gap-1.5 text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.1em] text-black/55 hover:text-black border border-black/15 hover:border-black/60 px-3 py-2 transition-colors whitespace-nowrap"
+            >
+              See full onepager
+              <ArrowRight className="w-3 h-3" strokeWidth={1.75} />
+            </NextLink>
           </div>
         </div>
 

@@ -32,7 +32,7 @@ export default function HomePage() {
         </h1>
 
         <p className="font-mono text-base tracking-widest text-black/35 uppercase">
-          AI for the professional services industry
+          Go-to AI partner for ERP Vars &amp; firms
         </p>
 
         <div className="mt-3 flex justify-center px-6">
