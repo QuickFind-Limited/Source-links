@@ -182,12 +182,10 @@ export default function OnePagerPage() {
             Partner One-Pager
           </div>
           <h1 className="text-[30px] sm:text-[42px] md:text-[52px] font-bold tracking-[-0.03em] text-black leading-[1.05] mb-5 max-w-[940px]">
-            The go-to <span className="font-black">AI partner</span> for ERP VARs <br className="hidden sm:block" />and Firms.
+            The go-to AI partner for ERP VARs <br className="hidden sm:block" />and Firms.
           </h1>
-          <p className="text-[21px] sm:text-[26px] md:text-[30px] italic text-black/70 leading-[1.5] max-w-[940px]">
-            We run the ERP implementation with AI in the background.
-            <br className="hidden sm:block" />{" "}
-            You stay front and center with the client — keep the brand, the relationship, and{" "}
+          <p className="text-[19px] sm:text-[24px] md:text-[28px] italic text-black/70 leading-[1.45] max-w-[940px]">
+            We run the ERP implementation with AI. You stay out front with the client — keep the brand, the relationship, and{" "}
             <span className="not-italic font-semibold text-black">50%+ margins.</span>
           </p>
         </div>
@@ -233,13 +231,13 @@ export default function OnePagerPage() {
               {/* What partners are saying */}
               <div className="bg-[#f5f5f3] border border-black/[0.08] px-6 sm:px-8 py-7 sm:py-8 flex-1">
                 <p className="text-[24px] sm:text-[28px] md:text-[32px] italic leading-[1.45] text-black/80 mb-7 tracking-[-0.015em]">
-                  &ldquo;Source handles the materials, the configuration, the full ERP
-                  implementation end-to-end. We focus on the upsell, the client experience, the
-                  relationship — and we&apos;re finally able to{" "}
+                  &ldquo;Source runs the actual implementation for us — the configs, the materials,
+                  the whole ERP build. We get to stay focused on our clients and the upsell. For
+                  the first time, we can{" "}
                   <span className="not-italic font-semibold text-black">
                     scale our services firm with Source
                   </span>{" "}
-                  without scaling headcount.&rdquo;
+                  without doubling headcount.&rdquo;
                 </p>
                 <div className="h-px bg-black/[0.08] mb-4" />
                 <div className="text-[14px] sm:text-[15px] font-semibold text-black">
