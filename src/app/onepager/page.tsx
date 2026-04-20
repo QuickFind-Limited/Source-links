@@ -182,11 +182,12 @@ export default function OnePagerPage() {
             Partner One-Pager
           </div>
           <h1 className="text-[30px] sm:text-[42px] md:text-[52px] font-bold tracking-[-0.03em] text-black leading-[1.05] mb-5 max-w-[940px]">
-            The go-to AI partner for ERP VARs <br className="hidden sm:block" />and Firms.
+            The go-to <span className="font-black">AI partner</span> for ERP VARs <br className="hidden sm:block" />and Firms.
           </h1>
-          <p className="text-[19px] sm:text-[24px] md:text-[28px] italic text-black/70 leading-[1.45] max-w-[940px]">
-            We automate ERP implementations with AI. You keep the client, the
-            brand, and you make{" "}
+          <p className="text-[21px] sm:text-[26px] md:text-[30px] italic text-black/70 leading-[1.5] max-w-[940px]">
+            We run the ERP implementation with AI in the background.
+            <br className="hidden sm:block" />{" "}
+            You stay front and center with the client — keep the brand, the relationship, and{" "}
             <span className="not-italic font-semibold text-black">50%+ margins.</span>
           </p>
         </div>
@@ -484,43 +485,43 @@ export default function OnePagerPage() {
               ))}
             </div>
 
-            {/* AI vs consultant work split — compact monochrome strip */}
-            <div className="bg-black text-white px-4 sm:px-5 py-4 sm:py-5 mb-6 rounded-sm">
-              <div className="text-[10px] font-mono uppercase tracking-[0.16em] text-white/40 font-bold mb-3.5">
+            {/* AI vs consultant work split — light grey panel, matches page surfaces */}
+            <div className="bg-[#f5f5f3] border border-black/[0.08] px-5 sm:px-7 py-5 sm:py-6 mb-6 rounded-sm">
+              <div className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.16em] text-black/45 font-bold mb-4">
                 Where the work happened
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-[auto_1px_1fr] gap-x-6 gap-y-4 items-stretch">
-                {/* 85% headline — sized to fill the left column without overpowering */}
-                <div className="flex md:flex-col items-baseline md:items-start gap-x-4 md:gap-x-0 md:min-w-[150px]">
-                  <div className="text-[44px] sm:text-[52px] md:text-[60px] font-bold tracking-[-0.025em] leading-none text-white">
+              <div className="grid grid-cols-1 md:grid-cols-[auto_1px_1fr] gap-x-7 gap-y-4 items-stretch">
+                {/* 85% headline */}
+                <div className="flex md:flex-col items-baseline md:items-start gap-x-4 md:gap-x-0 md:min-w-[160px]">
+                  <div className="text-[44px] sm:text-[52px] md:text-[60px] font-bold tracking-[-0.025em] leading-none text-black">
                     85%
                   </div>
                   <div className="flex flex-col">
-                    <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.14em] text-white/75 font-bold md:mt-3">
+                    <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.14em] text-black/70 font-bold md:mt-3">
                       AI-Automated
                     </div>
-                    <div className="text-[12px] text-white/50 mt-0.5 leading-snug">
+                    <div className="text-[12px] text-black/45 mt-0.5 leading-snug">
                       end-to-end · zero handoffs
                     </div>
                   </div>
                 </div>
-                <div className="hidden md:block w-px bg-white/[0.14]" />
+                <div className="hidden md:block w-px bg-black/[0.10]" />
                 <div className="flex flex-col justify-center gap-4">
                   <div>
-                    <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.14em] text-white/85 font-bold mb-1.5">
+                    <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.14em] text-black/75 font-bold mb-1.5">
                       Source AI delivered
                     </div>
-                    <div className="text-[14.5px] sm:text-[16px] text-white/85 leading-[1.55]">
+                    <div className="text-[14.5px] sm:text-[16px] text-black/80 leading-[1.55]">
                       System scan · business logic mapping · material generation · data migration ·
                       ETL · NetSuite configuration · testing & QA · validation
                     </div>
                   </div>
-                  <div className="h-px bg-white/[0.10]" />
+                  <div className="h-px bg-black/[0.08]" />
                   <div>
-                    <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.14em] text-white/55 font-bold mb-1.5">
+                    <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.14em] text-black/50 font-bold mb-1.5">
                       Consultant · ~12h total
                     </div>
-                    <div className="text-[14.5px] sm:text-[16px] text-white/65 leading-[1.55]">
+                    <div className="text-[14.5px] sm:text-[16px] text-black/60 leading-[1.55]">
                       Client relationship · context handoff · reviewing AI outputs · sign-off
                     </div>
                   </div>
@@ -787,17 +788,17 @@ export default function OnePagerPage() {
 
             {/* Overlay — heavy shade so the mockup reads only as a dimmed backdrop behind the foreground panel */}
             <div className="absolute inset-0 flex items-center justify-center bg-black/70 backdrop-blur-[1px] transition-colors group-hover:bg-black/75">
-              <div className="flex flex-col items-center text-center px-5 sm:px-6 py-4 sm:py-5 rounded-md bg-black/70 backdrop-blur-[3px] border border-white/15 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.5)] max-w-[440px] mx-4">
+              <div className="flex flex-col items-center text-center px-6 sm:px-8 py-5 sm:py-6 rounded-md bg-black/70 backdrop-blur-[3px] border border-white/15 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.5)] max-w-[560px] mx-4">
                 <div className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white shadow-[0_10px_24px_-6px_rgba(0,0,0,0.4)] mb-2.5 group-hover:scale-105 transition-transform">
                   <div className="w-0 h-0 border-l-[12px] sm:border-l-[14px] border-l-black border-y-[8px] sm:border-y-[9px] border-y-transparent ml-1" />
                 </div>
-                <div className="text-[15px] sm:text-[18px] font-semibold text-white leading-[1.25] tracking-tight">
+                <div className="text-[18px] sm:text-[22px] font-bold text-white leading-[1.2] tracking-[-0.015em]">
                   See the Source platform run a live migration
                 </div>
-                <div className="text-[11.5px] sm:text-[12.5px] text-white/70 mt-1 leading-snug">
+                <div className="text-[13px] sm:text-[15px] text-white/80 mt-2 leading-snug">
                   Live QuickBooks → NetSuite · client data · NetSuite config
                 </div>
-                <div className="mt-3 inline-flex items-center gap-1.5 bg-white text-black px-3.5 py-1.5 rounded-full text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.14em] font-bold group-hover:bg-white/90 transition-colors">
+                <div className="mt-4 inline-flex items-center gap-1.5 bg-gradient-to-b from-white to-white/85 text-black px-4 py-2 rounded-full text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.14em] font-bold ring-1 ring-white/30 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_10px_24px_-6px_rgba(0,0,0,0.55)] group-hover:from-white group-hover:to-white transition-all">
                   Book the platform demo →
                 </div>
               </div>
