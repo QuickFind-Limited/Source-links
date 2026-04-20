@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "AI Native ERP Implementations";
+export const alt = "The go-to AI partner for ERP Vars and Firms";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -35,7 +35,7 @@ export default function OpengraphImage() {
 
         <div
           style={{
-            fontSize: 112,
+            fontSize: 92,
             fontWeight: 600,
             letterSpacing: "-0.04em",
             lineHeight: 1.02,
@@ -43,7 +43,7 @@ export default function OpengraphImage() {
             display: "flex",
           }}
         >
-          AI Native ERP Implementations
+          The go-to AI partner for ERP Vars and Firms
         </div>
 
         <div
