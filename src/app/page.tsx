@@ -35,8 +35,18 @@ export default function HomePage() {
           AI for the professional services industry
         </p>
 
+        <div className="mt-3 flex justify-center px-6">
+          <span className="inline-flex items-center gap-2.5 px-4 py-2 border border-black/10 bg-white/70 backdrop-blur-sm font-mono text-[11px] md:text-[12px] tracking-[0.18em] md:tracking-widest text-black/75 uppercase whitespace-nowrap rounded-full">
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="absolute inline-flex h-full w-full rounded-full bg-black/50 opacity-75 animate-ping" />
+              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-black" />
+            </span>
+            Join the 20 firms scaling with Source
+          </span>
+        </div>
+
         {/* CTAs */}
-        <div className="flex items-center gap-6" style={{ marginTop: '0.5rem' }}>
+        <div className="flex items-center gap-6" style={{ marginTop: '1.5rem' }}>
           <a
             href="https://cal.com/source-ai"
             target="_blank"
@@ -45,16 +55,6 @@ export default function HomePage() {
           >
             Talk to us
           </a>
-        </div>
-
-        <div className="mt-10 md:mt-12 flex justify-center px-6">
-          <span className="inline-flex items-center gap-2.5 px-4 py-2 border border-black/10 bg-white/70 backdrop-blur-sm font-mono text-[11px] md:text-[12px] tracking-[0.18em] md:tracking-widest text-black/75 uppercase whitespace-nowrap rounded-full">
-            <span className="relative flex h-1.5 w-1.5">
-              <span className="absolute inline-flex h-full w-full rounded-full bg-black/50 opacity-75 animate-ping" />
-              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-black" />
-            </span>
-            Join the 20+ firms using Source
-          </span>
         </div>
       </div>
 
