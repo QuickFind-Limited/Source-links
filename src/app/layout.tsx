@@ -20,30 +20,30 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: 'The go-to AI Partner for ERP VARs and Firms',
-  description: 'The go-to AI Partner for ERP VARs and Firms',
+  title: 'Source - The go-to AI partner for ERP Firms and Vars',
+  description: 'Source - The go-to AI partner for ERP Firms and Vars',
   icons: {
     icon: '/favicon.svg',
     apple: '/apple-icon.png',
   },
   openGraph: {
-    title: 'The go-to AI Partner for ERP VARs and Firms',
-    description: 'The go-to AI Partner for ERP VARs and Firms',
+    title: 'Source - The go-to AI partner for ERP Firms and Vars',
+    description: 'Source - The go-to AI partner for ERP Firms and Vars',
     siteName: 'Source',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'The go-to AI Partner for ERP VARs and Firms',
+        alt: 'Source - The go-to AI partner for ERP Firms and Vars',
       },
     ],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'The go-to AI Partner for ERP VARs and Firms',
-    description: 'The go-to AI Partner for ERP VARs and Firms',
+    title: 'Source - The go-to AI partner for ERP Firms and Vars',
+    description: 'Source - The go-to AI partner for ERP Firms and Vars',
     images: ['/og-image.png'],
   },
 }
