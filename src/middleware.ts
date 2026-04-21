@@ -79,6 +79,8 @@ export async function middleware(request: NextRequest) {
     pathname.startsWith("/api/export") ||
     pathname.startsWith("/api/ping") ||
     pathname.startsWith("/reports") ||
+    pathname === "/opengraph-image" ||
+    pathname === "/twitter-image" ||
     pathname.match(/\.(svg|png|jpg|ico|css|js|html|woff|woff2|pdf)$/)
   ) {
     return NextResponse.next()
