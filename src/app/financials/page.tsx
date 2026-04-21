@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import NextLink from "next/link";
 import {
   Check,
   X,
@@ -549,74 +548,75 @@ function TermsTabs() {
 export default function FinancialsFirstPage() {
   return (
     <div className="min-h-screen bg-[#fafafa] text-black">
-      <div className="max-w-[1100px] mx-auto px-4 sm:px-6 py-6 sm:py-8">
+      <div className="max-w-[1100px] mx-auto px-4 sm:px-6 py-6 sm:py-10">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 pb-5 border-b border-black/[0.06] gap-2">
           <span className="text-[32px] sm:text-[38px] font-display tracking-normal leading-tight text-black">
             Source
           </span>
-          <div className="flex flex-wrap items-center gap-3 sm:gap-4">
-            <div className="text-[14px] sm:text-[22px] font-mono uppercase tracking-[0.06em] text-black/70 font-bold">
-              Go-to AI partner for ERP VARs &amp; Firms
-            </div>
-            <NextLink
-              href="/onepager"
-              className="inline-flex items-center gap-1.5 text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.1em] text-black/55 hover:text-black border border-black/15 hover:border-black/60 px-3 py-2 transition-colors whitespace-nowrap"
-            >
-              See full onepager
-              <ArrowRight className="w-3 h-3" strokeWidth={1.75} />
-            </NextLink>
+          <div className="text-[13px] sm:text-[18px] font-mono uppercase tracking-[0.06em] text-black/60 font-bold">
+            Go-to AI partner for ERP VARs &amp; Firms
           </div>
         </div>
 
         {/* Subtitle */}
-        <div className="mb-7">
-          <div className="text-[13px] sm:text-[14px] font-mono uppercase tracking-[0.08em] text-black/40 mb-1">
-            Partner Pricing, Scope & Terms of Engagement
+        <div className="mb-8 sm:mb-10">
+          <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.16em] text-black/40 font-bold mb-3">
+            Partner Pricing, Scope &amp; Terms of Engagement
           </div>
-          <h1 className="text-[30px] sm:text-[44px] font-semibold tracking-[-0.03em] text-black leading-[1.03] mb-4 max-w-[920px]">
+          <h1 className="text-[30px] sm:text-[42px] md:text-[52px] font-bold tracking-[-0.03em] text-black leading-[1.05] mb-5 max-w-[940px]">
             Financials ERP Implementations in 30 days, for under 10k with AI.
           </h1>
-          <p className="text-[17px] sm:text-[21px] italic text-black/55 leading-[1.5] max-w-[780px]">
-            Scale your finance-heavy implementations with AI and make 50%+ margin.
+          <p className="text-[19px] sm:text-[24px] md:text-[28px] italic text-black/70 leading-[1.45] max-w-[940px]">
+            Scale your finance-heavy implementations with AI and make{" "}
+            <span className="not-italic font-semibold text-black">50%+ margin.</span>
           </p>
         </div>
 
         {/* Hero stat cards */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-6">
           <div className="bg-white border border-black/[0.06] px-5 sm:px-6 py-5 sm:py-6 text-center">
-            <Clock className="w-5 h-5 mx-auto text-black/25 mb-2" strokeWidth={1.75} />
-            <div className="text-[32px] sm:text-[36px] font-medium tracking-tight text-black select-none">
-              Under 30 Days
+            <Clock className="w-5 h-5 mx-auto text-black/20 mb-2.5" strokeWidth={1.75} />
+            <div className="text-[30px] sm:text-[34px] font-semibold tracking-tight text-black leading-none select-none">
+              30 Days
             </div>
-            <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.12em] text-black/50 font-bold mt-1">
+            <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.12em] text-black/50 font-bold mt-2">
               Kick-off to go-live
             </div>
+            <div className="text-[11px] text-black/30 mt-1 tracking-tight">
+              vs 4–6 months traditional
+            </div>
           </div>
           <div className="bg-white border border-black/[0.06] px-5 sm:px-6 py-5 sm:py-6 text-center">
-            <DollarSign className="w-5 h-5 mx-auto text-black/25 mb-2" strokeWidth={1.75} />
-            <div className="text-[32px] sm:text-[36px] font-medium tracking-tight text-black select-none">
+            <DollarSign className="w-5 h-5 mx-auto text-black/20 mb-2.5" strokeWidth={1.75} />
+            <div className="text-[30px] sm:text-[34px] font-semibold tracking-tight text-black leading-none select-none">
               $7.5K – $25K
             </div>
-            <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.12em] text-black/50 font-bold mt-1">
+            <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.12em] text-black/50 font-bold mt-2">
               Quote to your client
+            </div>
+            <div className="text-[11px] text-black/30 mt-1 tracking-tight">
+              Fixed fee · 50% margin
             </div>
           </div>
           <div className="bg-white border border-black/[0.06] px-5 sm:px-6 py-5 sm:py-6 text-center">
-            <Users className="w-5 h-5 mx-auto text-black/25 mb-2" strokeWidth={1.75} />
-            <div className="text-[32px] sm:text-[36px] font-medium tracking-tight text-black select-none">
+            <Users className="w-5 h-5 mx-auto text-black/20 mb-2.5" strokeWidth={1.75} />
+            <div className="text-[30px] sm:text-[34px] font-semibold tracking-tight text-black leading-none select-none">
               Co-Branded
             </div>
-            <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.12em] text-black/50 font-bold mt-1">
+            <div className="text-[11px] sm:text-[12px] font-mono uppercase tracking-[0.12em] text-black/50 font-bold mt-2">
               Powered by Source AI
+            </div>
+            <div className="text-[11px] text-black/30 mt-1 tracking-tight">
+              White-label delivery
             </div>
           </div>
         </div>
 
         {/* Partner pricing callout */}
-        <div className="bg-white border-[3px] border-black rounded-sm px-6 sm:px-8 py-6 sm:py-8 mb-6">
-          <p className="text-[18px] sm:text-[22px] text-black/70 leading-[1.65] font-[450]">
-            Quote your client anywhere from <span className="font-semibold text-black">$7,500</span> to <span className="font-semibold text-black">$25,000</span> for a complete financials implementation. Source AI&apos;s fee is <span className="font-semibold text-black">50% of what you charge</span> — you keep a <span className="font-semibold text-[#16a34a]">50% margin</span>, guaranteed.
+        <div className="bg-white border-2 border-black/[0.09] px-6 sm:px-8 py-5 sm:py-6 mb-6">
+          <p className="text-[18px] sm:text-[22px] md:text-[25px] font-semibold text-black/90 leading-[1.35]">
+            Quote your client from <span className="text-black">$7,500 to $25,000</span> for a complete financials implementation. Source AI&apos;s fee is <span className="text-black">50% of what you charge</span> — you keep a <span className="text-[#16a34a]">50% margin</span>, guaranteed.
           </p>
         </div>
 
