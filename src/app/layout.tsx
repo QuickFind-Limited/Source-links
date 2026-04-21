@@ -20,30 +20,30 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: 'Source',
-  description: 'The go-to AI partner for ERP Vars and Firms',
+  title: 'The go-to AI Partner for ERP VARs and Firms',
+  description: 'The go-to AI Partner for ERP VARs and Firms',
   icons: {
     icon: '/favicon.svg',
     apple: '/apple-icon.png',
   },
   openGraph: {
-    title: 'Source',
-    description: 'The go-to AI partner for ERP Vars and Firms',
+    title: 'The go-to AI Partner for ERP VARs and Firms',
+    description: 'The go-to AI Partner for ERP VARs and Firms',
     siteName: 'Source',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Source — AI Migration Dashboard',
+        alt: 'The go-to AI Partner for ERP VARs and Firms',
       },
     ],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Source',
-    description: 'The go-to AI partner for ERP Vars and Firms',
+    title: 'The go-to AI Partner for ERP VARs and Firms',
+    description: 'The go-to AI Partner for ERP VARs and Firms',
     images: ['/og-image.png'],
   },
 }
