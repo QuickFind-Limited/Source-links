@@ -1305,7 +1305,7 @@ export default function HealthCheckPage() {
                 kicker: "Beyond the ERP",
                 title: "Flag External Systems",
                 desc:
-                  "Shopify, payments, IdP, CI logs &mdash; anything the ERP doesn't see. Required for any healthcheck claim about non-ERP behaviour.",
+                  "Shopify, payments, IdP, CI logs — anything the ERP doesn't see. Required for any healthcheck claim about non-ERP behaviour.",
                 admin: false,
               },
               {
