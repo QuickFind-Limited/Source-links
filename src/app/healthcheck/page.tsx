@@ -29,6 +29,7 @@ import {
   GitCompare,
   Camera,
   Plug,
+  ShieldAlert,
 } from "lucide-react";
 import type { ElementType } from "react";
 
@@ -1252,6 +1253,128 @@ export default function HealthCheckPage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* ── Setup Steps · Admin Touch ─────────────────────────────────── */}
+        <div className="flex items-center gap-3 mt-8 mb-4">
+          <div className="h-px flex-1 bg-black/[0.08]" />
+          <span className="text-[12px] sm:text-[13px] font-mono uppercase tracking-[0.08em] text-black/40 font-bold border-2 border-black/[0.10] px-3 py-1">
+            Client Setup
+          </span>
+          <div className="h-px flex-1 bg-black/[0.08]" />
+        </div>
+
+        <div className="bg-white border border-black/[0.08] mb-6">
+          <div className="px-4 sm:px-5 py-4 border-b border-black/[0.06]">
+            <div className="text-[15px] sm:text-[18px] font-medium tracking-tight text-black mb-1">
+              Four Steps for the Client. Admin Needed Only Twice.
+            </div>
+            <div className="text-[13px] sm:text-[14px] text-black/45 leading-[1.55]">
+              The full healthcheck setup &mdash; designed to be lightweight on
+              the client side. Two of the four steps need a one-off action
+              from a NetSuite or QuickBooks admin; the other two need no admin
+              involvement at all.
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-black/[0.06]">
+            {[
+              {
+                n: "1",
+                kicker: "Required",
+                title: "Connect the API",
+                desc:
+                  "NetSuite Token-Based Auth on a read-only role, or QuickBooks OAuth 2.0 refresh token. Both systems can be connected if the client runs both.",
+                admin: true,
+                adminNote:
+                  "Admin needed once to create the Integration Record (NetSuite) or approve the OAuth app (QuickBooks).",
+              },
+              {
+                n: "2",
+                kicker: "NetSuite only",
+                title: "SuiteCloud / SDF Export",
+                desc:
+                  "Project XML, scripts, and workflows exported via the SuiteCloud CLI. Adds drift analysis, code-quality review, and customisation-dependency mapping.",
+                admin: true,
+                adminNote:
+                  "Admin or developer role with the SuiteCloud Development Framework permission. One-off export; no ongoing access.",
+              },
+              {
+                n: "3",
+                kicker: "Beyond the ERP",
+                title: "Flag External Systems",
+                desc:
+                  "Shopify, payments, IdP, CI logs &mdash; anything the ERP doesn't see. Required for any healthcheck claim about non-ERP behaviour.",
+                admin: false,
+              },
+              {
+                n: "4",
+                kicker: "Optional",
+                title: "Discovery Transcripts",
+                desc:
+                  "Call transcripts, fact-find notes, or recordings. Encrypted at rest and emailed to the Source operator as attachments.",
+                admin: false,
+              },
+            ].map(({ n, kicker, title, desc, admin, adminNote }) => (
+              <div key={n} className="p-5 sm:p-6">
+                <div className="flex items-center gap-2.5 mb-3">
+                  <div className="flex h-7 w-7 items-center justify-center bg-black text-white text-[12px] font-mono font-bold shrink-0">
+                    {n}
+                  </div>
+                  <div className="text-[10px] font-mono uppercase tracking-[0.10em] text-black/35 font-bold">
+                    {kicker}
+                  </div>
+                </div>
+                <div className="text-[15px] sm:text-[16px] font-semibold text-black/85 mb-2 tracking-tight">
+                  {title}
+                </div>
+                <div className="text-[13px] sm:text-[14px] text-black/55 leading-[1.65] mb-3">
+                  {desc}
+                </div>
+                <div className="pt-2 border-t border-black/[0.06]">
+                  {admin ? (
+                    <div className="flex items-start gap-1.5">
+                      <ShieldAlert
+                        className="w-3.5 h-3.5 text-black/75 shrink-0 mt-[2px]"
+                        strokeWidth={1.75}
+                      />
+                      <div>
+                        <div className="text-[10px] font-mono uppercase tracking-[0.10em] text-black/85 font-bold mb-0.5">
+                          Admin access &middot; one-off
+                        </div>
+                        {adminNote ? (
+                          <div className="text-[11px] sm:text-[12px] text-black/50 leading-[1.55]">
+                            {adminNote}
+                          </div>
+                        ) : null}
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="text-[10px] font-mono uppercase tracking-[0.10em] text-black/30 font-bold">
+                      No admin needed
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="px-4 sm:px-5 py-3.5 border-t border-black/[0.06] bg-[#fafafa]">
+            <div className="flex items-start gap-2.5">
+              <ShieldAlert
+                className="w-4 h-4 text-black/75 shrink-0 mt-[2px]"
+                strokeWidth={1.75}
+              />
+              <div className="text-[12px] sm:text-[13px] text-black/60 leading-[1.6]">
+                <span className="font-medium text-black/85">
+                  Admin access required only for steps 1 and 2.
+                </span>{" "}
+                Both are one-off actions. After credentials are issued and the
+                SDF is exported, no further admin involvement is needed for
+                the lifetime of the engagement.
+              </div>
+            </div>
           </div>
         </div>
 
