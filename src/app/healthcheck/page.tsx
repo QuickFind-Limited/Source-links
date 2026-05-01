@@ -786,67 +786,221 @@ export default function HealthCheckPage() {
                 strokeWidth={1.75}
               />
               <div className="text-[15px] sm:text-[18px] font-medium tracking-tight text-black">
-                How Do They Rank Against Their Peers?
+                How Healthy Is This System Compared to Industry Peers?
               </div>
             </div>
             <div className="text-[13px] sm:text-[14px] text-black/45 leading-[1.55]">
-              Every healthcheck shows the client where they sit against an
-              anonymised peer cohort &mdash; same industry, similar revenue
-              band, comparable headcount. Directional only. No client is ever
-              named, no competitor data is ever surfaced.
+              Every healthcheck ranks the client against an anonymised peer
+              cohort matched on industry, revenue band, and headcount &mdash;
+              with the top-decile and industry-median baselines shown
+              alongside. Directional only. No client is ever named, no
+              competitor data is ever surfaced.
             </div>
           </div>
 
+          {/* Industry context strip */}
+          <div className="px-4 sm:px-5 py-3 border-b border-black/[0.06] bg-[#fafafa] flex flex-wrap items-center gap-x-5 gap-y-1.5">
+            <div className="flex items-baseline gap-2">
+              <span className="text-[10px] font-mono uppercase tracking-[0.10em] text-black/35 font-bold">
+                Industry
+              </span>
+              <span className="text-[13px] sm:text-[14px] font-medium text-black/80">
+                Mid-Market Manufacturing
+              </span>
+            </div>
+            <div className="flex items-baseline gap-2">
+              <span className="text-[10px] font-mono uppercase tracking-[0.10em] text-black/35 font-bold">
+                Revenue band
+              </span>
+              <span className="text-[13px] sm:text-[14px] text-black/65">
+                $50M&ndash;$250M
+              </span>
+            </div>
+            <div className="flex items-baseline gap-2">
+              <span className="text-[10px] font-mono uppercase tracking-[0.10em] text-black/35 font-bold">
+                Cohort size
+              </span>
+              <span className="text-[13px] sm:text-[14px] text-black/65">
+                247 anonymised companies
+              </span>
+            </div>
+          </div>
+
+          {/* Composite health index hero */}
+          <div className="px-4 sm:px-5 py-5 sm:py-6 border-b border-black/[0.06]">
+            <div className="grid grid-cols-1 md:grid-cols-[260px_1fr] gap-5 md:gap-7 items-center">
+              <div>
+                <div className="text-[10px] font-mono uppercase tracking-[0.12em] text-black/35 font-bold mb-1.5">
+                  ERP Health Index
+                </div>
+                <div className="flex items-baseline gap-2">
+                  <span className="text-[44px] sm:text-[52px] font-semibold text-black leading-none tracking-tight">
+                    47
+                  </span>
+                  <span className="text-[18px] sm:text-[20px] text-black/35 font-medium">
+                    / 100
+                  </span>
+                </div>
+                <div className="mt-2 inline-flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-[0.10em] text-red-600 font-bold border border-red-500/25 bg-red-500/[0.06] px-2 py-1">
+                  Bottom quartile vs peers
+                </div>
+              </div>
+
+              <div>
+                {/* Quartile bar */}
+                <div className="relative h-3 bg-[#f0f0ed] border border-black/[0.06] mb-2.5">
+                  {/* Quartile dividers */}
+                  <div className="absolute top-0 bottom-0 left-[25%] w-px bg-black/[0.12]" />
+                  <div className="absolute top-0 bottom-0 left-[50%] w-px bg-black/[0.20]" />
+                  <div className="absolute top-0 bottom-0 left-[75%] w-px bg-black/[0.12]" />
+                  {/* Industry median marker */}
+                  <div
+                    className="absolute -top-1 -bottom-1 left-[68%] w-px bg-black"
+                    title="Industry median: 68"
+                  />
+                  {/* Client position marker */}
+                  <div
+                    className="absolute -top-2 -bottom-2 left-[47%] flex flex-col items-center"
+                    style={{ transform: "translateX(-50%)" }}
+                  >
+                    <div className="w-[3px] h-7 bg-red-600" />
+                  </div>
+                </div>
+                <div className="grid grid-cols-3 text-[10px] font-mono uppercase tracking-[0.10em] text-black/40">
+                  <div className="text-left">
+                    <span className="font-bold text-black/55">Bottom 25%</span>
+                    <div className="text-[11px] sm:text-[12px] font-sans normal-case text-black/40 tracking-normal mt-0.5">
+                      &lt; 50
+                    </div>
+                  </div>
+                  <div className="text-center">
+                    <span className="font-bold text-black/85">
+                      Industry median
+                    </span>
+                    <div className="text-[11px] sm:text-[12px] font-sans normal-case text-black tracking-normal font-semibold mt-0.5">
+                      68
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <span className="font-bold text-emerald-700">
+                      Top decile
+                    </span>
+                    <div className="text-[11px] sm:text-[12px] font-sans normal-case text-emerald-700 tracking-normal font-semibold mt-0.5">
+                      85+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-[12px] sm:text-[13px] text-black/50 leading-[1.65] mt-4 pt-3 border-t border-black/[0.06]">
+              The ERP Health Index is a weighted composite of all six
+              dimensions &mdash; data integrity, process effectiveness,
+              security posture, integration health, customisation drift, and
+              license efficiency. Manufacturing peers in this revenue band
+              cluster around 68; this client is sitting 21 points below.
+            </div>
+          </div>
+
+          {/* Per-metric tiles */}
           <div className="px-4 sm:px-5 py-4 sm:py-5">
+            <div className="text-[10px] font-mono uppercase tracking-[0.12em] text-black/35 font-bold mb-3">
+              Where the gap is biggest
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-4">
               {[
                 {
                   label: "Month-End Close",
                   client: "14 days",
-                  cohort: "5 days",
+                  topDecile: "≤ 4 days",
+                  median: "5 days",
                   position: "Bottom quartile",
+                  pct: 12,
+                  medianPct: 70,
+                  topPct: 92,
+                  tone: "danger",
                 },
                 {
-                  label: "Manual Journal Entries",
-                  client: "34%",
-                  cohort: "8%",
+                  label: "Process Automation Rate",
+                  client: "66%",
+                  topDecile: "≥ 92%",
+                  median: "84%",
                   position: "Bottom quartile",
+                  pct: 18,
+                  medianPct: 70,
+                  topPct: 92,
+                  tone: "danger",
                 },
                 {
                   label: "License Utilisation",
                   client: "62%",
-                  cohort: "84%",
+                  topDecile: "≥ 90%",
+                  median: "84%",
                   position: "Below median",
+                  pct: 38,
+                  medianPct: 70,
+                  topPct: 92,
+                  tone: "warn",
                 },
-              ].map(({ label, client, cohort, position }) => (
+              ].map(({ label, client, topDecile, median, position, pct, medianPct, topPct, tone }) => (
                 <div
                   key={label}
-                  className="border border-black/[0.08] bg-[#fafafa]"
+                  className="border border-black/[0.08] bg-white"
                 >
-                  <div className="px-4 py-2.5 border-b border-black/[0.06]">
+                  <div className="px-4 py-2.5 border-b border-black/[0.06] bg-[#fafafa]">
                     <div className="text-[10px] font-mono uppercase tracking-[0.10em] text-black/35 font-bold">
                       {label}
                     </div>
                   </div>
-                  <div className="px-4 py-3 space-y-2">
-                    <div className="flex items-baseline justify-between">
+                  <div className="px-4 py-3.5">
+                    <div className="flex items-baseline justify-between mb-3">
                       <span className="text-[11px] font-mono uppercase tracking-[0.08em] text-black/35">
                         Client
                       </span>
-                      <span className="text-[16px] sm:text-[18px] font-semibold text-black tracking-tight">
+                      <span className="text-[20px] sm:text-[22px] font-semibold text-black tracking-tight leading-none">
                         {client}
                       </span>
                     </div>
-                    <div className="flex items-baseline justify-between">
-                      <span className="text-[11px] font-mono uppercase tracking-[0.08em] text-black/35">
-                        Peer cohort
-                      </span>
-                      <span className="text-[14px] sm:text-[15px] text-black/55 font-medium">
-                        {cohort}
-                      </span>
+
+                    {/* Quartile bar */}
+                    <div className="relative h-2 bg-[#f0f0ed] border border-black/[0.06] mb-2.5">
+                      <div className="absolute top-0 bottom-0 left-[25%] w-px bg-black/[0.10]" />
+                      <div className="absolute top-0 bottom-0 left-[50%] w-px bg-black/[0.18]" />
+                      <div className="absolute top-0 bottom-0 left-[75%] w-px bg-black/[0.10]" />
+                      <div
+                        className="absolute -top-0.5 -bottom-0.5 w-px bg-black"
+                        style={{ left: `${medianPct}%` }}
+                        title={`Industry median: ${median}`}
+                      />
+                      <div
+                        className={`absolute -top-1 -bottom-1 w-[3px] ${tone === "danger" ? "bg-red-600" : "bg-amber-600"}`}
+                        style={{ left: `${pct}%`, transform: "translateX(-50%)" }}
+                      />
                     </div>
-                    <div className="pt-2 border-t border-black/[0.06]">
-                      <span className="text-[10px] font-mono uppercase tracking-[0.10em] text-amber-700 font-bold">
+
+                    <div className="space-y-1 pt-1">
+                      <div className="flex items-baseline justify-between">
+                        <span className="text-[10px] font-mono uppercase tracking-[0.08em] text-black/45">
+                          Industry median
+                        </span>
+                        <span className="text-[12px] sm:text-[13px] text-black/70 font-medium">
+                          {median}
+                        </span>
+                      </div>
+                      <div className="flex items-baseline justify-between">
+                        <span className="text-[10px] font-mono uppercase tracking-[0.08em] text-emerald-700 font-bold">
+                          Top decile
+                        </span>
+                        <span className="text-[12px] sm:text-[13px] text-emerald-700 font-semibold">
+                          {topDecile}
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="mt-3 pt-2.5 border-t border-black/[0.06]">
+                      <span
+                        className={`text-[10px] font-mono uppercase tracking-[0.10em] font-bold ${tone === "danger" ? "text-red-600" : "text-amber-700"}`}
+                      >
                         {position}
                       </span>
                     </div>
@@ -863,8 +1017,8 @@ export default function HealthCheckPage() {
                 aggregated from anonymised, opt-in scans across hundreds of
                 live ERPs. Reported as ranges and quartiles &mdash; never
                 individual companies, never named competitors. The point is
-                directional: an impression of where the client sits, not a
-                reverse-engineering surface.
+                directional: a competitive baseline of how healthy a system
+                looks in this industry, not a reverse-engineering surface.
               </div>
             </div>
           </div>
