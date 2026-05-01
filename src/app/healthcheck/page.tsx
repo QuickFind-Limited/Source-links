@@ -808,8 +808,8 @@ export default function HealthCheckPage() {
                 },
                 {
                   label: "Manual Journal Entries",
-                  client: "34% of postings",
-                  cohort: "8% of postings",
+                  client: "34%",
+                  cohort: "8%",
                   position: "Bottom quartile",
                 },
                 {
