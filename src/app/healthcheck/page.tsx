@@ -28,6 +28,7 @@ import {
   RefreshCw,
   GitCompare,
   Camera,
+  Plug,
 } from "lucide-react";
 import type { ElementType } from "react";
 
@@ -1178,55 +1179,70 @@ export default function HealthCheckPage() {
         <div className="bg-white border border-black/[0.08] mb-6">
           <div className="px-4 sm:px-5 py-4 border-b border-black/[0.06]">
             <div className="text-[15px] sm:text-[18px] font-medium tracking-tight text-black mb-1">
-              Three Ways Partners Extend the Healthcheck
+              From Baseline Scan to Always-On Assurance
             </div>
             <div className="text-[13px] sm:text-[14px] text-black/45 leading-snug">
-              The same scan engine, repurposed. Each opens a different
-              conversation &mdash; compliance, accountability, or
-              implementation risk.
+              Start with a regular API-based scan. Layer up from there as the
+              client&apos;s needs grow &mdash; recurring monitoring,
+              multi-environment diffs, and a permanent audit trail.
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-black/[0.06]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-black/[0.06]">
             {[
               {
-                label: "Audit Trail",
-                Icon: ShieldCheck,
-                title: "Timestamped Record of Truth",
+                step: "1",
+                label: "Baseline",
+                Icon: Plug,
+                title: "Regular API Access",
                 desc:
-                  "Every scan is dated, signed, and archived. On this date, with these credentials, this is what the system looked like and this is what was agreed. Closes scope-creep arguments and protects partners against the “you never told us that” conversation 18 months in.",
-                tag: "CYA / Accountability",
+                  "Read-only API connection to the live ERP. One-time scan across 6 dimensions, 60+ signals. This is the standard healthcheck — fast, evidence-backed, 24-hour turnaround.",
+                tag: "Standard / One-Time",
               },
               {
-                label: "Quarterly Scans",
+                step: "2",
+                label: "Recurring",
                 Icon: RefreshCw,
-                title: "Ongoing System Monitoring",
+                title: "Quarterly Scans",
                 desc:
-                  "Run the same healthcheck every quarter. SOX, GDPR, and ISO buyers need scheduled evidence; finance teams want drift detection between closes. Recurring revenue for the partner, continuous assurance for the client.",
+                  "Same scan, same access, on a schedule. SOX, GDPR, and ISO buyers need scheduled evidence; finance teams want drift detection between closes. Recurring revenue for the partner, continuous assurance for the client.",
                 tag: "Compliance / Recurring",
               },
               {
-                label: "Sandbox vs Production",
+                step: "3",
+                label: "Multi-Env",
                 Icon: GitCompare,
-                title: "Pre Go-Live Diff",
+                title: "Sandbox vs Production",
                 desc:
-                  "Scan sandbox and production side-by-side. Surface configuration drift, missing customisations, and data mismatches before cutover — the difference between a clean go-live and a Monday-morning escalation.",
+                  "Add a second API connection to the sandbox. Source diffs both environments side-by-side and surfaces configuration drift, missing customisations, and data mismatches before cutover.",
                 tag: "Implementation Risk",
               },
-            ].map(({ label, Icon, title, desc, tag }) => (
-              <div key={label} className="p-5 sm:p-6">
+              {
+                step: "4",
+                label: "Always On",
+                Icon: ShieldCheck,
+                title: "Audit Trail",
+                desc:
+                  "Every scan, at every tier above, is dated, signed, and archived. On this date, with these credentials, this is what the system looked like and this is what was agreed. Closes scope-creep arguments and protects the partner.",
+                tag: "CYA / Accountability",
+              },
+            ].map(({ step, label, Icon, title, desc, tag }) => (
+              <div key={step} className="p-5 sm:p-6">
                 <div className="flex items-center gap-2.5 mb-3">
-                  <div className="w-8 h-8 shrink-0 border border-black/[0.10] flex items-center justify-center">
-                    <Icon
-                      className="w-4 h-4 text-black/60"
-                      strokeWidth={1.75}
-                    />
+                  <div className="flex h-7 w-7 items-center justify-center bg-black text-white text-[12px] font-mono font-bold shrink-0">
+                    {step}
                   </div>
                   <div className="text-[10px] font-mono uppercase tracking-[0.10em] text-black/35 font-bold">
                     {label}
                   </div>
                 </div>
-                <div className="text-[15px] sm:text-[16px] font-semibold text-black/85 mb-1.5 tracking-tight">
-                  {title}
+                <div className="flex items-center gap-2 mb-2">
+                  <Icon
+                    className="w-4 h-4 text-black/55 shrink-0"
+                    strokeWidth={1.75}
+                  />
+                  <div className="text-[15px] sm:text-[16px] font-semibold text-black/85 tracking-tight">
+                    {title}
+                  </div>
                 </div>
                 <div className="text-[13px] sm:text-[14px] text-black/55 leading-[1.65] mb-3">
                   {desc}
