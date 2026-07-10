@@ -75,6 +75,7 @@ export async function middleware(request: NextRequest) {
     pathname.startsWith("/financials") ||
     pathname.startsWith("/fixed-fee") ||
     pathname.startsWith("/healthcheck") ||
+    pathname.startsWith("/case-studies") ||
     pathname.startsWith("/get-quote") ||
     pathname.startsWith("/api/export") ||
     pathname.startsWith("/api/ping") ||
