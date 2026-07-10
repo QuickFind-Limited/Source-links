@@ -2,7 +2,7 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import type { Metadata } from "next"
 import { CASE_STUDIES, getCaseStudy } from "@/content/case-studies"
-import { CAL_LINK, CaseBanner, CsFooter, CsHeader, QuoteCard, TagPills } from "../ui"
+import { CAL_LINK, CaseBanner, CsFooter, CsHeader, QuoteCard } from "../ui"
 
 export function generateStaticParams() {
   return CASE_STUDIES.map((cs) => ({ slug: cs.slug }))
@@ -36,20 +36,15 @@ export default async function CaseStudyPage({
       {/* ── Hero ──────────────────────────────────────────────────────── */}
       <section className="mx-auto flex w-full max-w-[1320px] flex-col gap-14 px-6 pt-20 sm:px-10 lg:pt-28">
         <div className="flex flex-col items-start gap-8">
-          <nav
-            aria-label="Breadcrumb"
-            className="flex gap-3 font-mono text-[12px] uppercase leading-none tracking-[0.14em]"
-          >
+          <nav aria-label="Breadcrumb" className="flex gap-2 text-sm leading-none">
             <Link href="/case-studies" className="text-black/40 transition-colors hover:text-black">
               Case Studies
             </Link>
-            <span className="text-black/50">/</span>
-            <span aria-current="page" className="text-black">
+            <span className="text-black/30">/</span>
+            <span aria-current="page" className="font-medium text-black">
               {cs.client}
             </span>
           </nav>
-
-          <TagPills primary={cs.tags.primary} secondary={cs.tags.secondary} />
 
           <h1 className="max-w-[30ch] text-3xl font-medium leading-[1.1] tracking-[-0.03em] sm:text-4xl">
             {cs.title}
@@ -72,7 +67,7 @@ export default async function CaseStudyPage({
           </a>
         </div>
 
-        <CaseBanner client={cs.client} />
+        <CaseBanner client={cs.client} image={cs.image} />
       </section>
 
       {/* ── Body: fact card + article ─────────────────────────────────── */}

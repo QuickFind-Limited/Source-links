@@ -14,13 +14,13 @@ export function CsHeader() {
       <nav className="flex items-center gap-5 sm:gap-7">
         <Link
           href="/case-studies"
-          className="font-mono text-[13px] uppercase tracking-[0.12em] text-black transition-colors"
+          className="text-sm font-medium text-black transition-colors"
         >
           Case Studies
         </Link>
         <a
           href="/careers"
-          className="font-mono text-[13px] uppercase tracking-[0.12em] text-black/45 transition-colors hover:text-black"
+          className="text-sm text-black/45 transition-colors hover:text-black"
         >
           Careers
         </a>
@@ -34,14 +34,14 @@ export function CsFooter() {
     <footer className="mx-auto mt-24 w-full max-w-[1320px] px-6 pb-12 sm:px-10 lg:mt-28">
       <div className="h-px w-full bg-black/[0.07]" />
       <div className="flex flex-col gap-2 pt-6 sm:flex-row sm:items-center sm:justify-between">
-        <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-black/40">
+        <p className="text-[13px] text-black/40">
           © {new Date().getFullYear()} Source — QuickFind AI
         </p>
         <a
           href={CAL_LINK}
           target="_blank"
           rel="noreferrer"
-          className="font-mono text-[11px] uppercase tracking-[0.14em] text-black/40 transition-colors hover:text-black"
+          className="text-[13px] text-black/40 transition-colors hover:text-black"
         >
           Book an intro call →
         </a>
@@ -50,30 +50,32 @@ export function CsFooter() {
   )
 }
 
-/* ── Split pill tags — asymmetric radii, from the Paper system ──────────── */
-
-export function TagPills({ primary, secondary }: { primary: string; secondary: string }) {
-  return (
-    <div className="flex gap-[2px]">
-      <span className="rounded-l-full rounded-r-[2px] bg-black px-3 py-[7px] font-mono text-[11px] uppercase leading-none tracking-[0.12em] text-white">
-        {primary}
-      </span>
-      <span className="rounded-l-[2px] rounded-r-full bg-black/[0.05] px-3 py-[7px] font-mono text-[11px] uppercase leading-none tracking-[0.12em] text-black/60">
-        {secondary}
-      </span>
-    </div>
-  )
-}
-
-/* ── Banner — dark band with the Source × client lockup ─────────────────── */
+/* ── Banner — photo when provided, else dark Source × client lockup ─────── */
 
 export function CaseBanner({
   client,
+  image,
   compact = false,
 }: {
   client: string
+  image?: string
   compact?: boolean
 }) {
+  if (image) {
+    return (
+      <div
+        className={`relative w-full overflow-hidden rounded-[6px] bg-[#0a0a0a] ${
+          compact ? "aspect-[3.2/1]" : "aspect-[16/9] sm:aspect-[2.15/1]"
+        }`}
+      >
+        <img
+          src={image}
+          alt={`${client} — case study`}
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+      </div>
+    )
+  }
   return (
     <div
       className={`relative w-full overflow-hidden rounded-[6px] bg-[#0a0a0a] ${

@@ -20,8 +20,8 @@ export type CaseStudy = {
   slug: string
   /** Client display name — appears in breadcrumb, banner and cards. */
   client: string
-  /** Short uppercase tag pair rendered as the split pill. */
-  tags: { primary: string; secondary: string }
+  /** Banner photo under /public — falls back to the dark Source × client lockup when unset. */
+  image?: string
   title: string
   intro: string[]
   facts: { label: string; value: string }[]
@@ -33,7 +33,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     slug: "dtc-apparel-netsuite",
     client: "DTC Apparel Brand",
-    tags: { primary: "Case study", secondary: "NetSuite re-architecture" },
+    // image: "/images/case-study-interview.jpg", // ← flip on once the interview still lands at public/images/case-study-interview.jpg
     title:
       "Unwinding eight years of workarounds - and landing a clean NetSuite core.",
     intro: [
