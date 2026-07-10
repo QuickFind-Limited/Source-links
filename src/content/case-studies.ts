@@ -1,8 +1,9 @@
 // Case study content model for source.shop/case-studies.
 //
-// NOTE: the first entry is illustrative placeholder content (anonymised
-// engagement, role-attributed quotes) so the layout can ship — swap in a
-// real, client-approved story before linking the section from the homepage.
+// Content sourced from the recorded partner interview with Nathan Gehring
+// (Salora ERP), transcribed 2026-07-10 — quotes are verbatim from the
+// transcript (lightly trimmed for print), full transcript at
+// ~/Downloads/salora-case-study-transcript.txt
 
 export type CaseStudyQuote = {
   text: string
@@ -29,79 +30,107 @@ export type CaseStudy = {
   closing: { heading: string; paragraph: string }
 }
 
+const GEHRING = "Nathan Gehring, Founder, Salora ERP"
+
 export const CASE_STUDIES: CaseStudy[] = [
   {
-    slug: "dtc-apparel-netsuite",
-    client: "DTC Apparel Brand",
+    slug: "salora-erp",
+    client: "Salora ERP",
     image: "/images/case-study-interview.jpg",
     title:
-      "Unwinding eight years of workarounds - and landing a clean NetSuite core.",
+      "Running implementations together - and cutting delivery time by up to 80%.",
     intro: [
-      "A nine-figure direct-to-consumer apparel brand had grown fast on Shopify and NetSuite - and its systems had grown with it. Eight years of integrations, custom scripts, and one-off fixes had accreted into an estate nobody fully understood. Every change risked order flow, and every question needed the one person who remembered the answer.",
-      "That's what brought them to Source: a fixed-fee re-architecture, grounded in evidence from their actual system - delivered in weeks, not months.",
+      "Salora ERP is a 60-person NetSuite consulting firm with close to 300 active clients across retail, manufacturing, healthcare, SaaS, and services. Founded by Nathan Gehring and his business partner in March 2020, the firm built its name on doing the basics exceptionally well - \"treating every client like they're your only client.\"",
+      "Salora now co-runs implementations with Source: its consultants' expertise paired with Source's AI platform across discovery, system build, data migration, and integrations. The result, in Nathan's words - the same quality, in a fraction of the time and cost.",
     ],
     facts: [
-      { label: "Industry", value: "Consumer & DTC Apparel" },
-      { label: "Company size", value: "~250" },
-      { label: "Systems", value: "NetSuite, Shopify, Celigo, 3PL" },
-      { label: "Engagement", value: "Architecture review → fixed-fee build" },
+      { label: "Partner", value: "Salora ERP" },
+      { label: "Team", value: "~60 consultants" },
+      { label: "Active clients", value: "~300" },
+      { label: "Focus", value: "NetSuite & ERP implementations" },
+      { label: "Working together", value: "Co-delivered implementations" },
     ],
     sections: [
       {
-        heading: "The challenge",
+        heading: "The problem with the old way",
         paragraphs: [
-          "The brand's NetSuite account carried more than 1,800 saved searches, 58 active custom scripts, and dozens of integration flows - most built by people who had since moved on. The team knew a large share of it was dead weight, but nobody could say which parts were safe to touch. Meanwhile the business was preparing for a clean re-implementation, and every open question was a cutover risk.",
-          "The strategic problem was the one every mature operator faces: how do you make eight years of embedded system knowledge visible, so decisions stop depending on memory and start depending on evidence?",
+          "Traditional ERP implementations run six to twelve months and regularly cost six or seven figures. \"The traditional methodology, while it works, it's really painful for the client,\" Nathan says - the client's team still has day jobs, discovery means a week of twenty people in a conference room, and long timelines multiply the points of failure: people leave mid-project, bandwidth dries up, years of bad data need cleansing.",
+          "And too often the value never gets captured at all. \"A client will do this half-a-million-dollar implementation with another firm, and I ask - can you share the documentation the previous team provided? And they'll say: nothing was given to us. You spent all this money, all this time, and nothing was documented?\"",
         ],
       },
       {
-        heading: "Why Source",
+        heading: "Co-running projects with Source",
         quote: {
-          text: "Source read our actual system - every script, every saved search, every flow - before proposing anything. Nobody had ever done that.",
-          attribution: "Head of Operations",
+          text: "The critical part is that I still want to deliver the same quality and the same value we would have with the traditional methodology. With Source, we can absolutely do that - and we're seeing it in real time in the projects we're implementing together today.",
+          attribution: GEHRING,
         },
         paragraphs: [
-          "Source's experts, working with frontier AI over the brand's real estate, produced a complete register of the system: every integration flow with its disposition (retire, retain, replace, validate), every custom script with its type, bundle, and verdict, every saved search scored for port risk.",
-          "The client's own team then reviewed the registers line by line - confirming, challenging, and commenting on each row - so the target architecture was signed off on evidence rather than assumption.",
-          "And because the whole engagement was scoped from that evidence, the price was fixed before the build began. No hourly meters, no change-order treadmill.",
+          "Before Salora's consultants sit down with a client, Source has already done the groundwork: AI pre-interviews with each team member and automated scans of the client's existing systems. \"When we go on site to do discovery, we've already done 40, 50, 80 hours of pre-discovery. Instead of walking into a conference room and saying 'tell me about your job', we're asking precise, pointed, detailed questions - 'I saw in your interview you mentioned this very specific manual process. Tell me more.'\"",
+          "The system scans surface what conference rooms don't. \"The client tells me they've got 5,000 customers. The system says they have 50,000 - and 200,000 SKUs, 90% of which haven't been used in five years.\" And because pre-interviews happen one-to-one, people say things they'd never volunteer in front of a room: the spreadsheet the process actually runs on, the step that depends on asking Susie, the work that happens entirely outside the system.",
+          "The loop stays tight throughout delivery. \"We have a call with the client on Monday; we go on the call Tuesday and our notes are already updated in real time, and we're asking more precise follow-up questions. With the traditional methodology, I'd finally have transcribed my notes two weeks later.\"",
         ],
       },
       {
         heading: "Impact",
         quote: {
-          text: "The first step is always the register now. Every decision traces back to something we can point at.",
-          attribution: "Systems Lead",
+          text: "Instead of the traditional three, six, twelve-month project timeline, we're now doing implementations together in a few weeks to three months. By cutting the trajectory of the project down by 50, 75, even 80% in some cases, we're delivering on the promised value so much quicker.",
+          attribution: GEHRING,
         },
         paragraphs: [
-          "Within weeks, decisions that had stalled for quarters were closed:",
+          "Speed shows up in every phase of the project:",
         ],
         bullets: [
           {
-            lead: "Scripts triaged:",
-            rest: "all 58 active custom scripts dispositioned - keep, retire, redesign, or repoint - with the client team confirming each verdict in days, not months.",
+            lead: "System build:",
+            rest: "\"Via Source, we can configure the system in hours or a day or two, where traditionally it would have taken us weeks.\"",
           },
           {
-            lead: "Integrations mapped:",
-            rest: "every flow in the estate documented with source-of-truth ownership and a cutover decision, replacing tribal knowledge with a single register.",
+            lead: "Data migration:",
+            rest: "\"The client doesn't want to pay 30 grand for data migration. If I can do it in half a day where historically it took weeks, that's a lot more value to the client.\"",
           },
           {
-            lead: "Fixed-fee builds:",
-            rest: "priority builds quoted at a committed fixed price - 40-60% below the systems-integrator anchors the brand had been carrying.",
+            lead: "Integrations:",
+            rest: "\"You can build scripts, workflows, and integrations that would have taken months in a matter of hours. On large projects a client might have 30, 50, 80 integrations - now that's days or weeks, not six months.\"",
           },
+          {
+            lead: "Commercially:",
+            rest: "\"If the other firms are saying it's going to take 12 months and 300 grand, and we're saying two or three months and 100 grand, obviously we have a serious competitive edge.\"",
+          },
+          {
+            lead: "Client success:",
+            rest: "clients are inside their own system, with their own data, within the first few weeks - which turns the whole project into UAT and training. \"I want the client to be power users as early as possible.\"",
+          },
+        ],
+      },
+      {
+        heading: "What clients notice",
+        paragraphs: [
+          "\"Previously there was trepidation - 'oh gosh, this is going to be painful.' Now you can see the enthusiasm early in the cycle: wow, we're going to be able to do this this quickly. These pre-interview questions are so great, and we're getting such valuable information.\"",
+          "\"They're learning so much more about their business than they ever would have in the traditional methodology. Businesses have more data than ever before - now we can actually understand it, and fix the things they've been trying to fix for 20 years, in record time.\"",
+        ],
+      },
+      {
+        heading: "Why Source, not off-the-shelf AI",
+        quote: {
+          text: "Building a system that's much more precise, tailored, and refined to the way consultants work and these projects are implemented is going to be light years ahead of just your off-the-shelf AI tools.",
+          attribution: GEHRING,
+        },
+        paragraphs: [
+          "Source's platform is purpose-built for ERP delivery - and every co-delivered project sharpens the next. \"Every project we do together: what were our misses? What can we refine for the next one? How can we standardise our questions by client, by vertical, by integration?\"",
+          "And it hasn't made the work robotic - the opposite. \"It's really about making it more human and more interactive. I want it to be more personal than it's ever been before. And I think we're achieving that.\" Consultants spend less time on manual busywork; clients spend less time on data entry. \"I want people to spend as little time as possible in the system - and get back to having enough time to think creatively about how to improve the business.\"",
         ],
       },
       {
         heading: "What's next",
         paragraphs: [
-          "With the target architecture agreed and the registers signed off, the brand is moving through cutover with a run-sheet grounded in evidence - and a Phase 2 backlog already prioritised for the builds that come after go-live.",
-          "Looking ahead, the ambition is the same one Source brings to every engagement: systems that are understood, documented, and ready for the AI era - not just migrated.",
+          "For Salora, the partnership is how a 60-person firm competes with multi-billion-dollar consultancies - top-tier people, co-delivering with the best tooling in the industry. \"In theory, we're going to be able to do five to ten times more projects - hopefully without five or ten times more headcount. Teams serve many more clients, with the same quality of work and level of detail, on a much more expedited timeline.\"",
         ],
       },
     ],
     closing: {
-      heading: "Source: your systems, actually understood.",
+      heading: "Using AI to make consulting more human.",
       paragraph:
-        "This engagement is a model for how operationally heavy businesses modernise without betting the company on it: read the real system first, decide on evidence, fix the price, then build. With Source, the brand isn't just protecting what it built over eight years - it's shipping faster than it ever has.",
+        "Salora's story is what co-running projects with Source looks like in practice: discovery done before the first meeting, systems built in days, clients living in their own system within weeks - and consultants freed to do the work only people can do. Same outcome, same quality, delivered in a fraction of the time.",
     },
   },
 ]
