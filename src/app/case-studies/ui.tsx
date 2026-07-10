@@ -64,14 +64,14 @@ export function CaseBanner({
   if (image) {
     return (
       <div
-        className={`relative w-full overflow-hidden rounded-[6px] bg-[#0a0a0a] ${
+        className={`relative w-full overflow-hidden rounded-[6px] bg-[#0a0a0a] ring-1 ring-inset ring-black/10 ${
           compact ? "aspect-[3.2/1]" : "aspect-[16/9] sm:aspect-[2.15/1]"
         }`}
       >
         <img
           src={image}
           alt={`${client} — case study`}
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover object-[50%_30%]"
         />
       </div>
     )

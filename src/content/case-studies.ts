@@ -33,7 +33,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     slug: "dtc-apparel-netsuite",
     client: "DTC Apparel Brand",
-    // image: "/images/case-study-interview.jpg", // ← flip on once the interview still lands at public/images/case-study-interview.jpg
+    image: "/images/case-study-interview.jpg",
     title:
       "Unwinding eight years of workarounds - and landing a clean NetSuite core.",
     intro: [
