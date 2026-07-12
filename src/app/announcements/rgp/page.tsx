@@ -89,13 +89,13 @@ export default function RgpAnnouncementPage() {
       </section>
 
       {/* ── Centered announcement header ────────────────────────────────── */}
-      <section className="mx-auto flex w-full max-w-[900px] flex-col items-center gap-6 px-6 pt-20 text-center sm:px-10 lg:pt-24">
+      <section className="mx-auto flex w-full max-w-[1100px] flex-col items-center gap-6 px-6 pt-20 text-center sm:px-10 lg:pt-24">
         <p className="text-[13px] text-black/40">July 12, 2026 · Partnership</p>
-        <h1 className="text-balance text-4xl font-medium leading-[1.08] tracking-[-0.03em] sm:text-5xl">
+        <h1 className="max-w-[22ch] text-balance text-4xl font-medium leading-[1.08] tracking-[-0.03em] sm:text-5xl">
           Source and RGP partner to bring AI-accelerated ERP delivery to the
           enterprise
         </h1>
-        <p className="max-w-[52ch] text-balance text-[17px] leading-[1.55] text-black/60">
+        <p className="max-w-[56ch] text-balance text-[17px] leading-[1.55] text-black/60">
           RGP&apos;s transformation expertise, running on Source&apos;s AI platform —
           assessments grounded in evidence from day one, delivered in roughly
           half the time.

@@ -23,6 +23,8 @@ export type CaseStudy = {
   client: string
   /** Banner photo under /public — falls back to the dark Source × client lockup when unset. */
   image?: string
+  /** Interview video — when set, the case study page shows a player (poster = image) instead of the static banner. */
+  video?: { src: string }
   title: string
   intro: string[]
   facts: { label: string; value: string }[]

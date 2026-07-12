@@ -67,7 +67,19 @@ export default async function CaseStudyPage({
           </a>
         </div>
 
-        <CaseBanner client={cs.client} image={cs.image} />
+        {cs.video ? (
+          <div className="relative w-full overflow-hidden rounded-[6px] bg-[#0a0a0a] ring-1 ring-inset ring-black/10">
+            <video
+              controls
+              preload="metadata"
+              poster={cs.image}
+              className="block aspect-video w-full"
+              src={cs.video.src}
+            />
+          </div>
+        ) : (
+          <CaseBanner client={cs.client} image={cs.image} />
+        )}
       </section>
 
       {/* ── Body: fact card + article ─────────────────────────────────── */}
