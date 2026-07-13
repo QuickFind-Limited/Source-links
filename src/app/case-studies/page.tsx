@@ -16,7 +16,8 @@ export default function CaseStudiesIndexPage() {
         </h1>
         <p className="mt-6 max-w-[58ch] text-[0.9375rem] leading-[1.55] text-black/60">
           How operationally heavy businesses use Source to understand, untangle, and
-          rebuild their ERP estates — in weeks, not months, at a fixed cost.
+          rebuild their ERP estates — in weeks, not months, at a fixed cost and
+          timeline.
         </p>
       </section>
 
