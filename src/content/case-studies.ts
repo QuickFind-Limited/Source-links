@@ -39,6 +39,9 @@ export const CASE_STUDIES: CaseStudy[] = [
     slug: "salora-erp",
     client: "Salora ERP",
     image: "/images/case-study-interview.jpg",
+    video: {
+      src: "https://fexjjja2arhnehrv.public.blob.vercel-storage.com/media/salora-interview-720p.mp4",
+    },
     title:
       "Running implementations together - and cutting delivery time by up to 80%.",
     intro: [
