@@ -7,7 +7,7 @@ export const CAL_LINK = "https://cal.com/source-ai/30min"
 
 export function CsHeader() {
   return (
-    <header className="mx-auto flex w-full max-w-[1320px] items-center justify-between px-6 pt-8 sm:px-10 lg:pt-10">
+    <header className="mx-auto flex w-full max-w-[82.5rem] items-center justify-between px-6 pt-8 sm:px-10 lg:pt-10">
       <Link href="/" aria-label="Source — home">
         <img src="/source-mark.svg" alt="Source" className="h-10 w-auto select-none md:h-12" />
       </Link>
@@ -31,17 +31,17 @@ export function CsHeader() {
 
 export function CsFooter() {
   return (
-    <footer className="mx-auto mt-24 w-full max-w-[1320px] px-6 pb-12 sm:px-10 lg:mt-28">
+    <footer className="mx-auto mt-24 w-full max-w-[82.5rem] px-6 pb-12 sm:px-10 lg:mt-28">
       <div className="h-px w-full bg-black/[0.07]" />
       <div className="flex flex-col gap-2 pt-6 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-[13px] text-black/40">
+        <p className="text-[0.8125rem] text-black/40">
           © {new Date().getFullYear()} Source — QuickFind AI
         </p>
         <a
           href={CAL_LINK}
           target="_blank"
           rel="noreferrer"
-          className="text-[13px] text-black/40 transition-colors hover:text-black"
+          className="text-[0.8125rem] text-black/40 transition-colors hover:text-black"
         >
           Book an intro call →
         </a>
